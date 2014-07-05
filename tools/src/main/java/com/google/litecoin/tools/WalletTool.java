@@ -49,7 +49,7 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 
 /**
- * A command line tool for manipulating wallets and working with Litecoin.<p>
+ * A command line tool for manipulating wallets and working with Xxxxxxx.<p>
  */
 public class WalletTool {
     private static final Logger log = LoggerFactory.getLogger(WalletTool.class);
@@ -742,7 +742,7 @@ public class WalletTool {
                 Address address = new Address(wallet.getParams(), addr);
                 key = wallet.findKeyFromPubHash(address.getHash160());
             } catch (AddressFormatException e) {
-                System.err.println(addr + " does not parse as a Litecoin address of the right network parameters.");
+                System.err.println(addr + " does not parse as a Xxxxxxx address of the right network parameters.");
                 return;
             }            
         }

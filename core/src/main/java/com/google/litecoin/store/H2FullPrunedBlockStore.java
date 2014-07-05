@@ -365,7 +365,7 @@ public class H2FullPrunedBlockStore implements FullPrunedBlockStore {
             s.setBytes(1, hashBytes);
             s.setBytes(2, storedBlock.getChainWork().toByteArray());
             s.setInt(3, storedBlock.getHeight());
-            s.setBytes(4, storedBlock.getHeader().unsafeLitecoinSerialize());
+            s.setBytes(4, storedBlock.getHeader().unsafeXxxxxxxSerialize());
             s.setBoolean(5, wasUndoable);
             s.executeUpdate();
             s.close();

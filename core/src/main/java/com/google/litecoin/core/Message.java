@@ -26,7 +26,7 @@ import java.util.Arrays;
 import static com.google.common.base.Preconditions.checkState;
 
 /**
- * <p>A Message is a data structure that can be serialized/deserialized using both the Litecoin proprietary serialization
+ * <p>A Message is a data structure that can be serialized/deserialized using both the Xxxxxx proprietary serialization
  * format and built-in Java object serialization. Specific types of messages that are used both in the block chain,
  * and on the wire, are derived from this class.</p>
  */
@@ -87,9 +87,9 @@ public abstract class Message implements Serializable {
     /**
      * 
      * @param params NetworkParameters object.
-     * @param msg Litecoin protocol formatted byte array containing message content.
+     * @param msg Xxxxxxx protocol formatted byte array containing message content.
      * @param offset The location of the first msg byte within the array.
-     * @param protocolVersion Litecoin protocol version.
+     * @param protocolVersion Xxxxxxx protocol version.
      * @param parseLazy Whether to perform a full parse immediately or delay until a read is requested.
      * @param parseRetain Whether to retain the backing byte array for quick reserialization.  
      * If true and the backing byte array is invalidated due to modification of a field then 
@@ -150,7 +150,7 @@ public abstract class Message implements Serializable {
         this(params, msg, offset, NetworkParameters.PROTOCOL_VERSION, parseLazy, parseRetain, length);
     }
 
-    // These methods handle the serialization/deserialization using the custom Litecoin protocol.
+    // These methods handle the serialization/deserialization using the custom Xxxxxxx protocol.
     // It's somewhat painful to work with in Java, so some of these objects support a second 
     // serialization mechanism - the standard Java serialization system. This is used when things 
     // are serialized to the wallet.
@@ -277,13 +277,13 @@ public abstract class Message implements Serializable {
     }
 
     /**
-     * Returns a copy of the array returned by {@link Message#unsafeLitecoinSerialize()}, which is safe to mutate.
+     * Returns a copy of the array returned by {@link Message#unsafeXxxxxxxSerialize()}, which is safe to mutate.
      * If you need extra performance and can guarantee you won't write to the array, you can use the unsafe version.
      *
      * @return a freshly allocated serialized byte array
      */
     public byte[] xxxxxxxSerialize() {
-        byte[] bytes = unsafeLitecoinSerialize();
+        byte[] bytes = unsafeXxxxxxxSerialize();
         byte[] copy = new byte[bytes.length];
         System.arraycopy(bytes, 0, copy, 0, bytes.length);
         return copy;
@@ -306,7 +306,7 @@ public abstract class Message implements Serializable {
      *
      * @return a byte array owned by this object, do NOT mutate it.
      */
-    public byte[] unsafeLitecoinSerialize() {
+    public byte[] unsafeXxxxxxxSerialize() {
         // 1st attempt to use a cached array.
         if (bytes != null) {
             if (offset == 0 && length == bytes.length) {

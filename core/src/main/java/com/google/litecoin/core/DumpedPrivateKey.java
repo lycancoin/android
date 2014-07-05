@@ -23,7 +23,7 @@ import java.math.BigInteger;
 import java.util.Arrays;
 
 /**
- * Parses and generates private keys in the form used by the Litecoin "dumpprivkey" command. This is the private key
+ * Parses and generates private keys in the form used by the Xxxxxxx "dumpprivkey" command. This is the private key
  * bytes with a header byte and 4 checksum bytes at the end. If there are 33 private key bytes instead of 32, then
  * the last byte is a discriminator value for the compressed pubkey.
  */
@@ -54,7 +54,7 @@ public class DumpedPrivateKey extends VersionedChecksummedBytes {
     }
 
     /**
-     * Parses the given private key as created by the "dumpprivkey" Litecoin C++ RPC.
+     * Parses the given private key as created by the "dumpprivkey" Xxxxxxx C++ RPC.
      *
      * @param params  The expected network parameters of the key. If you don't care, provide null.
      * @param encoded The base58 encoded string.

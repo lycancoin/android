@@ -61,7 +61,7 @@ import static com.google.common.base.Preconditions.*;
 /**
  * <p>A Wallet stores keys and a record of transactions that send and receive value from those keys. Using these,
  * it is able to create new transactions that spend the recorded transactions, and this is the fundamental operation
- * of the Litecoin protocol.</p>
+ * of the Xxxxxxx protocol.</p>
  *
  * <p>To learn more about this class, read <b><a href="http://code.google.com/p/litecoinj/wiki/WorkingWithTheWallet">
  *     working with the wallet.</a></b></p>
@@ -139,7 +139,7 @@ public class Wallet implements Serializable, BlockChainListener {
      * may have unspent "change" outputs.<p>
      * <p/>
      * Note: for now we will not allow spends of transactions that did not make it into the block chain. The code
-     * that handles this in Litecoin C++ is complicated. Satoshis code will not allow you to spend unconfirmed coins,
+     * that handles this in Xxxxxxx C++ is complicated. Satoshis code will not allow you to spend unconfirmed coins,
      * however, it does seem to support dependency resolution entirely within the context of the memory pool so
      * theoretically you could spend zero-conf coins and all of them would be included together. To simplify we'll
      * make people wait but it would be a good improvement to resolve this in future.
@@ -1707,7 +1707,7 @@ public class Wallet implements Serializable, BlockChainListener {
 
     /** A SendResult is returned to you as part of sending coins to a recipient. */
     public static class SendResult {
-        /** The Litecoin transaction message that moves the money. */
+        /** The Xxxxxxx transaction message that moves the money. */
         public Transaction tx;
         /** A future that will complete once the tx message has been successfully broadcast to the network. */
         public ListenableFuture<Transaction> broadcastComplete;
@@ -1737,7 +1737,7 @@ public class Wallet implements Serializable, BlockChainListener {
         /**
          * A transaction can have a fee attached, which is defined as the difference between the input values
          * and output values. Any value taken in that is not provided to an output can be claimed by a miner. This
-         * is how mining is incentivized in later years of the Litecoin system when inflation drops. It also provides
+         * is how mining is incentivized in later years of the Xxxxxxx system when inflation drops. It also provides
          * a way for people to prioritize their transactions over others and is used as a way to make denial of service
          * attacks expensive. Some transactions require a fee due to their structure - currently litecoinj does not
          * correctly calculate this! As of late 2012 most transactions require no fee.
@@ -1796,7 +1796,7 @@ public class Wallet implements Serializable, BlockChainListener {
      * prevent this, but that should only occur once the transaction has been accepted by the network. This implies
      * you cannot have more than one outstanding sending tx at once.</p>
      *
-     * @param address       The Litecoin address to send the money to.
+     * @param address       The Xxxxxxx address to send the money to.
      * @param nanocoins     How much currency to send, in nanocoins.
      * @return either the created Transaction or null if there are insufficient coins.
      * coins as spent until commitTx is called on the result.

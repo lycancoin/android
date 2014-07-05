@@ -265,7 +265,7 @@ public class ToyWallet {
         txScrollPane = new JScrollPane(txTable);
         window.getContentPane().add(txScrollPane, BorderLayout.CENTER);
         
-        networkStats = new JLabel("Connecting to the Litecoin network ...");
+        networkStats = new JLabel("Connecting to the Xxxxxxx network ...");
         window.getContentPane().add(networkStats, BorderLayout.SOUTH);
     }
 }

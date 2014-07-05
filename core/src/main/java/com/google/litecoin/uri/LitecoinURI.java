@@ -188,7 +188,7 @@ public class LitecoinURI {
         for (String nameValuePairToken : nameValuePairTokens) {
             String[] tokens = nameValuePairToken.split("=");
             if (tokens.length != 2 || "".equals(tokens[0])) {
-                throw new LitecoinURIParseException("Malformed Litecoin URI - cannot parse name value pair '" +
+                throw new LitecoinURIParseException("Malformed Xxxxxxx URI - cannot parse name value pair '" +
                         nameValuePairToken + "'");
             }
 

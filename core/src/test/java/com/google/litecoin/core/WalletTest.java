@@ -172,7 +172,7 @@ public class WalletTest {
     private void basicSpendingCommon(Wallet wallet, Address toAddress, boolean testEncryption) throws Exception {
         // We'll set up a wallet that receives a coin, then sends a coin of
         // lesser value and keeps the change. We
-        // will attach a small fee. Because the Litecoin protocol makes it
+        // will attach a small fee. Because the Xxxxxxx protocol makes it
         // difficult to determine the fee of an
         // arbitrary transaction in isolation, we'll check that the fee was set
         // by examining the size of the change.

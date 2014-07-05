@@ -126,9 +126,9 @@ public class StoredBlock implements Serializable {
         }
         buffer.put(chainWorkBytes);
         buffer.putInt(getHeight());
-        // Using unsafeLitecoinSerialize here can give us direct access to the same bytes we read off the wire,
+        // Using unsafeXxxxxxxSerialize here can give us direct access to the same bytes we read off the wire,
         // avoiding serialization round-trips.
-        byte[] bytes = getHeader().unsafeLitecoinSerialize();
+        byte[] bytes = getHeader().unsafeXxxxxxxSerialize();
         buffer.put(bytes, 0, Block.HEADER_SIZE);  // Trim the trailing 00 byte (zero transactions).
     }
 

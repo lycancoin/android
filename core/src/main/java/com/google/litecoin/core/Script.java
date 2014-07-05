@@ -51,7 +51,7 @@ class ScriptChunk {
 /**
  * <p>Programs embedded inside transactions that control redemption of payments.</p>
  *
- * <p>Litecoin transactions don't specify what they do directly. Instead <a href="https://en.litecoin.it/wiki/Script">a
+ * <p>Xxxxxxx transactions don't specify what they do directly. Instead <a href="https://en.litecoin.it/wiki/Script">a
  * small binary stack language</a> is used to define programs that when evaluated return whether the transaction
  * "accepts" or rejects the other transactions connected to it.</p>
  *
@@ -790,7 +790,7 @@ public class Script {
      * <p>litecoinj does not support creation of P2SH transactions today. The goal of P2SH is to allow short addresses
      * even for complex scripts (eg, multi-sig outputs) so they are convenient to work with in things like QRcodes or
      * with copy/paste, and also to minimize the size of the unspent output set (which improves performance of the
-     * Litecoin system).</p>
+     * Xxxxxxx system).</p>
      */
     public boolean isPayToScriptHash() {
         return program.length == 23 &&
