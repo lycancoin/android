@@ -34,7 +34,7 @@ public class MemoryPoolTest {
     public void setup() throws Exception {
         BriefLogFormatter.init();
         tx1 = TestUtils.createFakeTx(params, Utils.toNanoCoins(1, 0), new ECKey().toAddress(params));
-        tx2 = new Transaction(params, tx1.litecoinSerialize());
+        tx2 = new Transaction(params, tx1.xxxxxxxSerialize());
 
         address1 = new PeerAddress(InetAddress.getByAddress(new byte[] { 127, 0, 0, 1 }));
         address2 = new PeerAddress(InetAddress.getByAddress(new byte[] { 127, 0, 0, 2 }));

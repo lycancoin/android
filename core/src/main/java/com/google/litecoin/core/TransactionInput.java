@@ -136,8 +136,8 @@ public class TransactionInput extends ChildMessage implements Serializable {
     }
 
     @Override
-    protected void litecoinSerializeToStream(OutputStream stream) throws IOException {
-        outpoint.litecoinSerialize(stream);
+    protected void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
+        outpoint.xxxxxxxSerialize(stream);
         stream.write(new VarInt(scriptBytes.length).encode());
         stream.write(scriptBytes);
         Utils.uint32ToByteStreamLE(sequence, stream);

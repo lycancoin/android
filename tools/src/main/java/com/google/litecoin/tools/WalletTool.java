@@ -282,7 +282,7 @@ public class WalletTool {
             case TEST: 
                 params = NetworkParameters.testNet();
                 chainFileName = new File("testnet.chain");
-                discovery = new IrcDiscovery("#litecoinTEST3");
+                discovery = new IrcDiscovery("#xxxxxxxTEST3");
                 break;
             default:
                 throw new RuntimeException("Unreachable.");
@@ -444,7 +444,7 @@ public class WalletTool {
                 req.aesKey = wallet.getKeyCrypter().deriveKey(password);
             }
             if (!wallet.completeTx(req)) {
-                System.err.println("Insufficient funds: have " + Utils.litecoinValueToFriendlyString(wallet.getBalance()));
+                System.err.println("Insufficient funds: have " + Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
                 return;
             }
             try {
@@ -545,7 +545,7 @@ public class WalletTool {
                         saveWallet(walletFile);
                         BigInteger balance = wallet.getBalance(Wallet.BalanceType.ESTIMATED);
                         if (condition.matchLitecoins(balance)) {
-                            System.out.println(Utils.litecoinValueToFriendlyString(balance));
+                            System.out.println(Utils.xxxxxxxValueToFriendlyString(balance));
                             latch.countDown();
                         }
                     }

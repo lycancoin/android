@@ -370,7 +370,7 @@ public class Block extends Message {
         if (transactions != null) {
             stream.write(new VarInt(transactions.size()).encode());
             for (Transaction tx : transactions) {
-                tx.litecoinSerialize(stream);
+                tx.xxxxxxxSerialize(stream);
             }
         }
     }
@@ -381,7 +381,7 @@ public class Block extends Message {
      *
      * @throws IOException
      */
-    public byte[] litecoinSerialize() {
+    public byte[] xxxxxxxSerialize() {
         // we have completely cached byte array.
         if (headerBytesValid && transactionBytesValid) {
             Preconditions.checkNotNull(bytes, "Bytes should never be null if headerBytesValid && transactionBytesValid");
@@ -408,7 +408,7 @@ public class Block extends Message {
     }
 
     @Override
-    protected void litecoinSerializeToStream(OutputStream stream) throws IOException {
+    protected void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
         writeHeader(stream);
         // We may only have enough data to write the header.
         writeTransactions(stream);
@@ -941,7 +941,7 @@ public class Block extends Message {
         coinbase.addOutput(new TransactionOutput(params, coinbase, value, Script.createOutputScript(pubKeyTo)));
         transactions.add(coinbase);
         coinbase.setParent(this);
-        coinbase.length = coinbase.litecoinSerialize().length;
+        coinbase.length = coinbase.xxxxxxxSerialize().length;
         adjustLength(transactions.size(), coinbase.length);
     }
 

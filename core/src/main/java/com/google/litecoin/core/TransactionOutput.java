@@ -134,7 +134,7 @@ public class TransactionOutput extends ChildMessage implements Serializable {
     }
 
     @Override
-    protected void litecoinSerializeToStream(OutputStream stream) throws IOException {
+    protected void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
         checkNotNull(scriptBytes);
         Utils.uint64ToByteStreamLE(getValue(), stream);
         // TODO: Move script serialization into the Script class, where it belongs.
@@ -225,7 +225,7 @@ public class TransactionOutput extends ChildMessage implements Serializable {
      */
     public String toString() {
         try {
-            return "TxOut of " + Utils.litecoinValueToFriendlyString(value) + " to " + getScriptPubKey().getToAddress()
+            return "TxOut of " + Utils.xxxxxxxValueToFriendlyString(value) + " to " + getScriptPubKey().getToAddress()
                     .toString() + " script:" + getScriptPubKey().toString();
         } catch (ScriptException e) {
             throw new RuntimeException(e);

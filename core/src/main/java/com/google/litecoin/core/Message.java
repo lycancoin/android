@@ -134,7 +134,7 @@ public abstract class Message implements Serializable {
             maybeParse();
             byte[] msgbytes = new byte[cursor - offset];
             System.arraycopy(msg, offset, msgbytes, 0, cursor - offset);
-            byte[] reserialized = litecoinSerialize();
+            byte[] reserialized = xxxxxxxSerialize();
             if (!Arrays.equals(reserialized, msgbytes))
                 throw new RuntimeException("Serialization is wrong: \n" +
                         Utils.bytesToHexString(reserialized) + " vs \n" +
@@ -282,7 +282,7 @@ public abstract class Message implements Serializable {
      *
      * @return a freshly allocated serialized byte array
      */
-    public byte[] litecoinSerialize() {
+    public byte[] xxxxxxxSerialize() {
         byte[] bytes = unsafeLitecoinSerialize();
         byte[] copy = new byte[bytes.length];
         System.arraycopy(bytes, 0, copy, 0, bytes.length);
@@ -323,7 +323,7 @@ public abstract class Message implements Serializable {
         // No cached array available so serialize parts by stream.
         ByteArrayOutputStream stream = new UnsafeByteArrayOutputStream(length < 32 ? 32 : length + 32);
         try {
-            litecoinSerializeToStream(stream);
+            xxxxxxxSerializeToStream(stream);
         } catch (IOException e) {
             // Cannot happen, we are serializing to a memory stream.
         }
@@ -335,7 +335,7 @@ public abstract class Message implements Serializable {
             // This give a dual benefit.  Releasing references to the larger byte array so that it
             // it is more likely to be GC'd.  And preventing double serializations.  E.g. calculating
             // merkle root calls this method.  It is will frequently happen prior to serializing the block
-            // which means another call to litecoinSerialize is coming.  If we didn't recache then internal
+            // which means another call to xxxxxxxSerialize is coming.  If we didn't recache then internal
             // serialization would occur a 2nd time and every subsequent time the message is serialized.
             bytes = stream.toByteArray();
             cursor = cursor - offset;
@@ -358,21 +358,21 @@ public abstract class Message implements Serializable {
      * @param stream
      * @throws IOException
      */
-    final public void litecoinSerialize(OutputStream stream) throws IOException {
+    final public void xxxxxxxSerialize(OutputStream stream) throws IOException {
         // 1st check for cached bytes.
         if (bytes != null && length != UNKNOWN_LENGTH) {
             stream.write(bytes, offset, length);
             return;
         }
 
-        litecoinSerializeToStream(stream);
+        xxxxxxxSerializeToStream(stream);
     }
 
     /**
-     * Serializes this message to the provided stream. If you just want the raw bytes use litecoinSerialize().
+     * Serializes this message to the provided stream. If you just want the raw bytes use xxxxxxxSerialize().
      */
-    void litecoinSerializeToStream(OutputStream stream) throws IOException {
-        log.debug("Warning: {} class has not implemented litecoinSerializeToStream method.  Generating message with no payload", getClass());
+    void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
+        log.debug("Warning: {} class has not implemented xxxxxxxSerializeToStream method.  Generating message with no payload", getClass());
     }
 
     /**

@@ -309,7 +309,7 @@ public class Utils {
      * Returns the given value in nanocoins as a 0.12 type string. More digits after the decimal place will be used
      * if necessary, but two will always be present.
      */
-    public static String litecoinValueToFriendlyString(BigInteger value) {
+    public static String xxxxxxxValueToFriendlyString(BigInteger value) {
         // TODO: This API is crap. This method should go away when we encapsulate money values.
         boolean negative = value.compareTo(BigInteger.ZERO) < 0;
         if (negative)
@@ -339,7 +339,7 @@ public class Utils {
      * @throws IllegalArgumentException
      *            If the input value is null
      */
-    public static String litecoinValueToPlainString(BigInteger value) {
+    public static String xxxxxxxValueToPlainString(BigInteger value) {
         if (value == null) {
             throw new IllegalArgumentException("Value cannot be null");
         }

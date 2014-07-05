@@ -109,7 +109,7 @@ public abstract class ListMessage extends Message {
     }
 
     @Override
-    public void litecoinSerializeToStream(OutputStream stream) throws IOException {
+    public void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
         stream.write(new VarInt(items.size()).encode());
         for (InventoryItem i : items) {
             // Write out the type code.

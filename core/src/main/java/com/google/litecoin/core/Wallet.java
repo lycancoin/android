@@ -45,7 +45,7 @@ import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static com.google.litecoin.core.Utils.litecoinValueToFriendlyString;
+import static com.google.litecoin.core.Utils.xxxxxxxValueToFriendlyString;
 import static com.google.common.base.Preconditions.*;
 
 // To do list:
@@ -873,8 +873,8 @@ public class Wallet implements Serializable, BlockChainListener {
             BigInteger valueSentFromMe = tx.getValueSentFromMe(this);
             if (log.isInfoEnabled()) {
                 log.info(String.format("Received a pending transaction %s that spends %s BTC from our own wallet," +
-                        " and sends us %s BTC", tx.getHashAsString(), Utils.litecoinValueToFriendlyString(valueSentFromMe),
-                        Utils.litecoinValueToFriendlyString(valueSentToMe)));
+                        " and sends us %s BTC", tx.getHashAsString(), Utils.xxxxxxxValueToFriendlyString(valueSentFromMe),
+                        Utils.xxxxxxxValueToFriendlyString(valueSentToMe)));
             }
             if (tx.getConfidence().getSource().equals(TransactionConfidence.Source.UNKNOWN)) {
                 log.warn("Wallet received transaction with an unknown source. Consider tagging tx!");
@@ -1047,7 +1047,7 @@ public class Wallet implements Serializable, BlockChainListener {
 
         if (!reorg) {
             log.info("Received tx {} for {} BTC: {}", new Object[]{sideChain ? "on a side chain" : "",
-                    litecoinValueToFriendlyString(valueDifference), tx.getHashAsString()});
+                    xxxxxxxValueToFriendlyString(valueDifference), tx.getHashAsString()});
         }
 
         onWalletChangedSuppressions++;
@@ -1127,7 +1127,7 @@ public class Wallet implements Serializable, BlockChainListener {
         }
 	// Implements revision d64f55589694
         BigInteger newBalance = getBalance();
-        log.info("Balance is now: " + litecoinValueToFriendlyString(getBalance()));
+        log.info("Balance is now: " + xxxxxxxValueToFriendlyString(getBalance()));
 
         // Inform anyone interested that we have received or sent coins but only if:
         //  - This is not due to a re-org.
@@ -1933,7 +1933,7 @@ public class Wallet implements Serializable, BlockChainListener {
             value = value.add(req.fee);
 
             log.info("Completing send tx with {} outputs totalling {}",
-                    req.tx.getOutputs().size(), litecoinValueToFriendlyString(value));
+                    req.tx.getOutputs().size(), xxxxxxxValueToFriendlyString(value));
 
             // Calculate a list of ALL potential candidates for spending and then ask a coin selector to provide us
             // with the actual outputs that'll be used to gather the required amount of value. In this way, users
@@ -1949,7 +1949,7 @@ public class Wallet implements Serializable, BlockChainListener {
             // Can we afford this?
             if (selection.valueGathered.compareTo(value) < 0) {
                 log.warn("Insufficient value in wallet for send, missing " +
-                        litecoinValueToFriendlyString(value.subtract(selection.valueGathered)));
+                        xxxxxxxValueToFriendlyString(value.subtract(selection.valueGathered)));
                 // TODO: Should throw an exception here.
                 return false;
             }
@@ -1961,7 +1961,7 @@ public class Wallet implements Serializable, BlockChainListener {
                 // we need to take back some coins ... this is called "change". Add another output that sends the change
                 // back to us. The address comes either from the request or getChangeAddress() as a default.
                 Address changeAddress = req.changeAddress != null ? req.changeAddress : getChangeAddress();
-                log.info("  with {} coins change", litecoinValueToFriendlyString(change));
+                log.info("  with {} coins change", xxxxxxxValueToFriendlyString(change));
                 req.tx.addOutput(new TransactionOutput(params, req.tx, change, changeAddress));
             }
             for (TransactionOutput output : selection.gathered) {
@@ -1978,7 +1978,7 @@ public class Wallet implements Serializable, BlockChainListener {
             }
 
             // Check size.
-            int size = req.tx.litecoinSerialize().length;
+            int size = req.tx.xxxxxxxSerialize().length;
             if (size > Transaction.MAX_STANDARD_TX_SIZE) {
                 // TODO: Throw an exception here.
                 log.error("Transaction could not be created without exceeding max size: {} vs {}", size,
@@ -2220,7 +2220,7 @@ public class Wallet implements Serializable, BlockChainListener {
         lock.lock();
         try {
             StringBuilder builder = new StringBuilder();
-            builder.append(String.format("Wallet containing %s BTC in:%n", litecoinValueToFriendlyString(getBalance())));
+            builder.append(String.format("Wallet containing %s BTC in:%n", xxxxxxxValueToFriendlyString(getBalance())));
             builder.append(String.format("  %d unspent transactions%n", unspent.size()));
             builder.append(String.format("  %d spent transactions%n", spent.size()));
             builder.append(String.format("  %d pending transactions%n", pending.size()));
@@ -2273,11 +2273,11 @@ public class Wallet implements Serializable, BlockChainListener {
         for (Transaction tx : transactionMap.values()) {
             try {
                 builder.append("Sends ");
-                builder.append(Utils.litecoinValueToFriendlyString(tx.getValueSentFromMe(this)));
+                builder.append(Utils.xxxxxxxValueToFriendlyString(tx.getValueSentFromMe(this)));
                 builder.append(" and receives ");
-                builder.append(Utils.litecoinValueToFriendlyString(tx.getValueSentToMe(this)));
+                builder.append(Utils.xxxxxxxValueToFriendlyString(tx.getValueSentToMe(this)));
                 builder.append(", total value ");
-                builder.append(Utils.litecoinValueToFriendlyString(tx.getValue(this)));
+                builder.append(Utils.xxxxxxxValueToFriendlyString(tx.getValue(this)));
                 builder.append(".\n");
             } catch (ScriptException e) {
                 // Ignore and don't print this line.
@@ -2527,7 +2527,7 @@ public class Wallet implements Serializable, BlockChainListener {
                 reprocessUnincludedTxAfterReorg(pool, tx);
             }
 
-            log.info("post-reorg balance is {}", Utils.litecoinValueToFriendlyString(getBalance()));
+            log.info("post-reorg balance is {}", Utils.xxxxxxxValueToFriendlyString(getBalance()));
             // Inform event listeners that a re-org took place. They should save the wallet at this point.
             invokeOnReorganize();
             onWalletChangedSuppressions--;
@@ -3019,7 +3019,7 @@ public class Wallet implements Serializable, BlockChainListener {
                 try {
                     if (out.isMine(this) && out.getScriptPubKey().isSentToRawPubKey()) {
                         TransactionOutPoint outPoint = new TransactionOutPoint(params, i, tx);
-                        filter.insert(outPoint.litecoinSerialize());
+                        filter.insert(outPoint.xxxxxxxSerialize());
                     }
                 } catch (ScriptException e) {
                     throw new RuntimeException(e); // If it is ours, we parsed the script corectly, so this shouldn't happen

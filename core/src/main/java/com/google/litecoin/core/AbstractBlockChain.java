@@ -638,7 +638,7 @@ public abstract class AbstractBlockChain {
             try {
                 if (listener.isTransactionRelevant(tx)) {
                     if (clone)
-                        tx = new Transaction(tx.params, tx.litecoinSerialize());
+                        tx = new Transaction(tx.params, tx.xxxxxxxSerialize());
                     listener.receiveFromBlock(tx, block, blockType);
                 }
             } catch (ScriptException e) {

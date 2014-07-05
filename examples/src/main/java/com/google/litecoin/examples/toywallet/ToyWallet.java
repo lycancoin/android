@@ -96,7 +96,7 @@ public class ToyWallet {
                 case 2:
                     try {
                         BigInteger val = tx.getValue(wallet);
-                        return Utils.litecoinValueToFriendlyString(val);
+                        return Utils.xxxxxxxValueToFriendlyString(val);
                     } catch (ScriptException e) {
                         throw new RuntimeException(e);
                     }
@@ -174,7 +174,7 @@ public class ToyWallet {
         peerGroup = new PeerGroup(params, chain);
         peerGroup.setUserAgent("ToyWallet", "1.0");
         if (testnet) {
-            peerGroup.addPeerDiscovery(new IrcDiscovery("#litecoinTEST3"));
+            peerGroup.addPeerDiscovery(new IrcDiscovery("#xxxxxxxTEST3"));
         } else {
             peerGroup.addPeerDiscovery(new DnsDiscovery(params));
         }

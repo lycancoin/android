@@ -160,7 +160,7 @@ public class VersionMessage extends Message {
     }
 
     @Override
-    public void litecoinSerializeToStream(OutputStream buf) throws IOException {
+    public void xxxxxxxSerializeToStream(OutputStream buf) throws IOException {
         Utils.uint32ToByteStreamLE(clientVersion, buf);
         Utils.uint32ToByteStreamLE(localServices, buf);
         Utils.uint32ToByteStreamLE(localServices >> 32, buf);
@@ -168,9 +168,9 @@ public class VersionMessage extends Message {
         Utils.uint32ToByteStreamLE(time >> 32, buf);
         try {
             // My address.
-            myAddr.litecoinSerialize(buf);
+            myAddr.xxxxxxxSerialize(buf);
             // Their address.
-            theirAddr.litecoinSerialize(buf);
+            theirAddr.xxxxxxxSerialize(buf);
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);  // Can't happen.
         } catch (IOException e) {

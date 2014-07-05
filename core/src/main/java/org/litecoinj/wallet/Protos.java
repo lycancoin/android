@@ -8299,7 +8299,7 @@ public final class Protos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rlitecoin.proto\022\006wallet\"A\n\013PeerAddress\022\022" +
+      "\n\rxxxxxxx.proto\022\006wallet\"A\n\013PeerAddress\022\022" +
       "\n\nip_address\030\001 \002(\014\022\014\n\004port\030\002 \002(\r\022\020\n\010serv" +
       "ices\030\003 \002(\004\"S\n\023EncryptedPrivateKey\022\035\n\025ini" +
       "tialisation_vector\030\001 \002(\014\022\035\n\025encrypted_pr" +

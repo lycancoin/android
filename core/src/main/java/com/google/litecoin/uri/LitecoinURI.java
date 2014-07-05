@@ -317,7 +317,7 @@ public class LitecoinURI {
         
         if (amount != null) {
             builder.append(QUESTION_MARK_SEPARATOR).append(FIELD_AMOUNT).append("=");
-            builder.append(Utils.litecoinValueToPlainString(amount));
+            builder.append(Utils.xxxxxxxValueToPlainString(amount));
             questionMarkHasBeenOutput = true;
         }
         

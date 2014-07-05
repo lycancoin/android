@@ -747,7 +747,7 @@ public class ECKey implements Serializable {
     /**
      * Check that it is possible to decrypt the key with the keyCrypter and that the original key is returned.
      *
-     * Because it is a critical failure if the private keys cannot be decrypted successfully (resulting of loss of all litecoins controlled
+     * Because it is a critical failure if the private keys cannot be decrypted successfully (resulting of loss of all xxxxxxxs controlled
      * by the private key) you can use this method to check when you *encrypt* a wallet that it can definitely be decrypted successfully.
      * See {@link Wallet#encrypt(KeyCrypter keyCrypter, KeyParameter aesKey)} for example usage.
      *

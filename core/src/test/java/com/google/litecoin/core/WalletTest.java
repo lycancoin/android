@@ -52,7 +52,7 @@ import java.util.concurrent.TimeUnit;
 import static com.google.litecoin.core.TestUtils.*;
 import static com.google.litecoin.core.TestUtils.createFakeBlock;
 import static com.google.litecoin.core.TestUtils.createFakeTx;
-import static com.google.litecoin.core.Utils.litecoinValueToFriendlyString;
+import static com.google.litecoin.core.Utils.xxxxxxxValueToFriendlyString;
 import static com.google.litecoin.core.Utils.toNanoCoins;
 import static org.junit.Assert.*;
 
@@ -442,18 +442,18 @@ public class WalletTest {
         txn[0] = txn[1] = null;
         confTxns.clear();
         sendMoneyToWallet(send1, AbstractBlockChain.NewBlockType.BEST_CHAIN);
-        assertEquals(litecoinValueToFriendlyString(wallet.getBalance()), "0.90");
+        assertEquals(xxxxxxxValueToFriendlyString(wallet.getBalance()), "0.90");
         assertEquals(null, txn[0]);
         assertEquals(2, confTxns.size());
         assertEquals(txn[1].getHash(), send1.getHash());
-        assertEquals(litecoinValueToFriendlyString(bigints[2]), "1.00");
-        assertEquals(litecoinValueToFriendlyString(bigints[3]), "0.90");
+        assertEquals(xxxxxxxValueToFriendlyString(bigints[2]), "1.00");
+        assertEquals(xxxxxxxValueToFriendlyString(bigints[3]), "0.90");
         // And we do it again after the catchup.
         Transaction send2 = wallet.createSend(new ECKey().toAddress(params), toNanoCoins(0, 10));
         // What we'd really like to do is prove the official client would accept it .... no such luck unfortunately.
         wallet.commitTx(send2);
         sendMoneyToWallet(send2, AbstractBlockChain.NewBlockType.BEST_CHAIN);
-        assertEquals(litecoinValueToFriendlyString(wallet.getBalance()), "0.80");
+        assertEquals(xxxxxxxValueToFriendlyString(wallet.getBalance()), "0.80");
         BlockPair b4 = createFakeBlock(blockStore);
         confTxns.clear();
         wallet.notifyNewBestBlock(b4.storedBlock);
@@ -468,7 +468,7 @@ public class WalletTest {
         // Send 0.10 to somebody else.
         Transaction send1 = wallet.createSend(new ECKey().toAddress(params), toNanoCoins(0, 10));
         // Reserialize.
-        Transaction send2 = new Transaction(params, send1.litecoinSerialize());
+        Transaction send2 = new Transaction(params, send1.xxxxxxxSerialize());
         assertEquals(nanos, send2.getValueSentFromMe(wallet));
         assertEquals(BigInteger.ZERO.subtract(toNanoCoins(0, 10)), send2.getValue(wallet));
     }
@@ -485,7 +485,7 @@ public class WalletTest {
         
         assertTrue("Wallet is not consistent", wallet.isConsistent());
         
-        Transaction txClone = new Transaction(params, tx.litecoinSerialize());
+        Transaction txClone = new Transaction(params, tx.xxxxxxxSerialize());
         try {
             wallet.receiveFromBlock(txClone, null, BlockChain.NewBlockType.BEST_CHAIN);
             fail("Illegal argument not thrown when it should have been.");
@@ -579,7 +579,7 @@ public class WalletTest {
         Transaction send1 = wallet.createSend(new ECKey().toAddress(params), toNanoCoins(2, 90));
         // Create a double spend of just the first one.
         Transaction send2 = wallet.createSend(new ECKey().toAddress(params), toNanoCoins(1, 0));
-        send2 = new Transaction(params, send2.litecoinSerialize());
+        send2 = new Transaction(params, send2.xxxxxxxSerialize());
         // Broadcast send1, it's now pending.
         wallet.commitTx(send1);
         assertEquals(BigInteger.ZERO, wallet.getBalance());
@@ -628,7 +628,7 @@ public class WalletTest {
         Transaction send1 = wallet.createSend(new ECKey().toAddress(params), toNanoCoins(0, 50));
         // Create a double spend.
         Transaction send2 = wallet.createSend(new ECKey().toAddress(params), toNanoCoins(0, 50));
-        send2 = new Transaction(params, send2.litecoinSerialize());
+        send2 = new Transaction(params, send2.xxxxxxxSerialize());
         // Broadcast send1.
         wallet.commitTx(send1);
         assertEquals(send1, received.getOutput(0).getSpentBy().getParentTransaction());
@@ -700,7 +700,7 @@ public class WalletTest {
         });
         assertEquals(TransactionConfidence.ConfidenceType.NOT_SEEN_IN_CHAIN,
                 notifiedTx[0].getConfidence().getConfidenceType());
-        final Transaction t1Copy = new Transaction(params, t1.litecoinSerialize());
+        final Transaction t1Copy = new Transaction(params, t1.xxxxxxxSerialize());
         sendMoneyToWallet(t1Copy, AbstractBlockChain.NewBlockType.BEST_CHAIN);
         assertFalse(flags[0]);
         assertTrue(flags[1]);

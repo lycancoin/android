@@ -133,8 +133,8 @@ public class TestUtils {
         doubleSpends.t2.addOutput(o2);
 
         try {
-            doubleSpends.t1 = new Transaction(params, doubleSpends.t1.litecoinSerialize());
-            doubleSpends.t2 = new Transaction(params, doubleSpends.t2.litecoinSerialize());
+            doubleSpends.t1 = new Transaction(params, doubleSpends.t1.xxxxxxxSerialize());
+            doubleSpends.t2 = new Transaction(params, doubleSpends.t2.xxxxxxxSerialize());
         } catch (ProtocolException e) {
             throw new RuntimeException(e);
         }

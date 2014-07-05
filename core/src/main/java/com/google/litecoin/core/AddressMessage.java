@@ -76,15 +76,15 @@ public class AddressMessage extends Message {
     }
 
     /* (non-Javadoc)
-      * @see Message#litecoinSerializeToStream(java.io.OutputStream)
+      * @see Message#xxxxxxxSerializeToStream(java.io.OutputStream)
       */
     @Override
-    void litecoinSerializeToStream(OutputStream stream) throws IOException {
+    void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
         if (addresses == null)
             return;
         stream.write(new VarInt(addresses.size()).encode());
         for (PeerAddress addr : addresses) {
-            addr.litecoinSerialize(stream);
+            addr.xxxxxxxSerialize(stream);
         }
     }
 

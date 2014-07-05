@@ -155,7 +155,7 @@ public class Transaction extends ChildMessage implements Serializable {
      */
     public Sha256Hash getHash() {
         if (hash == null) {
-            byte[] bits = litecoinSerialize();
+            byte[] bits = xxxxxxxSerialize();
             hash = new Sha256Hash(reverseBytes(doubleDigest(bits)));
         }
         return hash;
@@ -625,7 +625,7 @@ public class Transaction extends ChildMessage implements Serializable {
                     s.append("]");
                 }
                 s.append(" ");
-                s.append(litecoinValueToFriendlyString(out.getValue()));
+                s.append(xxxxxxxValueToFriendlyString(out.getValue()));
                 s.append(" BTC");
                 if (!out.isAvailableForSpending()) {
                     s.append(" Spent");
@@ -889,7 +889,7 @@ public class Transaction extends ChildMessage implements Serializable {
             }
 
             ByteArrayOutputStream bos = new UnsafeByteArrayOutputStream(length == UNKNOWN_LENGTH ? 256 : length + 4);
-            litecoinSerialize(bos);
+            xxxxxxxSerialize(bos);
             // We also have to write a hash type (sigHashType is actually an unsigned char)
             uint32ToByteStreamLE(0x000000ff & sigHashType, bos);
             // Note that this is NOT reversed to ensure it will be signed correctly. If it were to be printed out
@@ -911,14 +911,14 @@ public class Transaction extends ChildMessage implements Serializable {
     }
 
     @Override
-    protected void litecoinSerializeToStream(OutputStream stream) throws IOException {
+    protected void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
         uint32ToByteStreamLE(version, stream);
         stream.write(new VarInt(inputs.size()).encode());
         for (TransactionInput in : inputs)
-            in.litecoinSerialize(stream);
+            in.xxxxxxxSerialize(stream);
         stream.write(new VarInt(outputs.size()).encode());
         for (TransactionOutput out : outputs)
-            out.litecoinSerialize(stream);
+            out.xxxxxxxSerialize(stream);
         uint32ToByteStreamLE(lockTime, stream);
     }
 
