@@ -146,7 +146,7 @@ public class NetworkParameters implements Serializable {
             dumpedPrivateKeyHeader = 128;
             addressHeader = 48;
             if(type == 100) port = 10333;
-            else port = 9333;
+            else port = 2014130531;
             packetMagic = 0xfbc0b6db;
             genesisBlock.setDifficultyTarget(0x1e0ffff0L);
             genesisBlock.setTime(1317972665L);
@@ -164,7 +164,7 @@ public class NetworkParameters implements Serializable {
             // transactions are handled. Duplicated transactions could occur in the case where a coinbase had the same
             // extraNonce and the same outputs but appeared at different heights, and greatly complicated re-org handling.
             // Having these here simplifies block connection logic considerably.
-            //checkpoints.put(91722, new Sha256Hash("00000000000271a2dc26e7667f8419f2e15416dc6955e5a6c6cdf3f2574dd08e"));
+            //checkpoin/ts.put(91722, new Sha256Hash("00000000000271a2dc26e7667f8419f2e15416dc6955e5a6c6cdf3f2574dd08e"));
             //checkpoints.put(91812, new Sha256Hash("00000000000af0aed4792b1acee3d966af36cf5def14935db8de83d6f9306f2f"));
             //checkpoints.put(91842, new Sha256Hash("00000000000a4d0a398161ffc163c503763b1f4360639393e0e4c8e300e0caec"));
             //checkpoints.put(91880, new Sha256Hash("00000000000743f190a18c5577a3c2d2a1f610ae9601ac046a38084ccb7cd721"));
@@ -178,7 +178,7 @@ public class NetworkParameters implements Serializable {
             interval = INTERVAL;
             targetTimespan = TARGET_TIMESPAN;
             proofOfWorkLimit = Utils.decodeCompactBits(0x1d00ffffL);
-            port = 19333;
+            port = 2014130539;
             addressHeader = 111;
             acceptableAddressCodes = new int[] { 111 };
             dumpedPrivateKeyHeader = 239;
