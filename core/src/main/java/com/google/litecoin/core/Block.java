@@ -133,15 +133,17 @@ public class Block extends Message {
 
     /**
      * <p>A utility method that calculates how much new Lycancoin would be created by the block at the given height.
-     * The inflation of Lycancoin is predictable and drops roughly every 4 years (210,000 blocks). At the dawn of
-     * the system it was 50 coins per block, in late 2012 it went to 25 coins per block, and so on. The size of
+     * The inflation of Lycancoin is predictable.
+     * Subsidy is cut in half every 800000 blocks, which will occur approximately every 4.5 years.
+     * 800k blocks in ~3.8 years
+     * At the dawn of the system it was 2970 coins per block. The size of
      * a coinbase transaction is inflation plus fees.</p>
      *
      * <p>The half-life is controlled by {@link com.google.litecoin.core.NetworkParameters#getSubsidyDecreaseBlockCount()}.
      * </p>
      */
     public BigInteger getBlockInflation(int height) {
-        return Utils.toNanoCoins(50, 0).shiftRight(height / params.getSubsidyDecreaseBlockCount());
+        return Utils.toNanoCoins(2970, 0).shiftRight(height / params.getSubsidyDecreaseBlockCount());
     }
 
     private void readObject(ObjectInputStream ois) throws ClassNotFoundException, IOException {

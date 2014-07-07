@@ -153,7 +153,7 @@ public class NetworkParameters implements Serializable {
             genesisBlock.setNonce(6678936L);
             genesisBlock.setMerkleRoot(new Sha256Hash("97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
             id = ID_PRODNET;
-            subsidyDecreaseBlockCount = 840000;
+            subsidyDecreaseBlockCount = 800000;
             allowEmptyPeerChains = false;
             spendableCoinbaseDepth = 100;
             String genesisHash = genesisBlock.getHashAsString();
@@ -187,7 +187,7 @@ public class NetworkParameters implements Serializable {
             genesisBlock.setNonce(1730203L);
             allowEmptyPeerChains = true;
             spendableCoinbaseDepth = 100;
-            subsidyDecreaseBlockCount = 210000;
+            subsidyDecreaseBlockCount = 800000;
             String genesisHash = genesisBlock.getHashAsString();
             //checkState(genesisHash.equals("000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"),
             //        genesisHash);
