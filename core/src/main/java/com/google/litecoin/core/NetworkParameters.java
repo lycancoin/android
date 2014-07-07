@@ -48,11 +48,11 @@ public class NetworkParameters implements Serializable {
     public static final byte[] SATOSHI_KEY = Hex.decode("04fc9702847840aaf195de8442ebecedf5b095cdbb9bc716bda9110971b28a49e0ead8564ff0db22209e0374782c093bb899692d524e9d6a6956e7c5ecbcd68284");
 
     /** The string returned by getId() for the main, production network where people trade things. */
-    public static final String ID_PRODNET = "org.litecoin.production";
+    public static final String ID_PRODNET = "org.lycancoin.production";
     /** The string returned by getId() for the testnet. */
-    public static final String ID_TESTNET = "org.litecoin.test";
+    public static final String ID_TESTNET = "org.lycancoin.test";
     /** Unit test network. */
-    static final String ID_UNITTESTNET = "com.google.litecoin.unittest";
+    static final String ID_UNITTESTNET = "com.google.lycancoin.unittest";
 
     // TODO: Seed nodes should be here as well.
 
@@ -147,7 +147,7 @@ public class NetworkParameters implements Serializable {
             addressHeader = 48;
             if(type == 100) port = 10333;
             else port = 58862;
-            packetMagic = 0xfbc0b6db;
+            packetMagic = 0xfcd9b7dd;
             genesisBlock.setDifficultyTarget(0x1e0ffff0L);
             genesisBlock.setTime(1317972665L);
             genesisBlock.setNonce(2084524493L);
@@ -174,7 +174,7 @@ public class NetworkParameters implements Serializable {
             genesisBlock = createTestGenesis(this);
             id = ID_TESTNET;
             // Genesis hash is 000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943
-            packetMagic = 0xfcc1b7dc;
+            packetMagic = 0xfbc0b8db;
             interval = INTERVAL;
             targetTimespan = TARGET_TIMESPAN;
             proofOfWorkLimit = Utils.decodeCompactBits(0x1d00ffffL);
