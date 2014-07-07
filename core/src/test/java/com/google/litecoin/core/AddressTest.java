@@ -31,7 +31,7 @@ public class AddressTest {
     public void stringification() throws Exception {
         // Test a testnet address.
         Address a = new Address(testParams, Hex.decode("fda79a24e50ff70ff42f7d89585da5bd19d9e5cc"));
-        assertEquals("n4eA2nbYqErp7H6jebchxAN59DmNpksexv", a.toString());
+        assertEquals("XaUSassBGkBGfg5cmVdEVeZkV4VR8L9JDe", a.toString());
 
         Address b = new Address(prodParams, Hex.decode("3f2ebb6c8d88e586b551303d2c29eba15518d8d1"));
         assertEquals("LQz2pJYaeqntA9BFB8rDX5AL2TTKGd5AuN", b.toString());
@@ -39,7 +39,7 @@ public class AddressTest {
     
     @Test
     public void decoding() throws Exception {
-        Address a = new Address(testParams, "n4eA2nbYqErp7H6jebchxAN59DmNpksexv");
+        Address a = new Address(testParams, "XaUSassBGkBGfg5cmVdEVeZkV4VR8L9JDe");
         assertEquals("fda79a24e50ff70ff42f7d89585da5bd19d9e5cc", Utils.bytesToHexString(a.getHash160()));
 
         Address b = new Address(prodParams, "LQz2pJYaeqntA9BFB8rDX5AL2TTKGd5AuN");
@@ -85,7 +85,7 @@ public class AddressTest {
     public void getNetwork() throws Exception {
         NetworkParameters params = Address.getParametersFromAddress("LQz2pJYaeqntA9BFB8rDX5AL2TTKGd5AuN");
         assertEquals(NetworkParameters.prodNet().getId(), params.getId());
-        params = Address.getParametersFromAddress("n4eA2nbYqErp7H6jebchxAN59DmNpksexv");
+        params = Address.getParametersFromAddress("XaUSassBGkBGfg5cmVdEVeZkV4VR8L9JDe");
         assertEquals(NetworkParameters.testNet().getId(), params.getId());
     }
 }
