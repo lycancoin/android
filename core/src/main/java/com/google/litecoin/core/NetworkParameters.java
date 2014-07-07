@@ -146,7 +146,7 @@ public class NetworkParameters implements Serializable {
             dumpedPrivateKeyHeader = 128;
             addressHeader = 48;
             if(type == 100) port = 10333;
-            else port = 2014130531;
+            else port = 58862;
             packetMagic = 0xfbc0b6db;
             genesisBlock.setDifficultyTarget(0x1e0ffff0L);
             genesisBlock.setTime(1317972665L);
@@ -178,7 +178,7 @@ public class NetworkParameters implements Serializable {
             interval = INTERVAL;
             targetTimespan = TARGET_TIMESPAN;
             proofOfWorkLimit = Utils.decodeCompactBits(0x1d00ffffL);
-            port = 2014130539;
+            port = 45884;
             addressHeader = 111;
             acceptableAddressCodes = new int[] { 111 };
             dumpedPrivateKeyHeader = 239;
