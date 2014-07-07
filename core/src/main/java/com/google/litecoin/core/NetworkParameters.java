@@ -143,7 +143,7 @@ public class NetworkParameters implements Serializable {
             targetTimespan = TARGET_TIMESPAN;
             proofOfWorkLimit = Utils.decodeCompactBits(0x1e0fffffL);
             acceptableAddressCodes = new int[] { 48 };
-            dumpedPrivateKeyHeader = 128;
+            dumpedPrivateKeyHeader = 48+128;
             addressHeader = 48;
             if(type == 100) port = 10333;
             else port = 58862;
@@ -179,9 +179,9 @@ public class NetworkParameters implements Serializable {
             targetTimespan = TARGET_TIMESPAN;
             proofOfWorkLimit = Utils.decodeCompactBits(0x1d00ffffL);
             port = 45884;
-            addressHeader = 111;
-            acceptableAddressCodes = new int[] { 111 };
-            dumpedPrivateKeyHeader = 239;
+            addressHeader = 75;
+            acceptableAddressCodes = new int[] { 75 };
+            dumpedPrivateKeyHeader = addressHeader + 128;
             genesisBlock.setTime(1320884152L);
             genesisBlock.setDifficultyTarget(0x1d018ea7L);
             genesisBlock.setNonce(3562614017L);
