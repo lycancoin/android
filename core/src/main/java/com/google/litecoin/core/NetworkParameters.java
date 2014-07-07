@@ -151,13 +151,13 @@ public class NetworkParameters implements Serializable {
             genesisBlock.setDifficultyTarget(0x1e0ffff0L);
             genesisBlock.setTime(1391485370L);
             genesisBlock.setNonce(6678936L);
-            genesisBlock.setMerkleRoot(new Sha256Hash("97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+            genesisBlock.setMerkleRoot(new Sha256Hash("269910b6413f0b424d62db021fed2758ce6761f9b45f5e3a7640ef9dfbe2c218"));
             id = ID_PRODNET;
             subsidyDecreaseBlockCount = 800000;
             allowEmptyPeerChains = false;
             spendableCoinbaseDepth = 100;
             String genesisHash = genesisBlock.getHashAsString();
-            checkState(genesisHash.equals("12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"),
+            checkState(genesisHash.equals("50f80e3dea383a355eb15e4be1f122acbc4144bceaa86604555953c5b8a0c9e4"),
                     genesisHash);
 
             // This contains (at a minimum) the blocks which are not BIP30 compliant. BIP30 changed how duplicate
