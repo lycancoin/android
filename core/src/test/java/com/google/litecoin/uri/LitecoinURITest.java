@@ -47,10 +47,10 @@ public class LitecoinURITest {
         Address goodAddress = new Address(NetworkParameters.prodNet(), PRODNET_GOOD_ADDRESS);
         
         // simple example
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?amount=12.34&label=Hello&message=AMessage", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("12.34"), "Hello", "AMessage"));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?amount=12.34&label=Hello&message=AMessage", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("12.34"), "Hello", "AMessage"));
         
         // example with spaces, ampersand and plus
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?amount=12.34&label=Hello%20World&message=Mess%20%26%20age%20%2B%20hope", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("12.34"), "Hello World", "Mess & age + hope"));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?amount=12.34&label=Hello%20World&message=Mess%20%26%20age%20%2B%20hope", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("12.34"), "Hello World", "Mess & age + hope"));
 
         // amount negative
         try {
@@ -61,30 +61,30 @@ public class LitecoinURITest {
         }
 
         // no amount, label present, message present
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?label=Hello&message=glory", LitecoinURI.convertToLitecoinURI(goodAddress, null, "Hello", "glory"));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?label=Hello&message=glory", LitecoinURI.convertToLitecoinURI(goodAddress, null, "Hello", "glory"));
         
         // amount present, no label, message present
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?amount=0.1&message=glory", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("0.1"), null, "glory"));
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?amount=0.1&message=glory", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("0.1"), "", "glory"));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?amount=0.1&message=glory", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("0.1"), null, "glory"));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?amount=0.1&message=glory", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("0.1"), "", "glory"));
 
         // amount present, label present, no message
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?amount=12.34&label=Hello", LitecoinURI.convertToLitecoinURI(goodAddress,Utils.toNanoCoins("12.34"), "Hello", null));
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?amount=12.34&label=Hello", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("12.34"), "Hello", ""));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?amount=12.34&label=Hello", LitecoinURI.convertToLitecoinURI(goodAddress,Utils.toNanoCoins("12.34"), "Hello", null));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?amount=12.34&label=Hello", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("12.34"), "Hello", ""));
               
         // amount present, no label, no message
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?amount=1000", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("1000"), null, null));
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?amount=1000", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("1000"), "", ""));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?amount=1000", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("1000"), null, null));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?amount=1000", LitecoinURI.convertToLitecoinURI(goodAddress, Utils.toNanoCoins("1000"), "", ""));
         
         // no amount, label present, no message
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?label=Hello", LitecoinURI.convertToLitecoinURI(goodAddress, null, "Hello", null));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?label=Hello", LitecoinURI.convertToLitecoinURI(goodAddress, null, "Hello", null));
         
         // no amount, no label, message present
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?message=Agatha", LitecoinURI.convertToLitecoinURI(goodAddress, null, null, "Agatha"));
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS + "?message=Agatha", LitecoinURI.convertToLitecoinURI(goodAddress, null, "", "Agatha"));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?message=Agatha", LitecoinURI.convertToLitecoinURI(goodAddress, null, null, "Agatha"));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS + "?message=Agatha", LitecoinURI.convertToLitecoinURI(goodAddress, null, "", "Agatha"));
       
         // no amount, no label, no message
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS, LitecoinURI.convertToLitecoinURI(goodAddress, null, null, null));
-        assertEquals("litecoin:" + PRODNET_GOOD_ADDRESS, LitecoinURI.convertToLitecoinURI(goodAddress, null, "", ""));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS, LitecoinURI.convertToLitecoinURI(goodAddress, null, null, null));
+        assertEquals("lycancoin:" + PRODNET_GOOD_ADDRESS, LitecoinURI.convertToLitecoinURI(goodAddress, null, "", ""));
     }
 
     /**
@@ -262,7 +262,7 @@ public class LitecoinURITest {
         testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                 + "?amount=9876543210&label=Hello%20World&message=Be%20well");
         assertEquals(
-                "LitecoinURI['address'='LQz2pJYaeqntA9BFB8rDX5AL2TTKGd5AuN','amount'='987654321000000000','label'='Hello World','message'='Be well']",
+                "LycancoinURI['address'='LQz2pJYaeqntA9BFB8rDX5AL2TTKGd5AuN','amount'='987654321000000000','label'='Hello World','message'='Be well']",
                 testObject.toString());
     }
 
@@ -389,7 +389,7 @@ public class LitecoinURITest {
         // Unknown not required field
         testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                 + "?aardvark=true");
-        assertEquals("LitecoinURI['address'='LQz2pJYaeqntA9BFB8rDX5AL2TTKGd5AuN','aardvark'='true']", testObject.toString());
+        assertEquals("LycancoinURI['address'='LQz2pJYaeqntA9BFB8rDX5AL2TTKGd5AuN','aardvark'='true']", testObject.toString());
 
         assertEquals("true", (String) testObject.getParameterByName("aardvark"));
 
@@ -415,7 +415,7 @@ public class LitecoinURITest {
     @Test
     public void brokenURIs() throws LitecoinURIParseException {
         // Check we can parse the incorrectly formatted URIs produced by blockchain.info and its iPhone app.
-        String str = "litecoin://1KzTSfqjF2iKCduwz59nv2uqh1W2JsTxZH?amount=0.01000000";
+        String str = "lycancoin://1KzTSfqjF2iKCduwz59nv2uqh1W2JsTxZH?amount=0.01000000";
         LitecoinURI uri = new LitecoinURI(str);
         assertEquals("1KzTSfqjF2iKCduwz59nv2uqh1W2JsTxZH", uri.getAddress().toString());
         assertEquals(Utils.toNanoCoins(0, 1), uri.getAmount());
