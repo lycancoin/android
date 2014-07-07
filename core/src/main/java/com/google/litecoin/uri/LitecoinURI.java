@@ -89,7 +89,7 @@ public class LitecoinURI {
     public static final String FIELD_AMOUNT = "amount";
     public static final String FIELD_ADDRESS = "address";
 
-    public static final String XXXXXXX_SCHEME = "litecoin";
+    public static final String LYCANCOIN_SCHEME = "litecoin";
     private static final String ENCODED_SPACE_CHARACTER = "%20";
     private static final String AMPERSAND_SEPARATOR = "&";
     private static final String QUESTION_MARK_SEPARATOR = "?";
@@ -188,7 +188,7 @@ public class LitecoinURI {
         for (String nameValuePairToken : nameValuePairTokens) {
             String[] tokens = nameValuePairToken.split("=");
             if (tokens.length != 2 || "".equals(tokens[0])) {
-                throw new LitecoinURIParseException("Malformed Xxxxxxx URI - cannot parse name value pair '" +
+                throw new LitecoinURIParseException("Malformed Lycancoin URI - cannot parse name value pair '" +
                         nameValuePairToken + "'");
             }
 
@@ -311,13 +311,13 @@ public class LitecoinURI {
         }
         
         StringBuilder builder = new StringBuilder();
-        builder.append(XXXXXXX_SCHEME).append(":").append(address);
+        builder.append(LYCANCOIN_SCHEME).append(":").append(address);
         
         boolean questionMarkHasBeenOutput = false;
         
         if (amount != null) {
             builder.append(QUESTION_MARK_SEPARATOR).append(FIELD_AMOUNT).append("=");
-            builder.append(Utils.xxxxxxxValueToPlainString(amount));
+            builder.append(Utils.lycancoinValueToPlainString(amount));
             questionMarkHasBeenOutput = true;
         }
         

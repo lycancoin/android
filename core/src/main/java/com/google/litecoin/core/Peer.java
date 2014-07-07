@@ -41,9 +41,9 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 /**
- * A Peer handles the high level communication with a Xxxxxxx node.
+ * A Peer handles the high level communication with a Lycancoin node.
  *
- * <p>{@link Peer#getHandler()} is part of a Netty Pipeline with a Xxxxxxx serializer downstream of it.
+ * <p>{@link Peer#getHandler()} is part of a Netty Pipeline with a Lycancoin serializer downstream of it.
  */
 public class Peer {
     interface PeerLifecycleListener {
@@ -230,7 +230,7 @@ public class Peer {
             e.getChannel().close();
         }
 
-        /** Handle incoming Xxxxxxx messages */
+        /** Handle incoming Lycancoin messages */
         @Override
         public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
             Message m = (Message)e.getMessage();
@@ -369,7 +369,7 @@ public class Peer {
         }
     }
 
-    /** Returns the Netty Pipeline stage handling the high level Xxxxxxx protocol. */
+    /** Returns the Netty Pipeline stage handling the high level Lycancoin protocol. */
     public PeerHandler getHandler() {
         return handler;
     }

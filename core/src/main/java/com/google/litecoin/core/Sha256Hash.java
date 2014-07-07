@@ -68,7 +68,7 @@ public class Sha256Hash implements Serializable {
     }
 
     /**
-     * Calculates the hash of the hash of the contents. This is a standard operation in Xxxxxxx.
+     * Calculates the hash of the hash of the contents. This is a standard operation in Lycancoin.
      */
     public static Sha256Hash createDouble(byte[] contents) {
         return new Sha256Hash(Utils.doubleDigest(contents));

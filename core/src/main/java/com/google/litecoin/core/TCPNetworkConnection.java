@@ -44,7 +44,7 @@ import static org.jboss.netty.channel.Channels.write;
 // TODO: Remove this class and refactor the way we build Netty pipelines.
 
 /**
- * <p>A {@code TCPNetworkConnection} is used for connecting to a Xxxxxxx node over the standard TCP/IP protocol.<p>
+ * <p>A {@code TCPNetworkConnection} is used for connecting to a Lycancoin node over the standard TCP/IP protocol.<p>
  *
  * <p>{@link TCPNetworkConnection#getHandler()} is part of a Netty Pipeline, downstream of other pipeline stages.</p>
  *
@@ -194,7 +194,7 @@ public class TCPNetworkConnection implements NetworkConnection {
             // useful data in it. We need to know the peer protocol version before we can talk to it.
         }
 
-        // Attempt to decode a Xxxxxxx message passing upstream in the channel.
+        // Attempt to decode a Lycancoin message passing upstream in the channel.
         //
         // By extending ReplayingDecoder, reading past the end of buffer will throw a special Error
         // causing the channel to read more and retry.
@@ -213,7 +213,7 @@ public class TCPNetworkConnection implements NetworkConnection {
             return message;
         }
 
-        /** Serialize outgoing Xxxxxxx messages passing downstream in the channel. */
+        /** Serialize outgoing Lycancoin messages passing downstream in the channel. */
         public void handleDownstream(ChannelHandlerContext ctx, ChannelEvent evt) throws Exception {
             if (!(evt instanceof MessageEvent)) {
                 ctx.sendDownstream(evt);
@@ -233,7 +233,7 @@ public class TCPNetworkConnection implements NetworkConnection {
         }
     }
     
-    /** Returns the Netty Pipeline stage handling Xxxxxxx serialization for this connection. */
+    /** Returns the Netty Pipeline stage handling Lycancoin serialization for this connection. */
     public NetworkHandler getHandler() {
         return handler;
     }

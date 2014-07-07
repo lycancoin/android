@@ -29,7 +29,7 @@
     <artifactId>litecoinj</artifactId>
 
     <name>litecoinj</name>
-    <description>A Java Xxxxxxx library</description>
+    <description>A Java Lycancoin library</description>
 
     <profiles>
         <profile>

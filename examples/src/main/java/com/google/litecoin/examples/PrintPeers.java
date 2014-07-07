@@ -54,7 +54,7 @@ public class PrintPeers {
 
     private static void printIRC() throws PeerDiscoveryException {
         long start = System.currentTimeMillis();
-        IrcDiscovery d = new IrcDiscovery("#xxxxxxxTEST3") {
+        IrcDiscovery d = new IrcDiscovery("#lycancoinTEST3") {
             @Override
             protected void onIRCReceive(String message) {
                 System.out.println("<- " + message);

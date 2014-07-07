@@ -982,7 +982,7 @@ public class FullBlockTestGenerator {
         
         Block b56;
         try {
-            b56 = new Block(params, b57.xxxxxxxSerialize());
+            b56 = new Block(params, b57.lycancoinSerialize());
         } catch (ProtocolException e) {
             throw new RuntimeException(e); // Cannot happen.
         }
@@ -1108,14 +1108,14 @@ public class FullBlockTestGenerator {
             Preconditions.checkState(new VarInt(varIntBytes, 0).value == b64Created.getTransactions().size());
             
             for (Transaction transaction : b64Created.getTransactions())
-                transaction.xxxxxxxSerialize(stream);
+                transaction.lycancoinSerialize(stream);
             b64 = new Block(params, stream.toByteArray(), false, true, stream.size());
             
             // The following checks are checking to ensure block serialization functions in the way needed for this test
             // If they fail, it is likely not an indication of error, but an indication that this test needs rewritten
             Preconditions.checkState(stream.size() == b64Created.getMessageSize() + 8);
             Preconditions.checkState(stream.size() == b64.getMessageSize());
-            Preconditions.checkState(Arrays.equals(stream.toByteArray(), b64.xxxxxxxSerialize()));
+            Preconditions.checkState(Arrays.equals(stream.toByteArray(), b64.lycancoinSerialize()));
             Preconditions.checkState(b64.getOptimalEncodingMessageSize() == b64Created.getMessageSize());
         }
         blocks.add(new BlockAndValidity(b64, true, false, b64.getHash(), "b64"));

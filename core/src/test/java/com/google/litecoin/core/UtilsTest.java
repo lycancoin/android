@@ -50,48 +50,48 @@ public class UtilsTest {
 
     @Test
     public void testFormatting() {
-        assertEquals("1.00", xxxxxxxValueToFriendlyString(toNanoCoins(1, 0)));
-        assertEquals("1.23", xxxxxxxValueToFriendlyString(toNanoCoins(1, 23)));
-        assertEquals("0.001", xxxxxxxValueToFriendlyString(BigInteger.valueOf(COIN.longValue() / 1000)));
-        assertEquals("-1.23", xxxxxxxValueToFriendlyString(toNanoCoins(1, 23).negate()));
+        assertEquals("1.00", lycancoinValueToFriendlyString(toNanoCoins(1, 0)));
+        assertEquals("1.23", lycancoinValueToFriendlyString(toNanoCoins(1, 23)));
+        assertEquals("0.001", lycancoinValueToFriendlyString(BigInteger.valueOf(COIN.longValue() / 1000)));
+        assertEquals("-1.23", lycancoinValueToFriendlyString(toNanoCoins(1, 23).negate()));
     }
     
     /**
-     * Test the xxxxxxxValueToPlainString amount formatter
+     * Test the lycancoinValueToPlainString amount formatter
      */
     @Test
     public void testLitecoinValueToPlainString() {
         // null argument check
         try {
-            xxxxxxxValueToPlainString(null);
+            lycancoinValueToPlainString(null);
             org.junit.Assert.fail("Expecting IllegalArgumentException");
         } catch (IllegalArgumentException e) {
             assertTrue(e.getMessage().contains("Value cannot be null"));
         }
 
-        assertEquals("0.0015", xxxxxxxValueToPlainString(BigInteger.valueOf(150000)));
-        assertEquals("1.23", xxxxxxxValueToPlainString(toNanoCoins("1.23")));
-        assertEquals("-1.23", xxxxxxxValueToPlainString(toNanoCoins("-1.23")));
+        assertEquals("0.0015", lycancoinValueToPlainString(BigInteger.valueOf(150000)));
+        assertEquals("1.23", lycancoinValueToPlainString(toNanoCoins("1.23")));
+        assertEquals("-1.23", lycancoinValueToPlainString(toNanoCoins("-1.23")));
         
-        assertEquals("0.1", xxxxxxxValueToPlainString(toNanoCoins("0.1")));
-        assertEquals("1.1", xxxxxxxValueToPlainString(toNanoCoins("1.1")));
-        assertEquals("21.12", xxxxxxxValueToPlainString(toNanoCoins("21.12")));
-        assertEquals("321.123", xxxxxxxValueToPlainString(toNanoCoins("321.123")));
-        assertEquals("4321.1234", xxxxxxxValueToPlainString(toNanoCoins("4321.1234")));
-        assertEquals("54321.12345", xxxxxxxValueToPlainString(toNanoCoins("54321.12345")));
-        assertEquals("654321.123456", xxxxxxxValueToPlainString(toNanoCoins("654321.123456")));
-        assertEquals("7654321.1234567", xxxxxxxValueToPlainString(toNanoCoins("7654321.1234567")));
-        assertEquals("87654321.12345678", xxxxxxxValueToPlainString(toNanoCoins("87654321.12345678")));
+        assertEquals("0.1", lycancoinValueToPlainString(toNanoCoins("0.1")));
+        assertEquals("1.1", lycancoinValueToPlainString(toNanoCoins("1.1")));
+        assertEquals("21.12", lycancoinValueToPlainString(toNanoCoins("21.12")));
+        assertEquals("321.123", lycancoinValueToPlainString(toNanoCoins("321.123")));
+        assertEquals("4321.1234", lycancoinValueToPlainString(toNanoCoins("4321.1234")));
+        assertEquals("54321.12345", lycancoinValueToPlainString(toNanoCoins("54321.12345")));
+        assertEquals("654321.123456", lycancoinValueToPlainString(toNanoCoins("654321.123456")));
+        assertEquals("7654321.1234567", lycancoinValueToPlainString(toNanoCoins("7654321.1234567")));
+        assertEquals("87654321.12345678", lycancoinValueToPlainString(toNanoCoins("87654321.12345678")));
 
         // check there are no trailing zeros
-        assertEquals("1", xxxxxxxValueToPlainString(toNanoCoins("1.0")));
-        assertEquals("2", xxxxxxxValueToPlainString(toNanoCoins("2.00")));
-        assertEquals("3", xxxxxxxValueToPlainString(toNanoCoins("3.000")));
-        assertEquals("4", xxxxxxxValueToPlainString(toNanoCoins("4.0000")));
-        assertEquals("5", xxxxxxxValueToPlainString(toNanoCoins("5.00000")));
-        assertEquals("6", xxxxxxxValueToPlainString(toNanoCoins("6.000000")));
-        assertEquals("7", xxxxxxxValueToPlainString(toNanoCoins("7.0000000")));
-        assertEquals("8", xxxxxxxValueToPlainString(toNanoCoins("8.00000000")));
+        assertEquals("1", lycancoinValueToPlainString(toNanoCoins("1.0")));
+        assertEquals("2", lycancoinValueToPlainString(toNanoCoins("2.00")));
+        assertEquals("3", lycancoinValueToPlainString(toNanoCoins("3.000")));
+        assertEquals("4", lycancoinValueToPlainString(toNanoCoins("4.0000")));
+        assertEquals("5", lycancoinValueToPlainString(toNanoCoins("5.00000")));
+        assertEquals("6", lycancoinValueToPlainString(toNanoCoins("6.000000")));
+        assertEquals("7", lycancoinValueToPlainString(toNanoCoins("7.0000000")));
+        assertEquals("8", lycancoinValueToPlainString(toNanoCoins("8.00000000")));
     }    
     
     @Test

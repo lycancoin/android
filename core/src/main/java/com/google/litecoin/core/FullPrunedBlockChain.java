@@ -170,7 +170,7 @@ public class FullPrunedBlockChain extends AbstractBlockChain {
                         final int currentIndex = index;
                         final Transaction txCache;
                         try {
-                            txCache = new Transaction(params, tx.unsafeXxxxxxxSerialize());
+                            txCache = new Transaction(params, tx.unsafeLycancoinSerialize());
                         } catch (ProtocolException e1) {
                             throw new RuntimeException(e1);
                         }

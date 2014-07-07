@@ -44,7 +44,7 @@ public class Ping extends Message {
         this.hasNonce = false;
     }
     
-    public void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
+    public void lycancoinSerializeToStream(OutputStream stream) throws IOException {
         if (hasNonce)
             Utils.int64ToByteStreamLE(nonce, stream);
     }

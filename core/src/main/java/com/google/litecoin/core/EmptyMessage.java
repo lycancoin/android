@@ -42,7 +42,7 @@ public abstract class EmptyMessage extends Message {
     }
 
     @Override
-    final protected void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
+    final protected void lycancoinSerializeToStream(OutputStream stream) throws IOException {
     }
 
     @Override
@@ -74,10 +74,10 @@ public abstract class EmptyMessage extends Message {
     }
 
     /* (non-Javadoc)
-      * @see Message#xxxxxxxSerialize()
+      * @see Message#lycancoinSerialize()
       */
     @Override
-    public byte[] xxxxxxxSerialize() {
+    public byte[] lycancoinSerialize() {
         return new byte[0];
     }
 

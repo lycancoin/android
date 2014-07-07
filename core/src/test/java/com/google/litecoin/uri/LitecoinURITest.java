@@ -95,7 +95,7 @@ public class LitecoinURITest {
      */
     @Test
     public void testGood_Simple() throws LitecoinURIParseException {
-        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS);
+        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS);
         assertNotNull(testObject);
         assertNull("Unexpected amount", testObject.getAmount());
         assertNull("Unexpected label", testObject.getLabel());
@@ -121,14 +121,14 @@ public class LitecoinURITest {
     public void testBad_BadSyntax() {
         // Various illegal characters
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + "|" + PRODNET_GOOD_ADDRESS);
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + "|" + PRODNET_GOOD_ADDRESS);
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
             assertTrue(e.getMessage().contains("Bad URI syntax"));
         }
 
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS + "\\");
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS + "\\");
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
             assertTrue(e.getMessage().contains("Bad URI syntax"));
@@ -136,7 +136,7 @@ public class LitecoinURITest {
 
         // Separator without field
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":");
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":");
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
             assertTrue(e.getMessage().contains("Bad URI syntax"));
@@ -149,7 +149,7 @@ public class LitecoinURITest {
     @Test
     public void testBad_Address() {
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME);
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME);
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
         }
@@ -161,7 +161,7 @@ public class LitecoinURITest {
     @Test
     public void testBad_IncorrectAddressType() {
         try {
-            testObject = new LitecoinURI(NetworkParameters.testNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS);
+            testObject = new LitecoinURI(NetworkParameters.testNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS);
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
             assertTrue(e.getMessage().contains("Bad address"));
@@ -177,17 +177,17 @@ public class LitecoinURITest {
     @Test
     public void testGood_Amount() throws LitecoinURIParseException {
         // Test the decimal parsing
-        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                 + "?amount=9876543210.12345678");
         assertEquals("987654321012345678", testObject.getAmount().toString());
 
         // Test the decimal parsing
-        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                 + "?amount=.12345678");
         assertEquals("12345678", testObject.getAmount().toString());
 
         // Test the integer parsing
-        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                 + "?amount=9876543210");
         assertEquals("987654321000000000", testObject.getAmount().toString());
     }
@@ -200,7 +200,7 @@ public class LitecoinURITest {
      */
     @Test
     public void testGood_Label() throws LitecoinURIParseException {
-        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                 + "?label=Hello%20World");
         assertEquals("Hello World", testObject.getLabel());
     }
@@ -216,7 +216,7 @@ public class LitecoinURITest {
     public void testGood_LabelWithAmpersandAndPlus() throws LitecoinURIParseException, UnsupportedEncodingException {
         String testString = "Hello Earth & Mars + Venus";
         String encodedLabel = LitecoinURI.encodeURLString(testString);
-        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS + "?label="
+        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS + "?label="
                 + encodedLabel);
         assertEquals(testString, testObject.getLabel());
     }
@@ -233,7 +233,7 @@ public class LitecoinURITest {
         // Moscow in Russian in Cyrillic
         String moscowString = "\u041c\u043e\u0441\u043a\u0432\u0430";
         String encodedLabel = LitecoinURI.encodeURLString(moscowString);
-        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS + "?label="
+        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS + "?label="
                 + encodedLabel);
         assertEquals(moscowString, testObject.getLabel());
     }
@@ -246,7 +246,7 @@ public class LitecoinURITest {
      */
     @Test
     public void testGood_Message() throws LitecoinURIParseException {
-        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                 + "?message=Hello%20World");
         assertEquals("Hello World", testObject.getMessage());
     }
@@ -259,7 +259,7 @@ public class LitecoinURITest {
      */
     @Test
     public void testGood_Combinations() throws LitecoinURIParseException {
-        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                 + "?amount=9876543210&label=Hello%20World&message=Be%20well");
         assertEquals(
                 "LitecoinURI['address'='LQz2pJYaeqntA9BFB8rDX5AL2TTKGd5AuN','amount'='987654321000000000','label'='Hello World','message'='Be well']",
@@ -276,7 +276,7 @@ public class LitecoinURITest {
     public void testBad_Amount() throws LitecoinURIParseException {
         // Missing
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                     + "?amount=");
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
@@ -285,7 +285,7 @@ public class LitecoinURITest {
 
         // Non-decimal (BIP 21)
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                     + "?amount=12X4");
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
@@ -302,7 +302,7 @@ public class LitecoinURITest {
     @Test
     public void testBad_Label() throws LitecoinURIParseException {
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                     + "?label=");
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
@@ -319,7 +319,7 @@ public class LitecoinURITest {
     @Test
     public void testBad_Message() throws LitecoinURIParseException {
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                     + "?message=");
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
@@ -336,7 +336,7 @@ public class LitecoinURITest {
     @Test
     public void testBad_Duplicated() throws LitecoinURIParseException {
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                     + "?address=aardvark");
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
@@ -353,7 +353,7 @@ public class LitecoinURITest {
     @Test
     public void testBad_TooManyEquals() throws LitecoinURIParseException {
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                     + "?label=aardvark=zebra");
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
@@ -370,7 +370,7 @@ public class LitecoinURITest {
     @Test
     public void testBad_TooManyQuestionMarks() throws LitecoinURIParseException {
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                     + "?label=aardvark?message=zebra");
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
@@ -387,7 +387,7 @@ public class LitecoinURITest {
     @Test
     public void testUnknown() throws LitecoinURIParseException {
         // Unknown not required field
-        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+        testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                 + "?aardvark=true");
         assertEquals("LitecoinURI['address'='LQz2pJYaeqntA9BFB8rDX5AL2TTKGd5AuN','aardvark'='true']", testObject.toString());
 
@@ -395,7 +395,7 @@ public class LitecoinURITest {
 
         // Unknown not required field (isolated)
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                     + "?aardvark");
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {
@@ -404,7 +404,7 @@ public class LitecoinURITest {
 
         // Unknown and required field
         try {
-            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.XXXXXXX_SCHEME + ":" + PRODNET_GOOD_ADDRESS
+            testObject = new LitecoinURI(NetworkParameters.prodNet(), LitecoinURI.LYCANCOIN_SCHEME + ":" + PRODNET_GOOD_ADDRESS
                     + "?req-aardvark=true");
             fail("Expecting LitecoinURIParseException");
         } catch (LitecoinURIParseException e) {

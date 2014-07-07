@@ -38,7 +38,7 @@ import static com.google.litecoin.core.Utils.*;
  * <ul>
  * <li>The proper Class instance needs to be mapped to it's message name in the names variable below</li>
  * <li>There needs to be a constructor matching: NetworkParameters params, byte[] payload</li>
- * <li>Message.xxxxxxxSerializeToStream() needs to be properly subclassed</li>
+ * <li>Message.lycancoinSerializeToStream() needs to be properly subclassed</li>
  * </ul>
  */
 public class LitecoinSerializer {
@@ -111,7 +111,7 @@ public class LitecoinSerializer {
             header[4 + i] = (byte) (name.codePointAt(i) & 0xFF);
         }
 
-        byte[] payload = message.xxxxxxxSerialize();
+        byte[] payload = message.lycancoinSerialize();
 
         Utils.uint32ToByteArrayLE(payload.length, header, 4 + COMMAND_LEN);
 

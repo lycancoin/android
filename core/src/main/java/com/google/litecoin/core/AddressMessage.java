@@ -76,15 +76,15 @@ public class AddressMessage extends Message {
     }
 
     /* (non-Javadoc)
-      * @see Message#xxxxxxxSerializeToStream(java.io.OutputStream)
+      * @see Message#lycancoinSerializeToStream(java.io.OutputStream)
       */
     @Override
-    void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
+    void lycancoinSerializeToStream(OutputStream stream) throws IOException {
         if (addresses == null)
             return;
         stream.write(new VarInt(addresses.size()).encode());
         for (PeerAddress addr : addresses) {
-            addr.xxxxxxxSerialize(stream);
+            addr.lycancoinSerialize(stream);
         }
     }
 

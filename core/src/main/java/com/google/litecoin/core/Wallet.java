@@ -45,7 +45,7 @@ import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static com.google.litecoin.core.Utils.xxxxxxxValueToFriendlyString;
+import static com.google.litecoin.core.Utils.lycancoinValueToFriendlyString;
 import static com.google.common.base.Preconditions.*;
 
 // To do list:
@@ -61,7 +61,7 @@ import static com.google.common.base.Preconditions.*;
 /**
  * <p>A Wallet stores keys and a record of transactions that send and receive value from those keys. Using these,
  * it is able to create new transactions that spend the recorded transactions, and this is the fundamental operation
- * of the Xxxxxxx protocol.</p>
+ * of the Lycancoin protocol.</p>
  *
  * <p>To learn more about this class, read <b><a href="http://code.google.com/p/litecoinj/wiki/WorkingWithTheWallet">
  *     working with the wallet.</a></b></p>
@@ -139,7 +139,7 @@ public class Wallet implements Serializable, BlockChainListener {
      * may have unspent "change" outputs.<p>
      * <p/>
      * Note: for now we will not allow spends of transactions that did not make it into the block chain. The code
-     * that handles this in Xxxxxxx C++ is complicated. Satoshis code will not allow you to spend unconfirmed coins,
+     * that handles this in Lycancoin C++ is complicated. Satoshis code will not allow you to spend unconfirmed coins,
      * however, it does seem to support dependency resolution entirely within the context of the memory pool so
      * theoretically you could spend zero-conf coins and all of them would be included together. To simplify we'll
      * make people wait but it would be a good improvement to resolve this in future.
@@ -873,8 +873,8 @@ public class Wallet implements Serializable, BlockChainListener {
             BigInteger valueSentFromMe = tx.getValueSentFromMe(this);
             if (log.isInfoEnabled()) {
                 log.info(String.format("Received a pending transaction %s that spends %s BTC from our own wallet," +
-                        " and sends us %s BTC", tx.getHashAsString(), Utils.xxxxxxxValueToFriendlyString(valueSentFromMe),
-                        Utils.xxxxxxxValueToFriendlyString(valueSentToMe)));
+                        " and sends us %s BTC", tx.getHashAsString(), Utils.lycancoinValueToFriendlyString(valueSentFromMe),
+                        Utils.lycancoinValueToFriendlyString(valueSentToMe)));
             }
             if (tx.getConfidence().getSource().equals(TransactionConfidence.Source.UNKNOWN)) {
                 log.warn("Wallet received transaction with an unknown source. Consider tagging tx!");
@@ -1047,7 +1047,7 @@ public class Wallet implements Serializable, BlockChainListener {
 
         if (!reorg) {
             log.info("Received tx {} for {} BTC: {}", new Object[]{sideChain ? "on a side chain" : "",
-                    xxxxxxxValueToFriendlyString(valueDifference), tx.getHashAsString()});
+                    lycancoinValueToFriendlyString(valueDifference), tx.getHashAsString()});
         }
 
         onWalletChangedSuppressions++;
@@ -1127,7 +1127,7 @@ public class Wallet implements Serializable, BlockChainListener {
         }
 	// Implements revision d64f55589694
         BigInteger newBalance = getBalance();
-        log.info("Balance is now: " + xxxxxxxValueToFriendlyString(getBalance()));
+        log.info("Balance is now: " + lycancoinValueToFriendlyString(getBalance()));
 
         // Inform anyone interested that we have received or sent coins but only if:
         //  - This is not due to a re-org.
@@ -1707,7 +1707,7 @@ public class Wallet implements Serializable, BlockChainListener {
 
     /** A SendResult is returned to you as part of sending coins to a recipient. */
     public static class SendResult {
-        /** The Xxxxxxx transaction message that moves the money. */
+        /** The Lycancoin transaction message that moves the money. */
         public Transaction tx;
         /** A future that will complete once the tx message has been successfully broadcast to the network. */
         public ListenableFuture<Transaction> broadcastComplete;
@@ -1737,7 +1737,7 @@ public class Wallet implements Serializable, BlockChainListener {
         /**
          * A transaction can have a fee attached, which is defined as the difference between the input values
          * and output values. Any value taken in that is not provided to an output can be claimed by a miner. This
-         * is how mining is incentivized in later years of the Xxxxxxx system when inflation drops. It also provides
+         * is how mining is incentivized in later years of the Lycancoin system when inflation drops. It also provides
          * a way for people to prioritize their transactions over others and is used as a way to make denial of service
          * attacks expensive. Some transactions require a fee due to their structure - currently litecoinj does not
          * correctly calculate this! As of late 2012 most transactions require no fee.
@@ -1796,7 +1796,7 @@ public class Wallet implements Serializable, BlockChainListener {
      * prevent this, but that should only occur once the transaction has been accepted by the network. This implies
      * you cannot have more than one outstanding sending tx at once.</p>
      *
-     * @param address       The Xxxxxxx address to send the money to.
+     * @param address       The Lycancoin address to send the money to.
      * @param nanocoins     How much currency to send, in nanocoins.
      * @return either the created Transaction or null if there are insufficient coins.
      * coins as spent until commitTx is called on the result.
@@ -1933,7 +1933,7 @@ public class Wallet implements Serializable, BlockChainListener {
             value = value.add(req.fee);
 
             log.info("Completing send tx with {} outputs totalling {}",
-                    req.tx.getOutputs().size(), xxxxxxxValueToFriendlyString(value));
+                    req.tx.getOutputs().size(), lycancoinValueToFriendlyString(value));
 
             // Calculate a list of ALL potential candidates for spending and then ask a coin selector to provide us
             // with the actual outputs that'll be used to gather the required amount of value. In this way, users
@@ -1949,7 +1949,7 @@ public class Wallet implements Serializable, BlockChainListener {
             // Can we afford this?
             if (selection.valueGathered.compareTo(value) < 0) {
                 log.warn("Insufficient value in wallet for send, missing " +
-                        xxxxxxxValueToFriendlyString(value.subtract(selection.valueGathered)));
+                        lycancoinValueToFriendlyString(value.subtract(selection.valueGathered)));
                 // TODO: Should throw an exception here.
                 return false;
             }
@@ -1961,7 +1961,7 @@ public class Wallet implements Serializable, BlockChainListener {
                 // we need to take back some coins ... this is called "change". Add another output that sends the change
                 // back to us. The address comes either from the request or getChangeAddress() as a default.
                 Address changeAddress = req.changeAddress != null ? req.changeAddress : getChangeAddress();
-                log.info("  with {} coins change", xxxxxxxValueToFriendlyString(change));
+                log.info("  with {} coins change", lycancoinValueToFriendlyString(change));
                 req.tx.addOutput(new TransactionOutput(params, req.tx, change, changeAddress));
             }
             for (TransactionOutput output : selection.gathered) {
@@ -1978,7 +1978,7 @@ public class Wallet implements Serializable, BlockChainListener {
             }
 
             // Check size.
-            int size = req.tx.xxxxxxxSerialize().length;
+            int size = req.tx.lycancoinSerialize().length;
             if (size > Transaction.MAX_STANDARD_TX_SIZE) {
                 // TODO: Throw an exception here.
                 log.error("Transaction could not be created without exceeding max size: {} vs {}", size,
@@ -2220,7 +2220,7 @@ public class Wallet implements Serializable, BlockChainListener {
         lock.lock();
         try {
             StringBuilder builder = new StringBuilder();
-            builder.append(String.format("Wallet containing %s BTC in:%n", xxxxxxxValueToFriendlyString(getBalance())));
+            builder.append(String.format("Wallet containing %s BTC in:%n", lycancoinValueToFriendlyString(getBalance())));
             builder.append(String.format("  %d unspent transactions%n", unspent.size()));
             builder.append(String.format("  %d spent transactions%n", spent.size()));
             builder.append(String.format("  %d pending transactions%n", pending.size()));
@@ -2273,11 +2273,11 @@ public class Wallet implements Serializable, BlockChainListener {
         for (Transaction tx : transactionMap.values()) {
             try {
                 builder.append("Sends ");
-                builder.append(Utils.xxxxxxxValueToFriendlyString(tx.getValueSentFromMe(this)));
+                builder.append(Utils.lycancoinValueToFriendlyString(tx.getValueSentFromMe(this)));
                 builder.append(" and receives ");
-                builder.append(Utils.xxxxxxxValueToFriendlyString(tx.getValueSentToMe(this)));
+                builder.append(Utils.lycancoinValueToFriendlyString(tx.getValueSentToMe(this)));
                 builder.append(", total value ");
-                builder.append(Utils.xxxxxxxValueToFriendlyString(tx.getValue(this)));
+                builder.append(Utils.lycancoinValueToFriendlyString(tx.getValue(this)));
                 builder.append(".\n");
             } catch (ScriptException e) {
                 // Ignore and don't print this line.
@@ -2527,7 +2527,7 @@ public class Wallet implements Serializable, BlockChainListener {
                 reprocessUnincludedTxAfterReorg(pool, tx);
             }
 
-            log.info("post-reorg balance is {}", Utils.xxxxxxxValueToFriendlyString(getBalance()));
+            log.info("post-reorg balance is {}", Utils.lycancoinValueToFriendlyString(getBalance()));
             // Inform event listeners that a re-org took place. They should save the wallet at this point.
             invokeOnReorganize();
             onWalletChangedSuppressions--;
@@ -3019,7 +3019,7 @@ public class Wallet implements Serializable, BlockChainListener {
                 try {
                     if (out.isMine(this) && out.getScriptPubKey().isSentToRawPubKey()) {
                         TransactionOutPoint outPoint = new TransactionOutPoint(params, i, tx);
-                        filter.insert(outPoint.xxxxxxxSerialize());
+                        filter.insert(outPoint.lycancoinSerialize());
                     }
                 } catch (ScriptException e) {
                     throw new RuntimeException(e); // If it is ours, we parsed the script corectly, so this shouldn't happen

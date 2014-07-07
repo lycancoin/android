@@ -78,7 +78,7 @@ public class ChainSplitTest {
         assertFalse(reorgHappened[0]);
         assertEquals(2, walletChanged[0]);
         // We got two blocks which generated 50 coins each, to us.
-        assertEquals("100.00", Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+        assertEquals("100.00", Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
         // We now have the following chain:
         //     genesis -> b1 -> b2
         //
@@ -92,7 +92,7 @@ public class ChainSplitTest {
         assertTrue(chain.add(b3));
         assertFalse(reorgHappened[0]);  // No re-org took place.
         assertEquals(2, walletChanged[0]);
-        assertEquals("100.00", Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+        assertEquals("100.00", Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
         // Now we add another block to make the alternative chain longer.
         assertTrue(chain.add(b3.createNextBlock(someOtherGuy)));
         assertTrue(reorgHappened[0]);  // Re-org took place.
@@ -103,7 +103,7 @@ public class ChainSplitTest {
         //                  \-> b3 -> b4
         //
         // We lost some coins! b2 is no longer a part of the best chain so our available balance should drop to 50.
-        assertEquals("50.00", Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+        assertEquals("50.00", Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
         // ... and back to the first chain.
         Block b5 = b2.createNextBlock(coinsTo);
         Block b6 = b5.createNextBlock(coinsTo);
@@ -115,7 +115,7 @@ public class ChainSplitTest {
         //
         assertTrue(reorgHappened[0]);
         assertEquals(4, walletChanged[0]);
-        assertEquals("200.00", Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+        assertEquals("200.00", Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
     }
 
     @Test
@@ -134,7 +134,7 @@ public class ChainSplitTest {
         assertTrue(chain.add(b3));
         assertEquals(BigInteger.ZERO, wallet.getBalance());
         assertTrue(chain.add(b4));
-        assertEquals("50.00", Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+        assertEquals("50.00", Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
     }
 
     @Test
@@ -142,7 +142,7 @@ public class ChainSplitTest {
         // Check that we can handle our own spends being rolled back by a fork.
         Block b1 = unitTestParams.genesisBlock.createNextBlock(coinsTo);
         chain.add(b1);
-        assertEquals("50.00", Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+        assertEquals("50.00", Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
         Address dest = new ECKey().toAddress(unitTestParams);
         Transaction spend = wallet.createSend(dest, Utils.toNanoCoins(10, 0));
         wallet.commitTx(spend);
@@ -173,7 +173,7 @@ public class ChainSplitTest {
         // keys are being shared between wallets.
         Block b1 = unitTestParams.genesisBlock.createNextBlock(coinsTo);
         chain.add(b1);
-        assertEquals("50.00", Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+        assertEquals("50.00", Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
         Address dest = new ECKey().toAddress(unitTestParams);
         Transaction spend = wallet.createSend(dest, Utils.toNanoCoins(50, 0));
         // We do NOT confirm the spend here. That means it's not considered to be pending because createSend is
@@ -200,7 +200,7 @@ public class ChainSplitTest {
         // Test the standard case in which a block containing identical transactions appears on a side chain.
         Block b1 = unitTestParams.genesisBlock.createNextBlock(coinsTo);
         chain.add(b1);
-        assertEquals("50.00", Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+        assertEquals("50.00", Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
         // genesis -> b1
         //         -> b2
         Block b2 = unitTestParams.genesisBlock.createNextBlock(coinsTo);
@@ -210,7 +210,7 @@ public class ChainSplitTest {
         b2.addTransaction(b1.transactions.get(1));
         b2.solve();
         chain.add(b2);
-        assertEquals("50.00", Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+        assertEquals("50.00", Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
         assertTrue(wallet.isConsistent());
     }
 
@@ -230,7 +230,7 @@ public class ChainSplitTest {
         b3.addTransaction(b2.transactions.get(1));
         b3.solve();
         chain.add(b3);
-        assertEquals("50.00", Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+        assertEquals("50.00", Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
     }
 
     @Test
@@ -463,7 +463,7 @@ public class ChainSplitTest {
         BigInteger newWork3 = work3.add(work7).add(work8);
         assertEquals(newWork3, txns.get(2).getConfidence().getWorkDone());
 
-        assertEquals("250.00", Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+        assertEquals("250.00", Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
 
         // Now add two more blocks that don't send coins to us. Despite being irrelevant the wallet should still update.
         Block b9 = b8.createNextBlock(someOtherGuy);

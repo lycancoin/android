@@ -113,7 +113,7 @@ public class BlockTest {
     public void testHeaderParse() throws Exception {
         Block block = new Block(params, blockBytes);
         Block header = block.cloneAsHeader();
-        Block reparsed = new Block(params, header.xxxxxxxSerialize());
+        Block reparsed = new Block(params, header.lycancoinSerialize());
         assertEquals(reparsed, header);
     }
 
@@ -122,10 +122,10 @@ public class BlockTest {
         // We have to be able to reserialize everything exactly as we found it for hashing to work. This test also
         // proves that transaction serialization works, along with all its subobjects like scripts and in/outpoints.
         //
-        // NB: This tests the XXXXXXX proprietary serialization protocol. A different test checks Java serialization
+        // NB: This tests the LYCANCOIN proprietary serialization protocol. A different test checks Java serialization
         // of transactions.
         Block block = new Block(params, blockBytes);
-        assertTrue(Arrays.equals(blockBytes, block.xxxxxxxSerialize()));
+        assertTrue(Arrays.equals(blockBytes, block.lycancoinSerialize()));
     }
 
     @Test
@@ -144,7 +144,7 @@ public class BlockTest {
         Transaction tx2 = (Transaction) ois.readObject();
         ois.close();
 
-        // Note that this will actually check the transactions are equal by doing xxxxxxx serialization and checking
+        // Note that this will actually check the transactions are equal by doing lycancoin serialization and checking
         // the bytestreams are the same! A true "deep equals" is not implemented for Transaction. The primary purpose
         // of this test is to ensure no errors occur during the Java serialization/deserialization process.
         assertEquals(tx, tx2);
@@ -154,27 +154,27 @@ public class BlockTest {
     public void testUpdateLength() {
         NetworkParameters params = NetworkParameters.unitTests();
         Block block = params.genesisBlock.createNextBlockWithCoinbase(new ECKey().getPubKey());
-        assertEquals(block.xxxxxxxSerialize().length, block.length);
+        assertEquals(block.lycancoinSerialize().length, block.length);
         final int origBlockLen = block.length;
         Transaction tx = new Transaction(params);
         // this is broken until the transaction has > 1 input + output (which is required anyway...)
-        //assertTrue(tx.length == tx.xxxxxxxSerialize().length && tx.length == 8);
+        //assertTrue(tx.length == tx.lycancoinSerialize().length && tx.length == 8);
         byte[] outputScript = new byte[10];
         Arrays.fill(outputScript, (byte)Script.OP_FALSE);
         tx.addOutput(new TransactionOutput(params, null, BigInteger.valueOf(1), outputScript));
         tx.addInput(new TransactionInput(params, null, new byte[] {(byte)Script.OP_FALSE},
                 new TransactionOutPoint(params, 0, Sha256Hash.create(new byte[] {1}))));
         int origTxLength = 8 + 2 + 8 + 1 + 10 + 40 + 1 + 1;
-        assertEquals(tx.xxxxxxxSerialize().length, tx.length);
+        assertEquals(tx.lycancoinSerialize().length, tx.length);
         assertEquals(origTxLength, tx.length);
         block.addTransaction(tx);
-        assertEquals(block.xxxxxxxSerialize().length, block.length);
+        assertEquals(block.lycancoinSerialize().length, block.length);
         assertEquals(origBlockLen + tx.length, block.length);
         block.getTransactions().get(1).getInputs().get(0).setScriptBytes(new byte[] {(byte)Script.OP_FALSE, (byte)Script.OP_FALSE});
         assertEquals(block.length, origBlockLen + tx.length);
         assertEquals(tx.length, origTxLength + 1);
         block.getTransactions().get(1).getInputs().get(0).setScriptBytes(new byte[] {});
-        assertEquals(block.length, block.xxxxxxxSerialize().length);
+        assertEquals(block.length, block.lycancoinSerialize().length);
         assertEquals(block.length, origBlockLen + tx.length);
         assertEquals(tx.length, origTxLength - 1);
         block.getTransactions().get(1).addInput(new TransactionInput(params, null, new byte[] {(byte)Script.OP_FALSE},

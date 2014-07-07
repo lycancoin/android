@@ -46,7 +46,7 @@ public class IrcDiscovery implements PeerDiscovery {
      * Finds a list of peers by connecting to an IRC network, joining a channel, decoding the nicks and then
      * disconnecting.
      *
-     * @param channel The IRC channel to join, either "#xxxxxxx" or "#xxxxxxxTEST3" for the production and test networks
+     * @param channel The IRC channel to join, either "#lycancoin" or "#lycancoinTEST3" for the production and test networks
      *                respectively.
      */
     public IrcDiscovery(String channel) {
@@ -58,7 +58,7 @@ public class IrcDiscovery implements PeerDiscovery {
      * disconnecting.
      *
      * @param server  Name or textual IP address of the IRC server to join.
-     * @param channel The IRC channel to join, either "#xxxxxxx" or "#xxxxxxxTEST3" for the production and test networks
+     * @param channel The IRC channel to join, either "#lycancoin" or "#lycancoinTEST3" for the production and test networks
      */
     public IrcDiscovery(String channel, String server, int port) {
         this.channel = channel;
@@ -192,7 +192,7 @@ public class IrcDiscovery implements PeerDiscovery {
     static ArrayList<InetSocketAddress> parseUserList(String[] userNames) throws UnknownHostException {
         ArrayList<InetSocketAddress> addresses = new ArrayList<InetSocketAddress>();
         for (String user : userNames) {
-            // All Xxxxxxx peers start their nicknames with a 'u' character.
+            // All Lycancoin peers start their nicknames with a 'u' character.
             if (!user.startsWith("u")) {
                 continue;
             }
@@ -203,7 +203,7 @@ public class IrcDiscovery implements PeerDiscovery {
             byte[] addressBytes;
             try {
                 // Strip off the "u" before decoding. Note that it's possible for anyone to join these IRC channels and
-                // so simply beginning with "u" does not imply this is a valid Xxxxxxx encoded address.
+                // so simply beginning with "u" does not imply this is a valid Lycancoin encoded address.
                 //
                 // decodeChecked removes the checksum from the returned bytes.
                 addressBytes = Base58.decodeChecked(user.substring(1));

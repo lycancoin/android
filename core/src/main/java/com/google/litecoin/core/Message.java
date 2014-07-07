@@ -87,9 +87,9 @@ public abstract class Message implements Serializable {
     /**
      * 
      * @param params NetworkParameters object.
-     * @param msg Xxxxxxx protocol formatted byte array containing message content.
+     * @param msg Lycancoin protocol formatted byte array containing message content.
      * @param offset The location of the first msg byte within the array.
-     * @param protocolVersion Xxxxxxx protocol version.
+     * @param protocolVersion Lycancoin protocol version.
      * @param parseLazy Whether to perform a full parse immediately or delay until a read is requested.
      * @param parseRetain Whether to retain the backing byte array for quick reserialization.  
      * If true and the backing byte array is invalidated due to modification of a field then 
@@ -134,7 +134,7 @@ public abstract class Message implements Serializable {
             maybeParse();
             byte[] msgbytes = new byte[cursor - offset];
             System.arraycopy(msg, offset, msgbytes, 0, cursor - offset);
-            byte[] reserialized = xxxxxxxSerialize();
+            byte[] reserialized = lycancoinSerialize();
             if (!Arrays.equals(reserialized, msgbytes))
                 throw new RuntimeException("Serialization is wrong: \n" +
                         Utils.bytesToHexString(reserialized) + " vs \n" +
@@ -150,7 +150,7 @@ public abstract class Message implements Serializable {
         this(params, msg, offset, NetworkParameters.PROTOCOL_VERSION, parseLazy, parseRetain, length);
     }
 
-    // These methods handle the serialization/deserialization using the custom Xxxxxxx protocol.
+    // These methods handle the serialization/deserialization using the custom Lycancoin protocol.
     // It's somewhat painful to work with in Java, so some of these objects support a second 
     // serialization mechanism - the standard Java serialization system. This is used when things 
     // are serialized to the wallet.
@@ -277,13 +277,13 @@ public abstract class Message implements Serializable {
     }
 
     /**
-     * Returns a copy of the array returned by {@link Message#unsafeXxxxxxxSerialize()}, which is safe to mutate.
+     * Returns a copy of the array returned by {@link Message#unsafeLycancoinSerialize()}, which is safe to mutate.
      * If you need extra performance and can guarantee you won't write to the array, you can use the unsafe version.
      *
      * @return a freshly allocated serialized byte array
      */
-    public byte[] xxxxxxxSerialize() {
-        byte[] bytes = unsafeXxxxxxxSerialize();
+    public byte[] lycancoinSerialize() {
+        byte[] bytes = unsafeLycancoinSerialize();
         byte[] copy = new byte[bytes.length];
         System.arraycopy(bytes, 0, copy, 0, bytes.length);
         return copy;
@@ -306,7 +306,7 @@ public abstract class Message implements Serializable {
      *
      * @return a byte array owned by this object, do NOT mutate it.
      */
-    public byte[] unsafeXxxxxxxSerialize() {
+    public byte[] unsafeLycancoinSerialize() {
         // 1st attempt to use a cached array.
         if (bytes != null) {
             if (offset == 0 && length == bytes.length) {
@@ -323,7 +323,7 @@ public abstract class Message implements Serializable {
         // No cached array available so serialize parts by stream.
         ByteArrayOutputStream stream = new UnsafeByteArrayOutputStream(length < 32 ? 32 : length + 32);
         try {
-            xxxxxxxSerializeToStream(stream);
+            lycancoinSerializeToStream(stream);
         } catch (IOException e) {
             // Cannot happen, we are serializing to a memory stream.
         }
@@ -335,7 +335,7 @@ public abstract class Message implements Serializable {
             // This give a dual benefit.  Releasing references to the larger byte array so that it
             // it is more likely to be GC'd.  And preventing double serializations.  E.g. calculating
             // merkle root calls this method.  It is will frequently happen prior to serializing the block
-            // which means another call to xxxxxxxSerialize is coming.  If we didn't recache then internal
+            // which means another call to lycancoinSerialize is coming.  If we didn't recache then internal
             // serialization would occur a 2nd time and every subsequent time the message is serialized.
             bytes = stream.toByteArray();
             cursor = cursor - offset;
@@ -358,21 +358,21 @@ public abstract class Message implements Serializable {
      * @param stream
      * @throws IOException
      */
-    final public void xxxxxxxSerialize(OutputStream stream) throws IOException {
+    final public void lycancoinSerialize(OutputStream stream) throws IOException {
         // 1st check for cached bytes.
         if (bytes != null && length != UNKNOWN_LENGTH) {
             stream.write(bytes, offset, length);
             return;
         }
 
-        xxxxxxxSerializeToStream(stream);
+        lycancoinSerializeToStream(stream);
     }
 
     /**
-     * Serializes this message to the provided stream. If you just want the raw bytes use xxxxxxxSerialize().
+     * Serializes this message to the provided stream. If you just want the raw bytes use lycancoinSerialize().
      */
-    void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
-        log.debug("Warning: {} class has not implemented xxxxxxxSerializeToStream method.  Generating message with no payload", getClass());
+    void lycancoinSerializeToStream(OutputStream stream) throws IOException {
+        log.debug("Warning: {} class has not implemented lycancoinSerializeToStream method.  Generating message with no payload", getClass());
     }
 
     /**

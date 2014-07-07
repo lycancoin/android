@@ -139,7 +139,7 @@ public class StoredTransactionOutput implements Serializable {
     }
 
     public String toString() {
-        return String.format("Stored TxOut of %s (%s:%d)", Utils.xxxxxxxValueToFriendlyString(value), hash.toString(), index);
+        return String.format("Stored TxOut of %s (%s:%d)", Utils.lycancoinValueToFriendlyString(value), hash.toString(), index);
     }
 
     public int hashCode() {

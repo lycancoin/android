@@ -1109,7 +1109,7 @@ public class PeerGroup extends AbstractIdleService {
      * will complete as soon as the transaction was successfully written to that peer.</p>
      *
      * <p>Other than for sending your own transactions, this method is useful if you have received a transaction from
-     * someone and want to know that it's valid. It's a bit of a weird hack because the current version of the Xxxxxxx
+     * someone and want to know that it's valid. It's a bit of a weird hack because the current version of the Lycancoin
      * protocol does not inform you if you send an invalid transaction. Because sending bad transactions counts towards
      * your DoS limit, be careful with relaying lots of unknown transactions. Otherwise you might get kicked off the
      * network.</p>

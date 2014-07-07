@@ -35,10 +35,10 @@ import static com.google.litecoin.core.Utils.scryptDigest;
 import static com.google.litecoin.core.Utils.doubleDigestTwoBuffers;
 
 /**
- * <p>A block is a group of transactions, and is one of the fundamental data structures of the Xxxxxxx system.
+ * <p>A block is a group of transactions, and is one of the fundamental data structures of the Lycancoin system.
  * It records a set of {@link Transaction}s together with some data that links it into a place in the global block
  * chain, and proves that a difficult calculation was done over its contents. See
- * <a href="http://www.litecoin.org/litecoin.pdf">the Xxxxxxx technical paper</a> for
+ * <a href="http://www.litecoin.org/litecoin.pdf">the Lycancoin technical paper</a> for
  * more detail on blocks. <p/>
  *
  * To get a block, you can either build one from the raw bytes you can get from another implementation, or request one
@@ -55,7 +55,7 @@ public class Block extends Message {
 
     /**
      * A constant shared by the entire network: how large in bytes a block is allowed to be. One day we may have to
-     * upgrade everyone to change this, so Xxxxxxx can continue to grow. For now it exists as an anti-DoS measure to
+     * upgrade everyone to change this, so Lycancoin can continue to grow. For now it exists as an anti-DoS measure to
      * avoid somebody creating a titanically huge but valid block and forcing everyone to download/store it forever.
      */
     public static final int MAX_BLOCK_SIZE = 1 * 1000 * 1000;
@@ -110,13 +110,13 @@ public class Block extends Message {
         length = 80;
     }
 
-    /** Constructs a block object from the Xxxxxxx wire format. */
+    /** Constructs a block object from the Lycancoin wire format. */
     public Block(NetworkParameters params, byte[] payloadBytes) throws ProtocolException {
         super(params, payloadBytes, 0, false, false, payloadBytes.length);
     }
 
     /**
-     * Contruct a block object from the Xxxxxxx wire format.
+     * Contruct a block object from the Lycancoin wire format.
      * @param params NetworkParameters object.
      * @param parseLazy Whether to perform a full parse immediately or delay until a read is requested.
      * @param parseRetain Whether to retain the backing byte array for quick reserialization.  
@@ -132,8 +132,8 @@ public class Block extends Message {
     }
 
     /**
-     * <p>A utility method that calculates how much new Xxxxxxx would be created by the block at the given height.
-     * The inflation of Xxxxxxx is predictable and drops roughly every 4 years (210,000 blocks). At the dawn of
+     * <p>A utility method that calculates how much new Lycancoin would be created by the block at the given height.
+     * The inflation of Lycancoin is predictable and drops roughly every 4 years (210,000 blocks). At the dawn of
      * the system it was 50 coins per block, in late 2012 it went to 25 coins per block, and so on. The size of
      * a coinbase transaction is inflation plus fees.</p>
      *
@@ -370,7 +370,7 @@ public class Block extends Message {
         if (transactions != null) {
             stream.write(new VarInt(transactions.size()).encode());
             for (Transaction tx : transactions) {
-                tx.xxxxxxxSerialize(stream);
+                tx.lycancoinSerialize(stream);
             }
         }
     }
@@ -381,7 +381,7 @@ public class Block extends Message {
      *
      * @throws IOException
      */
-    public byte[] xxxxxxxSerialize() {
+    public byte[] lycancoinSerialize() {
         // we have completely cached byte array.
         if (headerBytesValid && transactionBytesValid) {
             Preconditions.checkNotNull(bytes, "Bytes should never be null if headerBytesValid && transactionBytesValid");
@@ -408,7 +408,7 @@ public class Block extends Message {
     }
 
     @Override
-    protected void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
+    protected void lycancoinSerializeToStream(OutputStream stream) throws IOException {
         writeHeader(stream);
         // We may only have enough data to write the header.
         writeTransactions(stream);
@@ -835,7 +835,7 @@ public class Block extends Message {
         hash = null;
     }
 
-    /** Returns the version of the block data structure as defined by the Xxxxxxx protocol. */
+    /** Returns the version of the block data structure as defined by the Lycancoin protocol. */
     public long getVersion() {
         maybeParseHeader();
         return version;
@@ -884,7 +884,7 @@ public class Block extends Message {
      * BlockChain} verifies that this is not too easy by looking at the length of the chain when the block is added.
      * To find the actual value the hash should be compared against, use
      * {@link com.google.litecoin.core.Block#getDifficultyTargetAsInteger()}. Note that this is <b>not</b> the same as
-     * the difficulty value reported by the Xxxxxxx "getdifficulty" RPC that you may see on various block explorers.
+     * the difficulty value reported by the Lycancoin "getdifficulty" RPC that you may see on various block explorers.
      * That number is the result of applying a formula to the underlying difficulty to normalize the minimum to 1.
      * Calculating the difficulty that way is currently unsupported.
      */
@@ -941,7 +941,7 @@ public class Block extends Message {
         coinbase.addOutput(new TransactionOutput(params, coinbase, value, Script.createOutputScript(pubKeyTo)));
         transactions.add(coinbase);
         coinbase.setParent(this);
-        coinbase.length = coinbase.xxxxxxxSerialize().length;
+        coinbase.length = coinbase.lycancoinSerialize().length;
         adjustLength(transactions.size(), coinbase.length);
     }
 

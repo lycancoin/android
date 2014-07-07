@@ -365,7 +365,7 @@ public class H2FullPrunedBlockStore implements FullPrunedBlockStore {
             s.setBytes(1, hashBytes);
             s.setBytes(2, storedBlock.getChainWork().toByteArray());
             s.setInt(3, storedBlock.getHeight());
-            s.setBytes(4, storedBlock.getHeader().unsafeXxxxxxxSerialize());
+            s.setBytes(4, storedBlock.getHeader().unsafeLycancoinSerialize());
             s.setBoolean(5, wasUndoable);
             s.executeUpdate();
             s.close();
@@ -415,7 +415,7 @@ public class H2FullPrunedBlockStore implements FullPrunedBlockStore {
                 bos.write((int) (0xFF & (numTxn >> 16)));
                 bos.write((int) (0xFF & (numTxn >> 24)));
                 for (Transaction tx : undoableBlock.getTransactions())
-                    tx.xxxxxxxSerialize(bos);
+                    tx.lycancoinSerialize(bos);
                 transactions = bos.toByteArray();
             }
             bos.close();

@@ -44,7 +44,7 @@ public class TransactionOutput extends ChildMessage implements Serializable {
     // The script bytes are parsed and turned into a Script on demand.
     private transient Script scriptPubKey;
 
-    // These fields are Java serialized but not Xxxxxxx serialized. They are used for tracking purposes in our wallet
+    // These fields are Java serialized but not Lycancoin serialized. They are used for tracking purposes in our wallet
     // only. If set to true, this output is counted towards our balance. If false and spentBy is null the tx output
     // was owned by us and was sent to somebody else. If false and spentBy is set it means this output was owned by
     // us and used in one of our own transactions (eg, because it is a change output).
@@ -69,7 +69,7 @@ public class TransactionOutput extends ChildMessage implements Serializable {
      * Deserializes a transaction output message. This is usually part of a transaction message.
      *
      * @param params NetworkParameters object.
-     * @param msg Xxxxxxx protocol formatted byte array containing message content.
+     * @param msg Lycancoin protocol formatted byte array containing message content.
      * @param offset The location of the first msg byte within the array.
      * @param parseLazy Whether to perform a full parse immediately or delay until a read is requested.
      * @param parseRetain Whether to retain the backing byte array for quick reserialization.  
@@ -134,7 +134,7 @@ public class TransactionOutput extends ChildMessage implements Serializable {
     }
 
     @Override
-    protected void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
+    protected void lycancoinSerializeToStream(OutputStream stream) throws IOException {
         checkNotNull(scriptBytes);
         Utils.uint64ToByteStreamLE(getValue(), stream);
         // TODO: Move script serialization into the Script class, where it belongs.
@@ -225,7 +225,7 @@ public class TransactionOutput extends ChildMessage implements Serializable {
      */
     public String toString() {
         try {
-            return "TxOut of " + Utils.xxxxxxxValueToFriendlyString(value) + " to " + getScriptPubKey().getToAddress()
+            return "TxOut of " + Utils.lycancoinValueToFriendlyString(value) + " to " + getScriptPubKey().getToAddress()
                     .toString() + " script:" + getScriptPubKey().toString();
         } catch (ScriptException e) {
             throw new RuntimeException(e);

@@ -29,9 +29,9 @@ import static com.google.litecoin.core.Utils.COIN;
 import static com.google.common.base.Preconditions.checkState;
 
 /**
- * <p>NetworkParameters contains the data needed for working with an instantiation of a Xxxxxxx chain.</p>
+ * <p>NetworkParameters contains the data needed for working with an instantiation of a Lycancoin chain.</p>
  *
- * Currently there are only two, the production chain and the test chain. But in future as Xxxxxxx
+ * Currently there are only two, the production chain and the test chain. But in future as Lycancoin
  * evolves there may be more. You can create your own as long as they don't conflict.
  */
 public class NetworkParameters implements Serializable {
@@ -61,7 +61,7 @@ public class NetworkParameters implements Serializable {
     /**
      * <p>Genesis block for this chain.</p>
      *
-     * <p>The first block in every chain is a well known constant shared between all Xxxxxxx implemenetations. For a
+     * <p>The first block in every chain is a well known constant shared between all Lycancoin implemenetations. For a
      * block to be valid, it must be eventually possible to work backwards to the genesis block by following the
      * prevBlockHash pointers in the block headers.</p>
      *
@@ -84,12 +84,12 @@ public class NetworkParameters implements Serializable {
     public final int addressHeader;
     /** First byte of a base58 encoded dumped private key. See {@link DumpedPrivateKey}. */
     public final int dumpedPrivateKeyHeader;
-    /** How many blocks pass between difficulty adjustment periods. Xxxxxxx standardises this to be 2015. */
+    /** How many blocks pass between difficulty adjustment periods. Lycancoin standardises this to be 2015. */
     public /*final*/ int interval;
     /**
      * How much time in seconds is supposed to pass between "interval" blocks. If the actual elapsed time is
      * significantly different from this value, the network difficulty formula will produce a different value. Both
-     * test and production Xxxxxxx networks use 2 weeks (1209600 seconds).
+     * test and production Lycancoin networks use 2 weeks (1209600 seconds).
      */
     public final int targetTimespan;
     /**
@@ -317,7 +317,7 @@ public class NetworkParameters implements Serializable {
     }
 
     private static NetworkParameters pn;
-    /** The primary Xxxxxxx chain created by Satoshi. */
+    /** The primary Lycancoin chain created by Satoshi. */
     public synchronized static NetworkParameters prodNet() {
         if (pn == null) {
             pn = new NetworkParameters(0);
@@ -326,7 +326,7 @@ public class NetworkParameters implements Serializable {
     }
 
     private static NetworkParameters pnh;
-    /** The primary Xxxxxxx chain created by Hank. */
+    /** The primary Lycancoin chain created by Hank. */
     public synchronized static NetworkParameters prodNetHank() {
         if (pnh == null) {
             pnh = new NetworkParameters(100);

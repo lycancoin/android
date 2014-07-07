@@ -96,7 +96,7 @@ public class ToyWallet {
                 case 2:
                     try {
                         BigInteger val = tx.getValue(wallet);
-                        return Utils.xxxxxxxValueToFriendlyString(val);
+                        return Utils.lycancoinValueToFriendlyString(val);
                     } catch (ScriptException e) {
                         throw new RuntimeException(e);
                     }
@@ -174,7 +174,7 @@ public class ToyWallet {
         peerGroup = new PeerGroup(params, chain);
         peerGroup.setUserAgent("ToyWallet", "1.0");
         if (testnet) {
-            peerGroup.addPeerDiscovery(new IrcDiscovery("#xxxxxxxTEST3"));
+            peerGroup.addPeerDiscovery(new IrcDiscovery("#lycancoinTEST3"));
         } else {
             peerGroup.addPeerDiscovery(new DnsDiscovery(params));
         }
@@ -265,7 +265,7 @@ public class ToyWallet {
         txScrollPane = new JScrollPane(txTable);
         window.getContentPane().add(txScrollPane, BorderLayout.CENTER);
         
-        networkStats = new JLabel("Connecting to the Xxxxxxx network ...");
+        networkStats = new JLabel("Connecting to the Lycancoin network ...");
         window.getContentPane().add(networkStats, BorderLayout.SOUTH);
     }
 }

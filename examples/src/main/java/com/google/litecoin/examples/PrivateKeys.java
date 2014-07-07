@@ -65,7 +65,7 @@ public class PrivateKeys {
             peerGroup.stop();
 
             // And take them!
-            System.out.println("Claiming " + Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()) + " coins");
+            System.out.println("Claiming " + Utils.lycancoinValueToFriendlyString(wallet.getBalance()) + " coins");
             wallet.sendCoins(peerGroup, destination, wallet.getBalance());
             // Wait a few seconds to let the packets flush out to the network (ugly).
             Thread.sleep(5000);

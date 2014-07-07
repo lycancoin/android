@@ -32,13 +32,13 @@ import static com.google.litecoin.core.Utils.*;
 
 /**
  * <p>A transaction represents the movement of coins from some addresses to some other addresses. It can also represent
- * the minting of new coins. A Transaction object corresponds to the equivalent in the Xxxxxxx C++ implementation.</p>
+ * the minting of new coins. A Transaction object corresponds to the equivalent in the Lycancoin C++ implementation.</p>
  *
- * <p>Transactions are the fundamental atoms of Xxxxxxx and have many powerful features. Read
+ * <p>Transactions are the fundamental atoms of Lycancoin and have many powerful features. Read
  * <a href="http://code.google.com/p/litecoinj/wiki/WorkingWithTransactions">"Working with transactions"</a> in the
  * documentation to learn more about how to use this class.</p>
  *
- * <p>All Xxxxxxx transactions are at risk of being reversed, though the risk is much less than with traditional payment
+ * <p>All Lycancoin transactions are at risk of being reversed, though the risk is much less than with traditional payment
  * systems. Transactions have <i>confidence levels</i>, which help you decide whether to trust a transaction or not.
  * Whether to trust a transaction is something that needs to be decided on a case by case basis - a rule that makes 
  * sense for selling MP3s might not make sense for selling cars, or accepting payments from a family member. If you
@@ -127,7 +127,7 @@ public class Transaction extends ChildMessage implements Serializable {
     /**
      * Creates a transaction by reading payload starting from offset bytes in. Length of a transaction is fixed.
      * @param params NetworkParameters object.
-     * @param msg Xxxxxxx protocol formatted byte array containing message content.
+     * @param msg Lycancoin protocol formatted byte array containing message content.
      * @param offset The location of the first msg byte within the array.
      * @param parseLazy Whether to perform a full parse immediately or delay until a read is requested.
      * @param parseRetain Whether to retain the backing byte array for quick reserialization.  
@@ -155,14 +155,14 @@ public class Transaction extends ChildMessage implements Serializable {
      */
     public Sha256Hash getHash() {
         if (hash == null) {
-            byte[] bits = xxxxxxxSerialize();
+            byte[] bits = lycancoinSerialize();
             hash = new Sha256Hash(reverseBytes(doubleDigest(bits)));
         }
         return hash;
     }
 
     /**
-     * Used by XxxxxxxSerializer.  The serializer has to calculate a hash for checksumming so to
+     * Used by LycancoinSerializer.  The serializer has to calculate a hash for checksumming so to
      * avoid wasting the considerable effort a set method is provided so the serializer can set it.
      *
      * No verification is performed on this hash.
@@ -530,7 +530,7 @@ public class Transaction extends ChildMessage implements Serializable {
 
     /**
      * A coinbase transaction is one that creates a new coin. They are the first transaction in each block and their
-     * value is determined by a formula that all implementations of Xxxxxxx share. In 2011 the value of a coinbase
+     * value is determined by a formula that all implementations of Lycancoin share. In 2011 the value of a coinbase
      * transaction is 50 coins, but in future it will be less. A coinbase transaction is defined not only by its
      * position in a block but by the data in the inputs.
      */
@@ -625,7 +625,7 @@ public class Transaction extends ChildMessage implements Serializable {
                     s.append("]");
                 }
                 s.append(" ");
-                s.append(xxxxxxxValueToFriendlyString(out.getValue()));
+                s.append(lycancoinValueToFriendlyString(out.getValue()));
                 s.append(" BTC");
                 if (!out.isAvailableForSpending()) {
                     s.append(" Spent");
@@ -786,7 +786,7 @@ public class Transaction extends ChildMessage implements Serializable {
      * is simplified is specified by the type and anyoneCanPay parameters.<p>
      *
      * You don't normally ever need to call this yourself. It will become more useful in future as the contracts
-     * features of Xxxxxxx are developed.
+     * features of Lycancoin are developed.
      *
      * @param inputIndex input the signature is being calculated for. Tx signatures are always relative to an input.
      * @param connectedScript the bytes that should be in the given input during signing.
@@ -827,7 +827,7 @@ public class Transaction extends ChildMessage implements Serializable {
             }
 
             // This step has no purpose beyond being synchronized with the reference clients bugs. OP_CODESEPARATOR
-            // is a legacy holdover from a previous, broken design of executing scripts that shipped in Xxxxxxx 0.1.
+            // is a legacy holdover from a previous, broken design of executing scripts that shipped in Lycancoin 0.1.
             // It was seriously flawed and would have let anyone take anyone elses money. Later versions switched to
             // the design we use today where scripts are executed independently but share a stack. This left the
             // OP_CODESEPARATOR instruction having no purpose as it was only meant to be used internally, not actually
@@ -853,7 +853,7 @@ public class Transaction extends ChildMessage implements Serializable {
                 // SIGHASH_SINGLE means only sign the output at the same index as the input (ie, my output).
                 if (inputIndex >= this.outputs.size()) {
                     // The input index is beyond the number of outputs, it's a buggy signature made by a broken
-                    // Xxxxxxx implementation. The reference client also contains a bug in handling this case:
+                    // Lycancoin implementation. The reference client also contains a bug in handling this case:
                     // any transaction output that is signed in this case will result in both the signed output
                     // and any future outputs to this public key being steal-able by anyone who has
                     // the resulting signature and the public key (both of which are part of the signed tx input).
@@ -889,7 +889,7 @@ public class Transaction extends ChildMessage implements Serializable {
             }
 
             ByteArrayOutputStream bos = new UnsafeByteArrayOutputStream(length == UNKNOWN_LENGTH ? 256 : length + 4);
-            xxxxxxxSerialize(bos);
+            lycancoinSerialize(bos);
             // We also have to write a hash type (sigHashType is actually an unsigned char)
             uint32ToByteStreamLE(0x000000ff & sigHashType, bos);
             // Note that this is NOT reversed to ensure it will be signed correctly. If it were to be printed out
@@ -911,14 +911,14 @@ public class Transaction extends ChildMessage implements Serializable {
     }
 
     @Override
-    protected void xxxxxxxSerializeToStream(OutputStream stream) throws IOException {
+    protected void lycancoinSerializeToStream(OutputStream stream) throws IOException {
         uint32ToByteStreamLE(version, stream);
         stream.write(new VarInt(inputs.size()).encode());
         for (TransactionInput in : inputs)
-            in.xxxxxxxSerialize(stream);
+            in.lycancoinSerialize(stream);
         stream.write(new VarInt(outputs.size()).encode());
         for (TransactionOutput out : outputs)
-            out.xxxxxxxSerialize(stream);
+            out.lycancoinSerialize(stream);
         uint32ToByteStreamLE(lockTime, stream);
     }
 

@@ -40,9 +40,9 @@ public class BlockImporter {
         
         String defaultDataDir;
         if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) {
-            defaultDataDir = System.getenv("APPDATA") + "\\.xxxxxxx/";
+            defaultDataDir = System.getenv("APPDATA") + "\\.lycancoin/";
         } else {
-            defaultDataDir = System.getProperty("user.home") + "/.xxxxxxx/";
+            defaultDataDir = System.getProperty("user.home") + "/.lycancoin/";
         }
         
         // TODO: Move this to a library function

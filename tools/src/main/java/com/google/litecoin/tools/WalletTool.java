@@ -49,7 +49,7 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 
 /**
- * A command line tool for manipulating wallets and working with Xxxxxxx.<p>
+ * A command line tool for manipulating wallets and working with Lycancoin.<p>
  */
 public class WalletTool {
     private static final Logger log = LoggerFactory.getLogger(WalletTool.class);
@@ -282,7 +282,7 @@ public class WalletTool {
             case TEST: 
                 params = NetworkParameters.testNet();
                 chainFileName = new File("testnet.chain");
-                discovery = new IrcDiscovery("#xxxxxxxTEST3");
+                discovery = new IrcDiscovery("#lycancoinTEST3");
                 break;
             default:
                 throw new RuntimeException("Unreachable.");
@@ -444,7 +444,7 @@ public class WalletTool {
                 req.aesKey = wallet.getKeyCrypter().deriveKey(password);
             }
             if (!wallet.completeTx(req)) {
-                System.err.println("Insufficient funds: have " + Utils.xxxxxxxValueToFriendlyString(wallet.getBalance()));
+                System.err.println("Insufficient funds: have " + Utils.lycancoinValueToFriendlyString(wallet.getBalance()));
                 return;
             }
             try {
@@ -545,7 +545,7 @@ public class WalletTool {
                         saveWallet(walletFile);
                         BigInteger balance = wallet.getBalance(Wallet.BalanceType.ESTIMATED);
                         if (condition.matchLitecoins(balance)) {
-                            System.out.println(Utils.xxxxxxxValueToFriendlyString(balance));
+                            System.out.println(Utils.lycancoinValueToFriendlyString(balance));
                             latch.countDown();
                         }
                     }
@@ -742,7 +742,7 @@ public class WalletTool {
                 Address address = new Address(wallet.getParams(), addr);
                 key = wallet.findKeyFromPubHash(address.getHash160());
             } catch (AddressFormatException e) {
-                System.err.println(addr + " does not parse as a Xxxxxxx address of the right network parameters.");
+                System.err.println(addr + " does not parse as a Lycancoin address of the right network parameters.");
                 return;
             }            
         }

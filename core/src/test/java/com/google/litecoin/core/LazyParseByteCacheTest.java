@@ -104,17 +104,17 @@ public class LazyParseByteCacheTest {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         bs.serialize(tx1, bos);
         tx1BytesWithHeader = bos.toByteArray();
-        tx1Bytes = tx1.xxxxxxxSerialize();
+        tx1Bytes = tx1.lycancoinSerialize();
         
         bos.reset();
         bs.serialize(tx2, bos);
         tx2BytesWithHeader = bos.toByteArray();
-        tx2Bytes = tx2.xxxxxxxSerialize();
+        tx2Bytes = tx2.lycancoinSerialize();
         
         bos.reset();
         bs.serialize(b1, bos);
         b1BytesWithHeader = bos.toByteArray();
-        b1Bytes = b1.xxxxxxxSerialize();
+        b1Bytes = b1.lycancoinSerialize();
     }
     
     @Test

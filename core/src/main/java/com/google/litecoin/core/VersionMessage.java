@@ -73,9 +73,9 @@ public class VersionMessage extends Message {
     public boolean relayTxesBeforeFilter;
 
     /** The version of this library release, as a string. */
-    public static final String XXXXXXXJ_VERSION = "0.8-SNAPSHOT";
+    public static final String LYCANCOINJ_VERSION = "0.8-SNAPSHOT";
     /** The value that is prepended to the subVer field of this application. */
-    public static final String LIBRARY_SUBVER = "/LitecoinJ:" + XXXXXXXJ_VERSION + "/";
+    public static final String LIBRARY_SUBVER = "/LitecoinJ:" + LYCANCOINJ_VERSION + "/";
 
     public VersionMessage(NetworkParameters params, byte[] msg) throws ProtocolException {
         super(params, msg, 0);
@@ -160,7 +160,7 @@ public class VersionMessage extends Message {
     }
 
     @Override
-    public void xxxxxxxSerializeToStream(OutputStream buf) throws IOException {
+    public void lycancoinSerializeToStream(OutputStream buf) throws IOException {
         Utils.uint32ToByteStreamLE(clientVersion, buf);
         Utils.uint32ToByteStreamLE(localServices, buf);
         Utils.uint32ToByteStreamLE(localServices >> 32, buf);
@@ -168,9 +168,9 @@ public class VersionMessage extends Message {
         Utils.uint32ToByteStreamLE(time >> 32, buf);
         try {
             // My address.
-            myAddr.xxxxxxxSerialize(buf);
+            myAddr.lycancoinSerialize(buf);
             // Their address.
-            theirAddr.xxxxxxxSerialize(buf);
+            theirAddr.lycancoinSerialize(buf);
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);  // Can't happen.
         } catch (IOException e) {
