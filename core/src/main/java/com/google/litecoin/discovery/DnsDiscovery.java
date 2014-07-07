@@ -52,6 +52,8 @@ public class DnsDiscovery implements PeerDiscovery {
     private NetworkParameters netParams;
 
     public static final String[] defaultHosts = new String[]{
+      "69.172.229.161",
+      "209.208.111.72",
     };
 
     /**
