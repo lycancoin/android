@@ -48,8 +48,8 @@ import java.util.Map;
  * <p>The following input forms are accepted:</p>
  *
  * <ul>
- * <li>{@code litecoin:<address>}</li>
- * <li>{@code litecoin:<address>?<name1>=<value1>&<name2>=<value2>} with multiple
+ * <li>{@code lycancoin:<address>}</li>
+ * <li>{@code lycancoin:<address>?<name1>=<value1>&<name2>=<value2>} with multiple
  * additional name/value pairs</li>
  * </ul>
  *
@@ -89,7 +89,7 @@ public class LitecoinURI {
     public static final String FIELD_AMOUNT = "amount";
     public static final String FIELD_ADDRESS = "address";
 
-    public static final String LYCANCOIN_SCHEME = "litecoin";
+    public static final String LYCANCOIN_SCHEME = "lycancoin";
     private static final String ENCODED_SPACE_CHARACTER = "%20";
     private static final String AMPERSAND_SEPARATOR = "&";
     private static final String QUESTION_MARK_SEPARATOR = "?";
@@ -128,20 +128,20 @@ public class LitecoinURI {
             throw new LitecoinURIParseException("Bad URI syntax", e);
         }
 
-        // URI is formed as  litecoin:<address>?<query parameters>
-        // blockchain.info generates URIs of non-BIP compliant form litecoin://address?....
+        // URI is formed as  lycancoin:<address>?<query parameters>
+        // blockchain.info generates URIs of non-BIP compliant form lycancoin://address?....
         // We support both until Ben fixes his code.
         
-        // Remove the litecoin scheme.
+        // Remove the lycancoin scheme.
         // (Note: getSchemeSpecificPart() is not used as it unescapes the label and parse then fails.
-        // For instance with : litecoin:129mVqKUmJ9uwPxKJBnNdABbuaaNfho4Ha?amount=0.06&label=Tom%20%26%20Jerry
+        // For instance with : lycancoin:129mVqKUmJ9uwPxKJBnNdABbuaaNfho4Ha?amount=0.06&label=Tom%20%26%20Jerry
         // the & (%26) in Tom and Jerry gets interpreted as a separator and the label then gets parsed
         // as 'Tom ' instead of 'Tom & Jerry')
         String schemeSpecificPart;
-        if (input.startsWith("litecoin://")) {
-            schemeSpecificPart = input.substring("litecoin://".length());
-        } else if (input.startsWith("litecoin:")) {
-            schemeSpecificPart = input.substring("litecoin:".length());
+        if (input.startsWith("lycancoin://")) {
+            schemeSpecificPart = input.substring("lycancoin://".length());
+        } else if (input.startsWith("lycancoin:")) {
+            schemeSpecificPart = input.substring("lycancoin:".length());
         } else {
             throw new LitecoinURIParseException("Unsupported URI scheme: " + uri.getScheme());
         }
@@ -277,7 +277,7 @@ public class LitecoinURI {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder("LitecoinURI[");
+        StringBuilder builder = new StringBuilder("LycancoinURI[");
         boolean first = true;
         for (Map.Entry<String, Object> entry : parameterMap.entrySet()) {
             if (first) {
