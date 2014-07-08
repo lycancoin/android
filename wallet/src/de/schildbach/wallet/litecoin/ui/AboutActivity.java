@@ -30,7 +30,7 @@ import com.google.litecoin.core.VersionMessage;
 
 import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.WalletApplication;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -40,7 +40,7 @@ public final class AboutActivity extends SherlockPreferenceActivity
 	private static final String KEY_ABOUT_VERSION = "about_version";
 	private static final String KEY_ABOUT_LICENSE = "about_license";
 	private static final String KEY_ABOUT_SOURCE = "about_source";
-	private static final String KEY_ABOUT_CREDITS_XXXXXXXJ = "about_credits_xxxxxxxj";
+	private static final String KEY_ABOUT_CREDITS_LYCANCOINJ = "about_credits_lycancoinj";
 	private static final String KEY_ABOUT_CREDITS_ZXING = "about_credits_zxing";
 	private static final String KEY_ABOUT_CREDITS_ICON = "about_credits_icon";
 	private static final String KEY_ABOUT_AUTHOR_TWITTER = "about_author_twitter";
@@ -61,8 +61,8 @@ public final class AboutActivity extends SherlockPreferenceActivity
 		findPreference(KEY_ABOUT_VERSION).setSummary(((WalletApplication) getApplication()).applicationVersionName());
 		findPreference(KEY_ABOUT_LICENSE).setSummary(Constants.LICENSE_URL);
 		findPreference(KEY_ABOUT_SOURCE).setSummary(Constants.SOURCE_URL);
-		findPreference(KEY_ABOUT_CREDITS_XXXXXXXJ).setTitle(getString(R.string.about_credits_xxxxxxxj_title, VersionMessage.XXXXXXXJ_VERSION));
-		findPreference(KEY_ABOUT_CREDITS_XXXXXXXJ).setSummary(Constants.CREDITS_XXXXXXXJ_URL);
+		findPreference(KEY_ABOUT_CREDITS_LYCANCOINJ).setTitle(getString(R.string.about_credits_lycancoinj_title, VersionMessage.LYCANCOINJ_VERSION));
+		findPreference(KEY_ABOUT_CREDITS_LYCANCOINJ).setSummary(Constants.CREDITS_LYCANCOINJ_URL);
 		findPreference(KEY_ABOUT_CREDITS_ZXING).setSummary(Constants.CREDITS_ZXING_URL);
 		findPreference(KEY_ABOUT_CREDITS_ICON).setSummary(Constants.CREDITS_ICON_URL);
 		findPreference(KEY_ABOUT_MARKET_APP).setSummary(String.format(Constants.MARKET_APP_URL, getPackageName()));
@@ -96,9 +96,9 @@ public final class AboutActivity extends SherlockPreferenceActivity
 			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.SOURCE_URL)));
 			finish();
 		}
-		else if (KEY_ABOUT_CREDITS_XXXXXXXJ.equals(key))
+		else if (KEY_ABOUT_CREDITS_LYCANCOINJ.equals(key))
 		{
-			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.CREDITS_XXXXXXXJ_URL)));
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.CREDITS_LYCANCOINJ_URL)));
 			finish();
 		}
 		else if (KEY_ABOUT_CREDITS_ZXING.equals(key))

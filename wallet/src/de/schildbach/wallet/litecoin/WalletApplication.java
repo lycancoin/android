@@ -54,7 +54,7 @@ import de.schildbach.wallet.litecoin.service.BlockchainServiceImpl;
 import de.schildbach.wallet.litecoin.util.CrashReporter;
 import de.schildbach.wallet.litecoin.util.StrictModeWrapper;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -69,7 +69,7 @@ public class WalletApplication extends Application
 	private ActivityManager activityManager;
 
 	private static final Charset UTF_8 = Charset.forName("UTF-8");
-	private static final String TAG = "Xxxxxxx"+WalletApplication.class.getSimpleName();
+	private static final String TAG = "Lycancoin"+WalletApplication.class.getSimpleName();
 
 	@Override
 	public void onCreate()
@@ -397,7 +397,7 @@ public class WalletApplication extends Application
 	public void resetBlockchain()
 	{
 		// actually stops the service
-        Log.d("Xxxxxxx", "Sending blockchain service reset intent");
+        Log.d("Lycancoin", "Sending blockchain service reset intent");
 		startService(blockchainServiceResetBlockchainIntent);
         android.os.Process.killProcess(android.os.Process.myPid());
 	}

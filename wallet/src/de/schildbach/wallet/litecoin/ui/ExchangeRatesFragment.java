@@ -53,7 +53,7 @@ import de.schildbach.wallet.litecoin.ExchangeRatesProvider.ExchangeRate;
 import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.ThrottelingWalletChangeListener;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -235,7 +235,7 @@ public final class ExchangeRatesFragment extends SherlockListFragment implements
 
 	public Loader<Cursor> onCreateLoader(final int id, final Bundle args)
 	{
-        Log.d("Xxxxxxx", "ExchangeRateProvider Key: " + activity.getPackageName());
+        Log.d("Lycancoin", "ExchangeRateProvider Key: " + activity.getPackageName());
         return new CursorLoader(activity, ExchangeRatesProvider.contentUri(activity.getPackageName()), null, null, null, null);
 	}
 

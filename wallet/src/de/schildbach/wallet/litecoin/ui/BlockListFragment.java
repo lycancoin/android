@@ -49,7 +49,7 @@ import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.service.BlockchainService;
 import de.schildbach.wallet.litecoin.service.BlockchainServiceImpl;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach

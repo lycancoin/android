@@ -36,7 +36,7 @@ import com.google.litecoin.core.ECKey;
 import de.schildbach.wallet.litecoin.AddressBookProvider;
 import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 public class WalletAddressesAdapter extends BaseAdapter
 {

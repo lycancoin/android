@@ -6,7 +6,7 @@
 
 	<artifactId>integration-android</artifactId>
 	<version>1.0</version>
-	<name>Xxxxxxx Integration for Android</name>
+	<name>Lycancoin Integration for Android</name>
 
 	<parent>
 		<groupId>de.schildbach.wallet.litecoin</groupId>

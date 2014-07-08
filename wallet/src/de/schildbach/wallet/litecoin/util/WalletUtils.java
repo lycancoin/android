@@ -248,7 +248,7 @@ public class WalletUtils
 	{
 		final DateFormat format = Iso8601Format.newDateTimeFormatT();
 
-		out.write("# KEEP YOUR PRIVATE KEYS SAFE! Anyone who can read this can spend your Xxxxxxxs.\n");
+		out.write("# KEEP YOUR PRIVATE KEYS SAFE! Anyone who can read this can spend your Lycancoins.\n");
 
 		for (final ECKey key : keys)
 		{
@@ -349,18 +349,18 @@ public class WalletUtils
 
     public static LitecoinURI parseAddressString(String addressString) {
         if (addressString == null) return null;
-        Log.d("Xxxxxxx", "Parsing: " + addressString);
+        Log.d("Lycancoin", "Parsing: " + addressString);
         try {
             final LitecoinURI uri = new LitecoinURI(Constants.NETWORK_PARAMETERS, addressString);
-            Log.d("Xxxxxxx", "URI: " + uri.getAddress().toString() + " " + uri.getLabel() + " " + uri.getAmount());
+            Log.d("Lycancoin", "URI: " + uri.getAddress().toString() + " " + uri.getLabel() + " " + uri.getAmount());
             return uri;
         }
         catch (final LitecoinURIParseException x)
         {
-            // Try prepending xxxxxxx:
+            // Try prepending lycancoin:
             try {
-                final LitecoinURI uri = new LitecoinURI(Constants.NETWORK_PARAMETERS, "xxxxxxx:" + addressString);
-                Log.d("Xxxxxxx", "URI: " + uri.getAddress().toString() + " " + uri.getLabel() + " " + uri.getAmount());
+                final LitecoinURI uri = new LitecoinURI(Constants.NETWORK_PARAMETERS, "lycancoin:" + addressString);
+                Log.d("Lycancoin", "URI: " + uri.getAddress().toString() + " " + uri.getLabel() + " " + uri.getAmount());
                 return uri;
             }
             catch (final LitecoinURIParseException y)

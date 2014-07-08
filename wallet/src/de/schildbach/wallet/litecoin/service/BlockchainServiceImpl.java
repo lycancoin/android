@@ -69,7 +69,7 @@ import de.schildbach.wallet.litecoin.WalletBalanceWidgetProvider;
 import de.schildbach.wallet.litecoin.ui.WalletActivity;
 import de.schildbach.wallet.litecoin.util.ThrottelingWalletChangeListener;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -105,7 +105,7 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 
 	private static final long APPWIDGET_THROTTLE_MS = DateUtils.SECOND_IN_MILLIS;
 
-	private static final String TAG = "Xxxxxxx"+BlockchainServiceImpl.class.getSimpleName();
+	private static final String TAG = "Lycancoin"+BlockchainServiceImpl.class.getSimpleName();
 
 	private final WalletEventListener walletEventListener = new ThrottelingWalletChangeListener(APPWIDGET_THROTTLE_MS)
 	{
@@ -368,8 +368,8 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
                 try {
 				    peerGroup.addWallet(wallet);
                 } catch(NoSuchMethodError e) {
-                    Log.e("Xxxxxxx", "There's no method: " + e.getLocalizedMessage());
-                    Log.e("Xxxxxxx", "Xxxxxxxj issue.  We're going to ignore this for now and just try and return nicely.");
+                    Log.e("Lycancoin", "There's no method: " + e.getLocalizedMessage());
+                    Log.e("Lycancoin", "Lycancoinj issue.  We're going to ignore this for now and just try and return nicely.");
                     return;
                 }
 				peerGroup.setUserAgent(Constants.USER_AGENT, application.applicationVersionName());
@@ -609,7 +609,7 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
                     final InputStream checkpointsFileIn = getAssets().open("checkpoints");
                     CheckpointManager.checkpoint(Constants.NETWORK_PARAMETERS, checkpointsFileIn, blockStore, earliestKeyCreationTime);
                 } catch (IOException e) {
-                    Log.d("Xxxxxxx", "Couldn't find checkpoints file; starting from genesis");
+                    Log.d("Lycancoin", "Couldn't find checkpoints file; starting from genesis");
                 }
             }
 			blockStore.getChainHead(); // detect corruptions as early as possible
@@ -852,7 +852,7 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
                 appWidgetIds = appWidgetManager.getAppWidgetIds(providerName);
         } catch(RuntimeException e) {
             // Bug #6 - App server dead?
-            Log.e("Xxxxxxx", "App server appears dead - Runtime Exception when running getAppWidgetIds.  Returning..");
+            Log.e("Lycancoin", "App server appears dead - Runtime Exception when running getAppWidgetIds.  Returning..");
             return;
         }
 

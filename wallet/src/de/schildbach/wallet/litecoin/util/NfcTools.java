@@ -94,7 +94,7 @@ public class NfcTools
 	{
 		final byte[] uriBytes = uri.getBytes(UTF_8);
 		final byte[] recordBytes = new byte[uriBytes.length + 1];
-		recordBytes[0] = (byte) 0x0; // prefix, alway 0 for xxxxxxx scheme
+		recordBytes[0] = (byte) 0x0; // prefix, alway 0 for lycancoin scheme
 		System.arraycopy(uriBytes, 0, recordBytes, 1, uriBytes.length);
 		return new NdefRecord(NdefRecord.TNF_WELL_KNOWN, NdefRecord.RTD_URI, new byte[0], recordBytes);
 	}

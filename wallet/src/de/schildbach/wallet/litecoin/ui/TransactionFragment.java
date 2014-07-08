@@ -51,7 +51,7 @@ import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.Base43;
 import de.schildbach.wallet.litecoin.util.BitmapFragment;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -94,7 +94,7 @@ public final class TransactionFragment extends SherlockFragment
 	{
 		final Wallet wallet = ((WalletApplication) activity.getApplication()).getWallet();
 
-		final byte[] serializedTx = tx.unsafeXxxxxxxSerialize();
+		final byte[] serializedTx = tx.unsafeLycancoinSerialize();
 
 		Address from = null;
 		boolean fromMine = false;

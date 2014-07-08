@@ -34,7 +34,7 @@ import com.google.litecoin.core.ECKey;
 
 import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.util.ViewPagerTabs;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach

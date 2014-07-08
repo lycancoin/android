@@ -72,7 +72,7 @@ import de.schildbach.wallet.litecoin.integration.android.LitecoinIntegration;
 import de.schildbach.wallet.litecoin.service.BlockchainService;
 import de.schildbach.wallet.litecoin.service.BlockchainServiceImpl;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -167,7 +167,7 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
 		public void changed()
 		{
 			dismissPopup();
-            Log.d("Xxxxxxx", "Amount: " + amountView.getAmount() + ", Fee: " + feeView.getAmount());
+            Log.d("Lycancoin", "Amount: " + amountView.getAmount() + ", Fee: " + feeView.getAmount());
 			validateAmounts(false);
 		}
 
@@ -399,7 +399,7 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
 
 				final AlertDialog.Builder dialog = new AlertDialog.Builder(activity);
 				dialog.setMessage(getString(R.string.send_coins_dialog_fee_message,
-						Constants.CURRENCY_CODE_XXXXXXX + " " + WalletUtils.formatValue(Constants.DEFAULT_TX_FEE, Constants.ZYZ_PRECISION)));
+						Constants.CURRENCY_CODE_LYCANCOIN + " " + WalletUtils.formatValue(Constants.DEFAULT_TX_FEE, Constants.ZYZ_PRECISION)));
 				if (allowLowFee)
 				{
 					dialog.setPositiveButton(R.string.send_coins_dialog_fee_button_send, new DialogInterface.OnClickListener()
@@ -652,7 +652,7 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
 		dismissPopup();
 
 		final CurrencyTextView viewAvailable = (CurrencyTextView) popupAvailableView.findViewById(R.id.send_coins_popup_available_amount);
-		viewAvailable.setPrefix(Constants.CURRENCY_CODE_XXXXXXX);
+		viewAvailable.setPrefix(Constants.CURRENCY_CODE_LYCANCOIN);
 		viewAvailable.setAmount(available);
 
 		final TextView viewPending = (TextView) popupAvailableView.findViewById(R.id.send_coins_popup_available_pending);
@@ -700,8 +700,8 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
                 final Transaction transaction = wallet.createSend(sendRequest);
                 int txSize = transaction.getOutputs().size();
                 // Get the size of the transaction
-                Log.d("Xxxxxxx", "Transaction size is " + txSize);
-                /* From official Xxxxxxx wallet.cpp
+                Log.d("Lycancoin", "Transaction size is " + txSize);
+                /* From official Lycancoin wallet.cpp
                     // Check that enough fee is included
                     int64_t nPayFee = nTransactionFee * (1 + (int64_t)nBytes / 1000);
                     bool fAllowFree = AllowFree(dPriority);
@@ -720,7 +720,7 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
                 BigInteger nPayFee = nTransactionFee.multiply(multiplicand);
                 if(sendRequest.fee.compareTo(nPayFee.max(nMinFee)) < 0)
                 {
-                    Log.i("XxxxxxxSendCoins", "Recalculated fee: " +
+                    Log.i("LycancoinSendCoins", "Recalculated fee: " +
                             sendRequest.fee.toString() + " < " + nPayFee.max(nMinFee).toString());
                     sendRequest.fee = nPayFee.max(nMinFee);
 
@@ -742,7 +742,7 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
                                         try {
                                             wallet.commitTx(sendRequest.tx);
                                         } catch (VerificationException e) {
-                                            Log.i("XxxxxxxSendCoins", "VerificationException: " + e);
+                                            Log.i("LycancoinSendCoins", "VerificationException: " + e);
                                             return;
                                         }
                                         // Fees are agreeable
@@ -757,7 +757,7 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
                     try {
                         wallet.commitTx(sendRequest.tx);
                     } catch (VerificationException e) {
-                        Log.i("XxxxxxxSendCoins", "VerificationException: " + e);
+                        Log.i("LycancoinSendCoins", "VerificationException: " + e);
                         return;
                     }
                     handler.post(new TransactionRunnable(transaction));

@@ -67,7 +67,7 @@
 			android:entryValues="@array/preferences_precision_values"
 			android:key="zyz_precision"
 			android:summary="This does not affect computations. It is used for saving view space only."
-			android:title="Precision of Xxxxxxx values" />
+			android:title="Precision of Lycancoin values" />
 
 		<CheckBoxPreference
 			android:defaultValue="true"

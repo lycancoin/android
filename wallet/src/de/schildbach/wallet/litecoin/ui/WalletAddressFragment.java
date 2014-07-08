@@ -44,7 +44,7 @@ import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.BitmapFragment;
 import de.schildbach.wallet.litecoin.util.NfcTools;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -56,9 +56,9 @@ public final class WalletAddressFragment extends Fragment
 	private SharedPreferences prefs;
 	private Object nfcManager;
 
-	private View xxxxxxxAddressButton;
-	private TextView xxxxxxxAddressLabel;
-	private ImageView xxxxxxxAddressQrView;
+	private View lycancoinAddressButton;
+	private TextView lycancoinAddressLabel;
+	private ImageView lycancoinAddressQrView;
 
 	private Address lastSelectedAddress;
 
@@ -81,11 +81,11 @@ public final class WalletAddressFragment extends Fragment
 		nfcManager = activity.getSystemService(Context.NFC_SERVICE);
 
 		final View view = inflater.inflate(R.layout.wallet_address_fragment, container, false);
-		xxxxxxxAddressButton = view.findViewById(R.id.xxxxxxx_address_button);
-		xxxxxxxAddressLabel = (TextView) view.findViewById(R.id.xxxxxxx_address_label);
-		xxxxxxxAddressQrView = (ImageView) view.findViewById(R.id.xxxxxxx_address_qr);
+		lycancoinAddressButton = view.findViewById(R.id.lycancoin_address_button);
+		lycancoinAddressLabel = (TextView) view.findViewById(R.id.lycancoin_address_label);
+		lycancoinAddressQrView = (ImageView) view.findViewById(R.id.lycancoin_address_qr);
 
-		xxxxxxxAddressButton.setOnClickListener(new OnClickListener()
+		lycancoinAddressButton.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(final View v)
 			{
@@ -93,7 +93,7 @@ public final class WalletAddressFragment extends Fragment
 			}
 		});
 
-		xxxxxxxAddressQrView.setOnClickListener(new OnClickListener()
+		lycancoinAddressQrView.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(final View v)
 			{
@@ -101,7 +101,7 @@ public final class WalletAddressFragment extends Fragment
 			}
 		});
 
-		xxxxxxxAddressQrView.setOnLongClickListener(new OnLongClickListener()
+		lycancoinAddressQrView.setOnLongClickListener(new OnLongClickListener()
 		{
 			public boolean onLongClick(final View v)
 			{
@@ -142,14 +142,14 @@ public final class WalletAddressFragment extends Fragment
 		{
 			lastSelectedAddress = selectedAddress;
 
-			xxxxxxxAddressLabel.setText(WalletUtils.formatAddress(selectedAddress, Constants.ADDRESS_FORMAT_GROUP_SIZE,
+			lycancoinAddressLabel.setText(WalletUtils.formatAddress(selectedAddress, Constants.ADDRESS_FORMAT_GROUP_SIZE,
 					Constants.ADDRESS_FORMAT_LINE_SIZE));
 
 			final String addressStr = LitecoinURI.convertToLitecoinURI(selectedAddress, null, null, null);
 
 			final int size = (int) (256 * getResources().getDisplayMetrics().density);
 			qrCodeBitmap = WalletUtils.getQRCodeBitmap(addressStr, size);
-			xxxxxxxAddressQrView.setImageBitmap(qrCodeBitmap);
+			lycancoinAddressQrView.setImageBitmap(qrCodeBitmap);
 
 			if (nfcManager != null)
 				NfcTools.publishUri(nfcManager, getActivity(), addressStr);

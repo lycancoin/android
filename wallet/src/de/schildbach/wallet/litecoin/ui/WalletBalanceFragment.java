@@ -47,7 +47,7 @@ import de.schildbach.wallet.litecoin.ExchangeRatesProvider.ExchangeRate;
 import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.ThrottelingWalletChangeListener;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -116,7 +116,7 @@ public final class WalletBalanceFragment extends Fragment
 		super.onViewCreated(view, savedInstanceState);
 
 		viewBalance = (CurrencyTextView) view.findViewById(R.id.wallet_balance);
-		viewBalance.setPrefix(Constants.CURRENCY_CODE_XXXXXXX);
+		viewBalance.setPrefix(Constants.CURRENCY_CODE_LYCANCOIN);
 
 		viewBalanceLocal = (CurrencyTextView) view.findViewById(R.id.wallet_balance_local);
 		viewBalanceLocal.setPrecision(Constants.LOCAL_PRECISION);

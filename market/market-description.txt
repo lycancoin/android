@@ -1,18 +1,18 @@
-With this app you always have your Xxxxxxxs with you, in your pocket! You can
+With this app you always have your Lycancoins with you, in your pocket! You can
 send payments simply by scanning a QR-code or by touching two phones together
-(NFC). Xxxxxxx Wallet is designed to be easy to use and reliable, while also
+(NFC). Lycancoin Wallet is designed to be easy to use and reliable, while also
 being secure and fast.
 
 FEATURES:
 
 • No cloud server or web service needed! This wallet is truly peer to peer.
-• Display of wallet balance in Xxxxxxx and various other currencies.
-• Sending and receiving of Xxxxxxx via NFC, QR-codes or Xxxxxxx URLs.
-• Address book for regularly used Xxxxxxx addresses.
+• Display of wallet balance in Lycancoin and various other currencies.
+• Sending and receiving of Lycancoin via NFC, QR-codes or Lycancoin URLs.
+• Address book for regularly used Lycancoin addresses.
 • Enter transactions while offline, will be executed when online.
 • Manages blockchain on your device (for enhanced security).
-• System notifications for Xxxxxxx connectivity and received coins.
-• App widget for Xxxxxxx balance (requirement: app moved to phone).
+• System notifications for Lycancoin connectivity and received coins.
+• App widget for Lycancoin balance (requirement: app moved to phone).
 
 KNOWN ISSUES, PLEASE READ:
 
@@ -27,8 +27,8 @@ It used a masterfully converted library called litecoinj, which was converted
 from bitcoinj:
 https://code.google.com/p/litecoinj/
 
-You can find more about Xxxxxxx at
-http://xxxxxxx.org
+You can find more about Lycancoin at
+http://lycancoin.org
 
 License: GPLv3
 Use at your own risk!

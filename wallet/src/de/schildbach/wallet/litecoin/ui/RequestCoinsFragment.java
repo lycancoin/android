@@ -52,7 +52,7 @@ import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.BitmapFragment;
 import de.schildbach.wallet.litecoin.util.NfcTools;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -277,7 +277,7 @@ public final class RequestCoinsFragment extends SherlockFragment implements Amou
         } catch (NullPointerException e) {
             // Not really sure why this is happening.
             // Bug #5
-            Log.e("Xxxxxxx", "NullPointerException when trying to start request coins intent.");
+            Log.e("Lycancoin", "NullPointerException when trying to start request coins intent.");
             Toast.makeText(activity.getApplicationContext(), "Failed to start Request Coins activity",
                     Toast.LENGTH_SHORT).show();
         }

@@ -16,7 +16,7 @@
 		android:normalScreens="true"
 		android:smallScreens="true" />
 
-	<application android:label="Sample for Xxxxxxx Integration" >
+	<application android:label="Sample for Lycancoin Integration" >
 		<activity
 			android:name="de.schildbach.wallet.integration.sample.SampleActivity"
 			android:theme="@android:style/Theme.Light" >

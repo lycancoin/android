@@ -44,7 +44,7 @@ import com.google.litecoin.core.Utils;
 
 import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -124,7 +124,7 @@ public final class CurrencyAmountView extends FrameLayout
 		contextButton.setLayoutParams(chooseViewParams);
 		this.addView(contextButton);
 
-		setCurrencyCode(Constants.CURRENCY_CODE_XXXXXXX);
+		setCurrencyCode(Constants.CURRENCY_CODE_LYCANCOIN);
 
 		updateAppearance();
 	}

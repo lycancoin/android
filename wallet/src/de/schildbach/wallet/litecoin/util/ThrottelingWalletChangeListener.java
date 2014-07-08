@@ -94,7 +94,7 @@ public abstract class ThrottelingWalletChangeListener implements WalletEventList
 			    onThrotteledWalletChanged();
 		    } catch(RejectedExecutionException e)
             {
-                Log.d("Xxxxxxx", "RejectExecutionException calling onThrotteledWalletChanged");
+                Log.d("Lycancoin", "RejectExecutionException calling onThrotteledWalletChanged");
             }
         }
 	};

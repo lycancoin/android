@@ -23,7 +23,7 @@ import com.google.litecoin.core.Peer;
 import com.google.litecoin.core.StoredBlock;
 import com.google.litecoin.core.Transaction;
 
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach

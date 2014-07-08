@@ -42,7 +42,7 @@ import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.Base43;
 import de.schildbach.wallet.litecoin.util.NfcTools;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -181,7 +181,7 @@ public final class TransactionActivity extends AbstractWalletActivity
 		transactionFragment.update(tx);
 
 		if (nfcManager != null)
-			NfcTools.publishMimeObject(nfcManager, this, Constants.MIMETYPE_TRANSACTION, tx.unsafeXxxxxxxSerialize(), false);
+			NfcTools.publishMimeObject(nfcManager, this, Constants.MIMETYPE_TRANSACTION, tx.unsafeLycancoinSerialize(), false);
 	}
 
 	private void processPendingTransaction(final Transaction tx)

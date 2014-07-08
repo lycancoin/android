@@ -84,7 +84,7 @@ import de.schildbach.wallet.litecoin.util.EncryptionUtils;
 import de.schildbach.wallet.litecoin.util.IOUtils;
 import de.schildbach.wallet.litecoin.util.Iso8601Format;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
@@ -932,12 +932,12 @@ public final class WalletActivity extends AbstractWalletActivity
                         .setMessage(message)
                         .setNeutralButton(R.string.button_import_into_new_app, new OnClickListener() {
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                // Throw import intent to xxxxxxx app
+                                // Throw import intent to lycancoin app
                                 Intent sendIntent = new Intent();
                                 sendIntent.setAction(Intent.ACTION_VIEW);
                                 Uri uri = Uri.fromFile(file);
                                 Log.i(TAG, "URI to file: " + uri);
-                                sendIntent.setDataAndType(uri, "x-xxxxxxx/private-keys");
+                                sendIntent.setDataAndType(uri, "x-lycancoin/private-keys");
                                 // Verify that the intent will resolve to an activity
                                 if (sendIntent.resolveActivity(getPackageManager()) != null) {
                                     startActivity(sendIntent);

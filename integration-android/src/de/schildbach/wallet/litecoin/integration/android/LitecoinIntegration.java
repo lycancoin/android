@@ -31,12 +31,12 @@ public final class LitecoinIntegration
 	private static final String INTENT_EXTRA_TRANSACTION_HASH = "transaction_hash";
 
 	/**
-	 * Request any amount of Xxxxxxxs (probably a donation) from user, without feedback from the app.
+	 * Request any amount of Lycancoins (probably a donation) from user, without feedback from the app.
 	 * 
 	 * @param context
 	 *            Android context
 	 * @param address
-	 *            Xxxxxxx address
+	 *            Lycancoin address
 	 */
 	public static void request(final Context context, final String address)
 	{
@@ -46,14 +46,14 @@ public final class LitecoinIntegration
 	}
 
 	/**
-	 * Request specific amount of Xxxxxxxs from user, without feedback from the app.
+	 * Request specific amount of Lycancoins from user, without feedback from the app.
 	 * 
 	 * @param context
 	 *            Android context
 	 * @param address
-	 *            Xxxxxxx address
+	 *            Lycancoin address
 	 * @param amount
-	 *            Xxxxxxx amount in nanocoins
+	 *            Lycancoin amount in nanocoins
 	 */
 	public static void request(final Context context, final String address, final long amount)
 	{
@@ -63,18 +63,18 @@ public final class LitecoinIntegration
 	}
 
 	/**
-	 * Request any amount of Xxxxxxxs (probably a donation) from user, with feedback from the app. Result intent can be
+	 * Request any amount of Lycancoins (probably a donation) from user, with feedback from the app. Result intent can be
 	 * received by overriding {@link android.app.Activity#onActivityResult()}. Result indicates either
 	 * {@link Activity#RESULT_OK} or {@link Activity#RESULT_CANCELED}. In the success case, use
 	 * {@link #transactionHashFromResult(Intent)} to read the transaction hash from the intent.
 	 * 
-	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own Xxxxxxx
+	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own Lycancoin
 	 * infrastructure and validate the transaction.
 	 * 
 	 * @param context
 	 *            Android context
 	 * @param address
-	 *            Xxxxxxx address
+	 *            Lycancoin address
 	 */
 	public static void requestForResult(final Activity activity, final int requestCode, final String address)
 	{
@@ -84,18 +84,18 @@ public final class LitecoinIntegration
 	}
 
 	/**
-	 * Request specific amount of Xxxxxxxs from user, with feedback from the app. Result intent can be received by
+	 * Request specific amount of Lycancoins from user, with feedback from the app. Result intent can be received by
 	 * overriding {@link android.app.Activity#onActivityResult()}. Result indicates either {@link Activity#RESULT_OK} or
 	 * {@link Activity#RESULT_CANCELED}. In the success case, use {@link #transactionHashFromResult(Intent)} to read the
 	 * transaction hash from the intent.
 	 * 
-	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own Xxxxxxx
+	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own Lycancoin
 	 * infrastructure and validate the transaction.
 	 * 
 	 * @param context
 	 *            Android context
 	 * @param address
-	 *            Xxxxxxx address
+	 *            Lycancoin address
 	 */
 	public static void requestForResult(final Activity activity, final int requestCode, final String address, final long amount)
 	{
@@ -105,7 +105,7 @@ public final class LitecoinIntegration
 	}
 
 	/**
-	 * Put transaction hash into result intent. Meant for usage by Xxxxxxx wallet applications.
+	 * Put transaction hash into result intent. Meant for usage by Lycancoin wallet applications.
 	 * 
 	 * @param result
 	 *            result intent
@@ -119,11 +119,11 @@ public final class LitecoinIntegration
 	}
 
 	/**
-	 * Get transaction hash from result intent. Meant for usage by applications initiating a Xxxxxxx payment.
+	 * Get transaction hash from result intent. Meant for usage by applications initiating a Lycancoin payment.
 	 * 
-	 * You can use this hash to request the transaction from the Xxxxxxx network, in order to validate. For this, you
-	 * need your own Xxxxxxx infrastructure though. There is no guarantee that the transaction has ever been broadcasted
-	 * to the Xxxxxxx network.
+	 * You can use this hash to request the transaction from the Lycancoin network, in order to validate. For this, you
+	 * need your own Lycancoin infrastructure though. There is no guarantee that the transaction has ever been broadcasted
+	 * to the Lycancoin network.
 	 * 
 	 * @param result
 	 *            result intent
@@ -140,7 +140,7 @@ public final class LitecoinIntegration
 
 	private static Intent makeIntent(final String address, final Long amount)
 	{
-		final StringBuilder uri = new StringBuilder("xxxxxxx:");
+		final StringBuilder uri = new StringBuilder("lycancoin:");
 		if (address != null)
 			uri.append(address);
 		if (amount != null)
@@ -171,7 +171,7 @@ public final class LitecoinIntegration
 
 	private static void redirectToDownload(final Context context)
 	{
-		Toast.makeText(context, "No Xxxxxxx application found.\nPlease install Xxxxxxx Wallet.", Toast.LENGTH_LONG).show();
+		Toast.makeText(context, "No Lycancoin application found.\nPlease install Lycancoin Wallet.", Toast.LENGTH_LONG).show();
 
 		final Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://"));
 		final Intent binaryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://"));

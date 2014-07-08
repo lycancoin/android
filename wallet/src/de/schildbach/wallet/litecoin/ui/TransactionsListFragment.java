@@ -64,7 +64,7 @@ import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.ThrottelingWalletChangeListener;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.xxxxxxx.wallet.R;
+import bz.cohors.moneta.lycancoin.wallet.R;
 import org.spongycastle.crypto.tls.TlsAgreementCredentials;
 
 /**
@@ -369,7 +369,7 @@ public class TransactionsListFragment extends SherlockListFragment implements Lo
                     // I don't know how I can set the policy on this underneath AsyncTaskLoader
                     // Ideally, I'd like to use ThreadPoolExecutor.DiscardOldestPolicy
                     // This would just kill the oldest task and add this one.
-                    Log.d("Xxxxxxx", "RejectedExecutionException on forceLoad()");
+                    Log.d("Lycancoin", "RejectedExecutionException on forceLoad()");
                 }
 			}
 		};
