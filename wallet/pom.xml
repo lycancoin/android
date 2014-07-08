@@ -157,7 +157,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			 <plugin>
+			 <!-- plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-jarsigner-plugin</artifactId>
 			    <executions>
@@ -183,7 +183,7 @@
 				    </configuration>
 				</execution>
 			    </executions>
-			</plugin>
+			</plugin -->
 			<!-- the signed apk then needs to be zipaligned -->
 			<plugin>
 			    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
