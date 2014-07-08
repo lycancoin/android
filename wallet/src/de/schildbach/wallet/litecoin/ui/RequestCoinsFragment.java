@@ -277,7 +277,7 @@ public final class RequestCoinsFragment extends SherlockFragment implements Amou
         } catch (NullPointerException e) {
             // Not really sure why this is happening.
             // Bug #5
-            Log.e("Litecoin", "NullPointerException when trying to start request coins intent.");
+            Log.e("Xxxxxxx", "NullPointerException when trying to start request coins intent.");
             Toast.makeText(activity.getApplicationContext(), "Failed to start Request Coins activity",
                     Toast.LENGTH_SHORT).show();
         }

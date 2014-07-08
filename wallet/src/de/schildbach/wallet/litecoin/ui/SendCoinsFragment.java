@@ -167,7 +167,7 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
 		public void changed()
 		{
 			dismissPopup();
-            Log.d("Litecoin", "Amount: " + amountView.getAmount() + ", Fee: " + feeView.getAmount());
+            Log.d("Xxxxxxx", "Amount: " + amountView.getAmount() + ", Fee: " + feeView.getAmount());
 			validateAmounts(false);
 		}
 
@@ -700,8 +700,8 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
                 final Transaction transaction = wallet.createSend(sendRequest);
                 int txSize = transaction.getOutputs().size();
                 // Get the size of the transaction
-                Log.d("Litecoin", "Transaction size is " + txSize);
-                /* From official Litecoin wallet.cpp
+                Log.d("Xxxxxxx", "Transaction size is " + txSize);
+                /* From official Xxxxxxx wallet.cpp
                     // Check that enough fee is included
                     int64_t nPayFee = nTransactionFee * (1 + (int64_t)nBytes / 1000);
                     bool fAllowFree = AllowFree(dPriority);
@@ -720,7 +720,7 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
                 BigInteger nPayFee = nTransactionFee.multiply(multiplicand);
                 if(sendRequest.fee.compareTo(nPayFee.max(nMinFee)) < 0)
                 {
-                    Log.i("LitecoinSendCoins", "Recalculated fee: " +
+                    Log.i("XxxxxxxSendCoins", "Recalculated fee: " +
                             sendRequest.fee.toString() + " < " + nPayFee.max(nMinFee).toString());
                     sendRequest.fee = nPayFee.max(nMinFee);
 
@@ -742,7 +742,7 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
                                         try {
                                             wallet.commitTx(sendRequest.tx);
                                         } catch (VerificationException e) {
-                                            Log.i("LitecoinSendCoins", "VerificationException: " + e);
+                                            Log.i("XxxxxxxSendCoins", "VerificationException: " + e);
                                             return;
                                         }
                                         // Fees are agreeable
@@ -757,7 +757,7 @@ public final class SendCoinsFragment extends SherlockFragment implements AmountC
                     try {
                         wallet.commitTx(sendRequest.tx);
                     } catch (VerificationException e) {
-                        Log.i("LitecoinSendCoins", "VerificationException: " + e);
+                        Log.i("XxxxxxxSendCoins", "VerificationException: " + e);
                         return;
                     }
                     handler.post(new TransactionRunnable(transaction));

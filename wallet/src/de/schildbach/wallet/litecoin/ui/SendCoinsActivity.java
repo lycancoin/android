@@ -116,7 +116,7 @@ public final class SendCoinsActivity extends AbstractWalletActivity
 		final String addressLabel;
 		final BigInteger amount;
 
-		if ((Intent.ACTION_VIEW.equals(action) || NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) && intentUri != null && "litecoin".equals(scheme))
+		if ((Intent.ACTION_VIEW.equals(action) || NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) && intentUri != null && "xxxxxxx".equals(scheme))
 		{
 			try
 			{

@@ -31,12 +31,12 @@ public final class LitecoinIntegration
 	private static final String INTENT_EXTRA_TRANSACTION_HASH = "transaction_hash";
 
 	/**
-	 * Request any amount of Litecoins (probably a donation) from user, without feedback from the app.
+	 * Request any amount of Xxxxxxxs (probably a donation) from user, without feedback from the app.
 	 * 
 	 * @param context
 	 *            Android context
 	 * @param address
-	 *            Litecoin address
+	 *            Xxxxxxx address
 	 */
 	public static void request(final Context context, final String address)
 	{
@@ -46,14 +46,14 @@ public final class LitecoinIntegration
 	}
 
 	/**
-	 * Request specific amount of Litecoins from user, without feedback from the app.
+	 * Request specific amount of Xxxxxxxs from user, without feedback from the app.
 	 * 
 	 * @param context
 	 *            Android context
 	 * @param address
-	 *            Litecoin address
+	 *            Xxxxxxx address
 	 * @param amount
-	 *            Litecoin amount in nanocoins
+	 *            Xxxxxxx amount in nanocoins
 	 */
 	public static void request(final Context context, final String address, final long amount)
 	{
@@ -63,18 +63,18 @@ public final class LitecoinIntegration
 	}
 
 	/**
-	 * Request any amount of Litecoins (probably a donation) from user, with feedback from the app. Result intent can be
+	 * Request any amount of Xxxxxxxs (probably a donation) from user, with feedback from the app. Result intent can be
 	 * received by overriding {@link android.app.Activity#onActivityResult()}. Result indicates either
 	 * {@link Activity#RESULT_OK} or {@link Activity#RESULT_CANCELED}. In the success case, use
 	 * {@link #transactionHashFromResult(Intent)} to read the transaction hash from the intent.
 	 * 
-	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own Litecoin
+	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own Xxxxxxx
 	 * infrastructure and validate the transaction.
 	 * 
 	 * @param context
 	 *            Android context
 	 * @param address
-	 *            Litecoin address
+	 *            Xxxxxxx address
 	 */
 	public static void requestForResult(final Activity activity, final int requestCode, final String address)
 	{
@@ -84,18 +84,18 @@ public final class LitecoinIntegration
 	}
 
 	/**
-	 * Request specific amount of Litecoins from user, with feedback from the app. Result intent can be received by
+	 * Request specific amount of Xxxxxxxs from user, with feedback from the app. Result intent can be received by
 	 * overriding {@link android.app.Activity#onActivityResult()}. Result indicates either {@link Activity#RESULT_OK} or
 	 * {@link Activity#RESULT_CANCELED}. In the success case, use {@link #transactionHashFromResult(Intent)} to read the
 	 * transaction hash from the intent.
 	 * 
-	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own Litecoin
+	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own Xxxxxxx
 	 * infrastructure and validate the transaction.
 	 * 
 	 * @param context
 	 *            Android context
 	 * @param address
-	 *            Litecoin address
+	 *            Xxxxxxx address
 	 */
 	public static void requestForResult(final Activity activity, final int requestCode, final String address, final long amount)
 	{
@@ -105,7 +105,7 @@ public final class LitecoinIntegration
 	}
 
 	/**
-	 * Put transaction hash into result intent. Meant for usage by Litecoin wallet applications.
+	 * Put transaction hash into result intent. Meant for usage by Xxxxxxx wallet applications.
 	 * 
 	 * @param result
 	 *            result intent
@@ -119,11 +119,11 @@ public final class LitecoinIntegration
 	}
 
 	/**
-	 * Get transaction hash from result intent. Meant for usage by applications initiating a Litecoin payment.
+	 * Get transaction hash from result intent. Meant for usage by applications initiating a Xxxxxxx payment.
 	 * 
-	 * You can use this hash to request the transaction from the Litecoin network, in order to validate. For this, you
-	 * need your own Litecoin infrastructure though. There is no guarantee that the transaction has ever been broadcasted
-	 * to the Litecoin network.
+	 * You can use this hash to request the transaction from the Xxxxxxx network, in order to validate. For this, you
+	 * need your own Xxxxxxx infrastructure though. There is no guarantee that the transaction has ever been broadcasted
+	 * to the Xxxxxxx network.
 	 * 
 	 * @param result
 	 *            result intent
@@ -171,7 +171,7 @@ public final class LitecoinIntegration
 
 	private static void redirectToDownload(final Context context)
 	{
-		Toast.makeText(context, "No Litecoin application found.\nPlease install Litecoin Wallet.", Toast.LENGTH_LONG).show();
+		Toast.makeText(context, "No Xxxxxxx application found.\nPlease install Xxxxxxx Wallet.", Toast.LENGTH_LONG).show();
 
 		final Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=de.schildbach.wallet"));
 		final Intent binaryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/litecoin-wallet/downloads/list"));

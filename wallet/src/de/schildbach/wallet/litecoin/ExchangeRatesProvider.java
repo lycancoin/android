@@ -126,7 +126,7 @@ public class ExchangeRatesProvider extends ContentProvider
             try {
 			  cursor.newRow().add(code.hashCode()).add(rate.currencyCode).add(rate.rate.longValue()).add(rate.source);
             } catch (NullPointerException e) {
-                Log.e("Litecoin", "Unable to add an exchange rate.  NullPointerException.");
+                Log.e("Xxxxxxx", "Unable to add an exchange rate.  NullPointerException.");
             }
 		}
 
@@ -173,7 +173,7 @@ public class ExchangeRatesProvider extends ContentProvider
         Double btcRate = 0.0;
 		try {
             String currencies[] = {"USD", "BTC", "RUR"};
-            String urls[] = {"https://btc-e.com/api/2/14/ticker", "https://btc-e.com/api/2/10/ticker", "https://btc-e.com/api/2/ltc_rur/ticker"};
+            String urls[] = {"https://btc-e.com/", "https://btc-e.com/", "https://btc-e.com/"};
             for(int i = 0; i < currencies.length; ++i) {
                 final String currencyCode = currencies[i];
                 final URL URL = new URL(urls[i]);

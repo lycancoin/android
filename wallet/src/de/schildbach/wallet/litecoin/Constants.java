@@ -53,8 +53,8 @@ public class Constants
 	public static final String WALLET_KEY_BACKUP_BASE58 = TEST ? WALLET_KEY_BACKUP_BASE58_TEST : WALLET_KEY_BACKUP_BASE58_PROD;
 
 	public static final File EXTERNAL_WALLET_BACKUP_DIR = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-	private static final String EXTERNAL_WALLET_KEY_BACKUP_PROD = "litecoin-wallet-keys";
-	private static final String EXTERNAL_WALLET_KEY_BACKUP_TEST = "litecoin-wallet-keys-testnet";
+	private static final String EXTERNAL_WALLET_KEY_BACKUP_PROD = "xxxxxxx-wallet-keys";
+	private static final String EXTERNAL_WALLET_KEY_BACKUP_TEST = "xxxxxxx-wallet-keys-testnet";
 	public static final String EXTERNAL_WALLET_KEY_BACKUP = TEST ? EXTERNAL_WALLET_KEY_BACKUP_TEST : EXTERNAL_WALLET_KEY_BACKUP_PROD;
 
 	private static final String WALLET_KEY_BACKUP_SNAPSHOT_PROD = "key-backup-snapshot";
@@ -72,14 +72,14 @@ public class Constants
 	public static final String PEER_DISCOVERY_IRC_CHANNEL_PROD = "#xxxxxxx";
 	public static final String PEER_DISCOVERY_IRC_CHANNEL_TEST = "#xxxxxxxTEST3";
 
-	private static final String BLOCKEXPLORER_BASE_URL_PROD = "http://explorer.litecoin.net/";
-	private static final String BLOCKEXPLORER_BASE_URL_TEST = "http://explorer.litecoin.net/";
+	private static final String BLOCKEXPLORER_BASE_URL_PROD = "http://explorer.xxxxxxx.net/";
+	private static final String BLOCKEXPLORER_BASE_URL_TEST = "http://explorer.xxxxxxx.net/";
 	public static final String BLOCKEXPLORER_BASE_URL = TEST ? BLOCKEXPLORER_BASE_URL_TEST : BLOCKEXPLORER_BASE_URL_PROD;
 
 	public static final String MIMETYPE_TRANSACTION = "application/x-ltctx";
 
 	public static final int MAX_NUM_CONFIRMATIONS = 7;
-	public static final String USER_AGENT = "Litecoin Wallet";
+	public static final String USER_AGENT = "Xxxxxxx Wallet";
 	public static final String DEFAULT_EXCHANGE_CURRENCY = "USD";
 	public static final int WALLET_OPERATION_STACK_SIZE = 256 * 1024;
 	public static final long BLOCKCHAIN_DOWNLOAD_THRESHOLD_MS = 5 * DateUtils.SECOND_IN_MILLIS;
@@ -105,11 +105,11 @@ public class Constants
 	public static final String REPORT_SUBJECT_CRASH = "Crash report";
 
 	public static final String LICENSE_URL = "http://www.gnu.org/licenses/gpl-3.0.txt";
-	public static final String SOURCE_URL = "https://github.com/hank/litecoin-wallet";
-	public static final String BINARY_URL = "https://github.com/hank/litecoin-wallet";
-	public static final String CREDITS_XXXXXXXJ_URL = "http://code.google.com/p/litecoinj/";
+	public static final String SOURCE_URL = "https://github.com/hank/xxxxxxx-wallet";
+	public static final String BINARY_URL = "https://github.com/hank/xxxxxxx-wallet";
+	public static final String CREDITS_XXXXXXXJ_URL = "http://code.google.com/p/xxxxxxxj/";
 	public static final String CREDITS_ZXING_URL = "http://code.google.com/p/zxing/";
-	public static final String CREDITS_ICON_URL = "http://forum.litecoin.net/index.php?topic=1134.0";
+	public static final String CREDITS_ICON_URL = "http://forum.xxxxxxx.net/index.php?topic=1134.0";
 	public static final String AUTHOR_TWITTER_URL = "https://twitter.com/#!/bitcoins4life";
 	public static final String AUTHOR_GOOGLEPLUS_URL = "https://profiles.google.com/hardware.hank";
 	public static final String MARKET_APP_URL = "market://details?id=%s";

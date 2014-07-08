@@ -235,7 +235,7 @@ public final class ExchangeRatesFragment extends SherlockListFragment implements
 
 	public Loader<Cursor> onCreateLoader(final int id, final Bundle args)
 	{
-        Log.d("Litecoin", "ExchangeRateProvider Key: " + activity.getPackageName());
+        Log.d("Xxxxxxx", "ExchangeRateProvider Key: " + activity.getPackageName());
         return new CursorLoader(activity, ExchangeRatesProvider.contentUri(activity.getPackageName()), null, null, null, null);
 	}
 
