@@ -33,7 +33,7 @@ import android.widget.TextView;
 import de.schildbach.wallet.litecoin.AddressBookProvider;
 import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import de.schildbach.wallet.litecoin.R;
+import bz.cohors.moneta.xxxxxxx.wallet.R;
 
 /**
  * @author Andreas Schildbach

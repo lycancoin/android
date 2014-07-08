@@ -35,7 +35,7 @@ import com.actionbarsherlock.view.MenuItem;
 import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.CrashReporter;
-import de.schildbach.wallet.litecoin.R;
+import bz.cohors.moneta.xxxxxxx.wallet.R;
 
 /**
  * @author Andreas Schildbach

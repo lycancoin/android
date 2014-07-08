@@ -26,7 +26,7 @@ import android.text.format.DateUtils;
 import com.google.litecoin.core.NetworkParameters;
 import com.google.litecoin.core.Utils;
 
-import de.schildbach.wallet.litecoin.R;
+import bz.cohors.moneta.xxxxxxx.wallet.R;
 
 /**
  * @author Andreas Schildbach

@@ -43,7 +43,7 @@ import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.ExchangeRatesProvider;
 import de.schildbach.wallet.litecoin.ExchangeRatesProvider.ExchangeRate;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import de.schildbach.wallet.litecoin.R;
+import bz.cohors.moneta.xxxxxxx.wallet.R;
 
 /**
  * @author Andreas Schildbach

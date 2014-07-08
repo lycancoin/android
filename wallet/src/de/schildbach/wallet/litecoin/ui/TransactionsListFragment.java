@@ -64,7 +64,7 @@ import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.ThrottelingWalletChangeListener;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import de.schildbach.wallet.litecoin.R;
+import bz.cohors.moneta.xxxxxxx.wallet.R;
 import org.spongycastle.crypto.tls.TlsAgreementCredentials;
 
 /**

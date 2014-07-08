@@ -54,7 +54,7 @@ import de.schildbach.wallet.litecoin.service.BlockchainServiceImpl;
 import de.schildbach.wallet.litecoin.util.CrashReporter;
 import de.schildbach.wallet.litecoin.util.StrictModeWrapper;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import de.schildbach.wallet.litecoin.R;
+import bz.cohors.moneta.xxxxxxx.wallet.R;
 
 /**
  * @author Andreas Schildbach

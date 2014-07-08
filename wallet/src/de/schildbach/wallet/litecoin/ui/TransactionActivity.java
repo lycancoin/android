@@ -42,7 +42,7 @@ import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.Base43;
 import de.schildbach.wallet.litecoin.util.NfcTools;
-import de.schildbach.wallet.litecoin.R;
+import bz.cohors.moneta.xxxxxxx.wallet.R;
 
 /**
  * @author Andreas Schildbach

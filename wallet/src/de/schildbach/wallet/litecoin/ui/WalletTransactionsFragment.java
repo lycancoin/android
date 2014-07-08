@@ -27,7 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import de.schildbach.wallet.litecoin.ui.TransactionsListFragment.Direction;
 import de.schildbach.wallet.litecoin.util.ViewPagerTabs;
-import de.schildbach.wallet.litecoin.R;
+import bz.cohors.moneta.xxxxxxx.wallet.R;
 
 /**
  * @author Andreas Schildbach

@@ -51,7 +51,7 @@ import de.schildbach.wallet.litecoin.DetermineFirstSeenThread;
 import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.BitmapFragment;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import de.schildbach.wallet.litecoin.R;
+import bz.cohors.moneta.xxxxxxx.wallet.R;
 
 /**
  * @author Andreas Schildbach

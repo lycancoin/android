@@ -84,7 +84,7 @@ import de.schildbach.wallet.litecoin.util.EncryptionUtils;
 import de.schildbach.wallet.litecoin.util.IOUtils;
 import de.schildbach.wallet.litecoin.util.Iso8601Format;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import de.schildbach.wallet.litecoin.R;
+import bz.cohors.moneta.xxxxxxx.wallet.R;
 
 /**
  * @author Andreas Schildbach

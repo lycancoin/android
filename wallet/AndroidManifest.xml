@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	package="de.schildbach.wallet.litecoin"
+	package="bz.cohors.moneta.xxxxxxx.wallet"
 	android:installLocation="auto"
 	android:versionCode="10019"
 	android:versionName="1.099" >
@@ -122,11 +122,12 @@
 
 		<provider
 			android:name=".AddressBookProvider"
-			android:authorities="de.schildbach.wallet.litecoin.address_book"
+			android:authorities="bz.cohors.moneta.xxxxxxx.wallet.address_book"
+			rs.moneta.fuelcon.wallet
 			android:exported="false" />
 		<provider
 			android:name=".ExchangeRatesProvider"
-			android:authorities="de.schildbach.wallet.litecoin.exchange_rates"
+			android:authorities="bz.cohors.moneta.xxxxxxx.wallet.exchange_rates"
 			android:exported="false" />
 
 		<receiver
