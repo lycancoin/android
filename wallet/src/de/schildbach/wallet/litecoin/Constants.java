@@ -99,8 +99,8 @@ public class Constants
 	public static final int ZYZ_PRECISION = 8;
 	public static final int LOCAL_PRECISION = 4;
 
-	public static final String DONATION_ADDRESS = "LerikguvK4nTvhk5XUp8ofg2JgLqAGnBV3";
-	public static final String REPORT_EMAIL = "ralree@gmail.com";
+	public static final String DONATION_ADDRESS = "";
+	public static final String REPORT_EMAIL = "support@kogorta.dp.ua";
 	public static final String REPORT_SUBJECT_ISSUE = "Reported issue";
 	public static final String REPORT_SUBJECT_CRASH = "Crash report";
 
