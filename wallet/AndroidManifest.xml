@@ -131,7 +131,7 @@
 
 		<receiver
 			android:name=".WalletBalanceWidgetProvider"
-			android:label="Litecoin Wallet Balance" >
+			android:label="Xxxxxxx Wallet Balance" >
 			<intent-filter>
 				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
 			</intent-filter>
