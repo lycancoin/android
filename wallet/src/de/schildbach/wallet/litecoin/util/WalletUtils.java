@@ -199,12 +199,12 @@ public class WalletUtils
 		}
 	}
 
-	public static BigInteger localValue(final BigInteger ltcValue, final BigInteger rate)
+	public static BigInteger localValue(final BigInteger zyzValue, final BigInteger rate)
 	{
-		return ltcValue.multiply(rate).divide(Utils.COIN);
+		return zyzValue.multiply(rate).divide(Utils.COIN);
 	}
 
-	public static BigInteger ltcValue(final BigInteger localValue, final BigInteger rate)
+	public static BigInteger zyzValue(final BigInteger localValue, final BigInteger rate)
 	{
 		return localValue.multiply(Utils.COIN).divide(rate);
 	}

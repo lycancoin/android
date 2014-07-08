@@ -74,7 +74,7 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 
 	private ExchangeRate exchangeRate;
 	private boolean exchangeDirection = true;
-	private CurrencyAmountView ltcAmountView, localAmountView;
+	private CurrencyAmountView zyzAmountView, localAmountView;
 	private TextView exchangeRateView;
 
 	@Override
@@ -100,12 +100,12 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 
 		final View view = inflater.inflate(R.layout.amount_calculator_dialog, null);
 
-		ltcAmountView = (CurrencyAmountView) view.findViewById(R.id.amount_calculator_row_ltc);
-		ltcAmountView.setListener(new CurrencyAmountView.Listener()
+		zyzAmountView = (CurrencyAmountView) view.findViewById(R.id.amount_calculator_row_zyz);
+		zyzAmountView.setListener(new CurrencyAmountView.Listener()
 		{
 			public void changed()
 			{
-				if (ltcAmountView.getAmount() != null)
+				if (zyzAmountView.getAmount() != null)
 				{
 					exchangeDirection = true;
 
@@ -142,7 +142,7 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 				}
 				else
 				{
-					ltcAmountView.setHint(null);
+					zyzAmountView.setHint(null);
 				}
 			}
 
@@ -190,12 +190,12 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 
 			if (exchangeDirection)
 			{
-				final BigInteger ltcAmount = ltcAmountView.getAmount();
-				if (ltcAmount != null)
+				final BigInteger zyzAmount = zyzAmountView.getAmount();
+				if (zyzAmount != null)
 				{
 					localAmountView.setAmount(null);
-					localAmountView.setHint(WalletUtils.localValue(ltcAmount, exchangeRate.rate));
-					ltcAmountView.setHint(null);
+					localAmountView.setHint(WalletUtils.localValue(zyzAmount, exchangeRate.rate));
+					zyzAmountView.setHint(null);
 				}
 			}
 			else
@@ -203,8 +203,8 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 				final BigInteger localAmount = localAmountView.getAmount();
 				if (localAmount != null)
 				{
-					ltcAmountView.setAmount(null);
-					ltcAmountView.setHint(WalletUtils.ltcValue(localAmount, exchangeRate.rate));
+					zyzAmountView.setAmount(null);
+					zyzAmountView.setHint(WalletUtils.zyzValue(localAmount, exchangeRate.rate));
 					localAmountView.setHint(null);
 				}
 			}
@@ -222,8 +222,8 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 
 	private void done()
 	{
-		final BigInteger amount = exchangeDirection ? ltcAmountView.getAmount() : WalletUtils
-				.ltcValue(localAmountView.getAmount(), exchangeRate.rate);
+		final BigInteger amount = exchangeDirection ? zyzAmountView.getAmount() : WalletUtils
+				.zyzValue(localAmountView.getAmount(), exchangeRate.rate);
 
 		((Listener) getTargetFragment()).useCalculatedAmount(amount);
 

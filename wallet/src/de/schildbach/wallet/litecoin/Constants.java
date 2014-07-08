@@ -76,7 +76,7 @@ public class Constants
 	private static final String BLOCKEXPLORER_BASE_URL_TEST = "http://explorer.xxxxxxx.net/";
 	public static final String BLOCKEXPLORER_BASE_URL = TEST ? BLOCKEXPLORER_BASE_URL_TEST : BLOCKEXPLORER_BASE_URL_PROD;
 
-	public static final String MIMETYPE_TRANSACTION = "application/x-ltctx";
+	public static final String MIMETYPE_TRANSACTION = "application/x-zyztx";
 
 	public static final int MAX_NUM_CONFIRMATIONS = 7;
 	public static final String USER_AGENT = "Xxxxxxx Wallet";
@@ -134,7 +134,7 @@ public class Constants
 	public static final String PREFS_KEY_LABS_SEND_COINS_LOW_FEE = "labs_send_coins_low_fee";
 	public static final String PREFS_KEY_LABS_TRANSACTION_DETAILS = "labs_transactions_details";
 	public static final String PREFS_KEY_LABS_BLOCK_EXPLORER = "labs_block_explorer";
-	public static final String PREFS_KEY_LTC_PRECISION = "ltc_precision";
+	public static final String PREFS_KEY_LTC_PRECISION = "zyz_precision";
 	public static final String PREFS_KEY_DISCLAIMER = "disclaimer";
 
 	public static final BigInteger DEFAULT_TX_FEE = Utils.CENT.multiply(new BigInteger("2")); // 0.02

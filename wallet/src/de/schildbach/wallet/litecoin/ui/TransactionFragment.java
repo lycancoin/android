@@ -269,7 +269,7 @@ public final class TransactionFragment extends SherlockFragment
 				final byte[] gzippedSerializedTx = bos.toByteArray();
 				final boolean useCompressioon = gzippedSerializedTx.length < serializedTx.length;
 
-				final StringBuilder txStr = new StringBuilder("ltctx:");
+				final StringBuilder txStr = new StringBuilder("zyztx:");
 				txStr.append(useCompressioon ? 'Z' : '-');
 				txStr.append(Base43.encode(useCompressioon ? gzippedSerializedTx : serializedTx));
 
