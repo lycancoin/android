@@ -86,7 +86,7 @@
 	<string name="send_coins_fragment_receiving_address_error_cross_network">Kann %s-Adresse mit diesem Wallet nicht nutzen!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">Kann Adresse von unbekanntem Netzwerk mit diesem Wallet nicht nutzen!</string>
 	<string name="send_coins_fragment_available_label">Verfügbar</string>
-	<string name="send_coins_fragment_pending">(LTC %s warten auf Bestätigung)</string>
+	<string name="send_coins_fragment_pending">(ZYZ %s warten auf Bestätigung)</string>
 	<string name="send_coins_fragment_amount_label">Betrag</string>
 	<string name="send_coins_fragment_amount_empty">Ergänze Betrag hier</string>
 	<string name="send_coins_fragment_amount_error">Ungültiger Betrag!</string>
@@ -161,7 +161,7 @@
 
 	<string name="amount_calculator_dialog_title">Währungs-Umrechner</string>
 	<string name="amount_calculator_dialog_button_use">Übernehmen</string>
-	<string name="amount_calculator_dialog_exchange_rate">LTC 1 ist etwa %1$s %2$s wert\nKurs von %3$s abgerufen</string>
+	<string name="amount_calculator_dialog_exchange_rate">ZYZ 1 ist etwa %1$s %2$s wert\nKurs von %3$s abgerufen</string>
 	<string name="amount_calculator_dialog_exchange_rate_not_available">Umrechnungskurs nicht verfügbar.</string>
 
 	<string name="peer_monitor_activity_title">Peer Monitor</string>
@@ -213,7 +213,7 @@
 	<string name="about_credits_market_app_title">Google Play App-Eintrag</string>
 	<string name="about_credits_market_publisher_title">Andere Apps des Autors</string>
 
-	<string name="notification_coins_received_msg">LTC %s empfangen</string>
+	<string name="notification_coins_received_msg">ZYZ %s empfangen</string>
 	<string name="notification_peers_connected_msg">%d Peers verbunden</string>
 
 	<!-- generic buttons -->
@@ -228,8 +228,8 @@
 	<string name="button_paste">Einfügen</string>
 	<string name="button_share">Teilen</string>
 	<string name="button_set_as_default">Als Standard setzen</string>
-	<string name="button_request_coins">LTC anfordern</string>
-	<string name="button_send_coins">LTC senden</string>
+	<string name="button_request_coins">ZYZ anfordern</string>
+	<string name="button_send_coins">ZYZ senden</string>
 	<string name="button_edit_address">Adresse hinzufügen/ändern</string>
 
 	<string name="time_today">heute</string>

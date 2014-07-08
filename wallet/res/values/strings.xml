@@ -80,7 +80,7 @@
 	<string name="send_coins_fragment_receiving_address_error_cross_network">Cannot use %s address with this wallet!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">Cannot use address of unknown network with this wallet!</string>
 	<string name="send_coins_fragment_available_label">Available for spending</string>
-	<string name="send_coins_fragment_pending">(LTC %s waiting for confirmation)</string>
+	<string name="send_coins_fragment_pending">(ZYZ %s waiting for confirmation)</string>
 	<string name="send_coins_fragment_amount_label">Amount to pay</string>
 	<string name="send_coins_fragment_amount_empty">Put amount here</string>
 	<string name="send_coins_fragment_amount_error">Invalid amount!</string>
@@ -149,7 +149,7 @@
 	<string name="transaction_row_message_received_dead">This payment has been reversed by the sender.</string>
 	<string name="amount_calculator_dialog_title">Currency calculator</string>
 	<string name="amount_calculator_dialog_button_use">Use</string>
-	<string name="amount_calculator_dialog_exchange_rate">LTC 1 is worth about %1$s %2$s\nPrice fetched from %3$s</string>
+	<string name="amount_calculator_dialog_exchange_rate">ZYZ 1 is worth about %1$s %2$s\nPrice fetched from %3$s</string>
 	<string name="amount_calculator_dialog_exchange_rate_not_available">Exchange rate not available.</string>
 	<string name="peer_monitor_activity_title">Peer Monitor</string>
 	<string name="peer_list_fragment_empty">No peers connected</string>
@@ -196,7 +196,7 @@
 	<string name="about_author_googleplus_title">Author at Google+</string>
 	<string name="about_credits_market_app_title">Google Play App Page</string>
 	<string name="about_credits_market_publisher_title">Other Apps of Author</string>
-	<string name="notification_coins_received_msg">Received LTC %s</string>
+	<string name="notification_coins_received_msg">Received ZYZ %s</string>
 	<string name="notification_peers_connected_msg">%d peers connected</string>
 
 	<!-- generic buttons -->
