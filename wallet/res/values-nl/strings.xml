@@ -26,7 +26,7 @@
 	<string name="send_coins_fragment_receiving_address_hint">typ adres of naam</string>
 	<string name="send_coins_fragment_receiving_address_error">Ongeldig Lycancoin Adres!</string>
 	<string name="send_coins_fragment_available_label">Beschikbaar voor besteding</string>
-	<string name="send_coins_fragment_pending">(ZYZ %s wachtend op bevestiging)</string>
+	<string name="send_coins_fragment_pending">(LYC %s wachtend op bevestiging)</string>
 	<string name="send_coins_fragment_amount_label">Bedrag te betalen</string>
 	<string name="send_coins_fragment_fee_label">Transactiekosten</string>
 	<string name="send_coins_fragment_button_send">Verzenden</string>
@@ -66,7 +66,7 @@
 	<string name="about_credits_market_app_title">Google Play App Pagina</string>
 	<string name="about_credits_market_publisher_title">Andere Apps van Author</string>
 
-	<string name="notification_coins_received_msg">Ontvangen ZYZ %s</string>
+	<string name="notification_coins_received_msg">Ontvangen LYC %s</string>
 	<string name="notification_peers_connected_msg">%d verbindingen</string>
 
 	<!-- generic buttons -->

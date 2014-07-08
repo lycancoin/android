@@ -63,7 +63,7 @@ public final class CurrencyAmountView extends FrameLayout
 	private int significantColor, lessSignificantColor, errorColor;
 	private Drawable deleteButtonDrawable, contextButtonDrawable;
 	private CurrencyCodeDrawable currencyCodeDrawable;
-	private int precision = Constants.ZYZ_PRECISION;
+	private int precision = Constants.LYC_PRECISION;
 	private boolean amountSigned = false;
 	private boolean smallerInsignificant = true;
 	private boolean validateAmount = true;

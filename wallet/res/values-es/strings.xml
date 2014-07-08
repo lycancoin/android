@@ -80,7 +80,7 @@
 	<string name="send_coins_fragment_receiving_address_error_cross_network">¡No se puede usar la dirección %s con esta cartera!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">¡No se puede usar una dirección de red desconocida con esta cartera!</string>
 	<string name="send_coins_fragment_available_label">Disponible para gastar</string>
-	<string name="send_coins_fragment_pending">(ZYZ %s esperando confirmación)</string>
+	<string name="send_coins_fragment_pending">(LYC %s esperando confirmación)</string>
 	<string name="send_coins_fragment_amount_label">Cantidad a pagar</string>
 	<string name="send_coins_fragment_amount_empty">Introduce cantidad aquí</string>
 	<string name="send_coins_fragment_amount_error">¡Cantidad inválida!</string>
@@ -149,7 +149,7 @@
 	<string name="transaction_row_message_received_dead">Este pago ha sido revocado por el emisor.</string>
 	<string name="amount_calculator_dialog_title">Calculadora de moneda</string>
 	<string name="amount_calculator_dialog_button_use">Uso</string>
-	<string name="amount_calculator_dialog_exchange_rate">1 ZYZ tiene un valor de %1$s %2$s\nValor obtenido de %3$s</string>
+	<string name="amount_calculator_dialog_exchange_rate">1 LYC tiene un valor de %1$s %2$s\nValor obtenido de %3$s</string>
 	<string name="amount_calculator_dialog_exchange_rate_not_available">Tasa de cambio no disponible.</string>
 	<string name="peer_monitor_activity_title">Monitor de pares</string>
 	<string name="peer_list_fragment_empty">Sin pares conectados</string>
@@ -194,7 +194,7 @@
 	<string name="about_author_googleplus_title">El autor en Google+</string>
 	<string name="about_credits_market_app_title">Página de la aplicación en Android Market</string>
 	<string name="about_credits_market_publisher_title">Otras aplicaciones del autor</string>
-	<string name="notification_coins_received_msg">ZYZ %s recibidos</string>
+	<string name="notification_coins_received_msg">LYC %s recibidos</string>
 	<string name="notification_peers_connected_msg">%d pares conectados</string>
 
 	<!-- generic buttons -->

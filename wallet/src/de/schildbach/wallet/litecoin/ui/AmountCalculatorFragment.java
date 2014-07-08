@@ -74,7 +74,7 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 
 	private ExchangeRate exchangeRate;
 	private boolean exchangeDirection = true;
-	private CurrencyAmountView zyzAmountView, localAmountView;
+	private CurrencyAmountView lycAmountView, localAmountView;
 	private TextView exchangeRateView;
 
 	@Override
@@ -92,7 +92,7 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 	public Dialog onCreateDialog(final Bundle savedInstanceState)
 	{
 		exchangeCurrency = prefs.getString(Constants.PREFS_KEY_EXCHANGE_CURRENCY, Constants.DEFAULT_EXCHANGE_CURRENCY);
-		precision = Integer.parseInt(prefs.getString(Constants.PREFS_KEY_ZYZ_PRECISION, Integer.toString(Constants.ZYZ_PRECISION)));
+		precision = Integer.parseInt(prefs.getString(Constants.PREFS_KEY_LYC_PRECISION, Integer.toString(Constants.LYC_PRECISION)));
 
 		final AlertDialog.Builder dialog = new AlertDialog.Builder(activity);
 		dialog.setInverseBackgroundForced(true);
@@ -100,12 +100,12 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 
 		final View view = inflater.inflate(R.layout.amount_calculator_dialog, null);
 
-		zyzAmountView = (CurrencyAmountView) view.findViewById(R.id.amount_calculator_row_zyz);
-		zyzAmountView.setListener(new CurrencyAmountView.Listener()
+		lycAmountView = (CurrencyAmountView) view.findViewById(R.id.amount_calculator_row_lyc);
+		lycAmountView.setListener(new CurrencyAmountView.Listener()
 		{
 			public void changed()
 			{
-				if (zyzAmountView.getAmount() != null)
+				if (lycAmountView.getAmount() != null)
 				{
 					exchangeDirection = true;
 
@@ -142,7 +142,7 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 				}
 				else
 				{
-					zyzAmountView.setHint(null);
+					lycAmountView.setHint(null);
 				}
 			}
 
@@ -190,12 +190,12 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 
 			if (exchangeDirection)
 			{
-				final BigInteger zyzAmount = zyzAmountView.getAmount();
-				if (zyzAmount != null)
+				final BigInteger lycAmount = lycAmountView.getAmount();
+				if (lycAmount != null)
 				{
 					localAmountView.setAmount(null);
-					localAmountView.setHint(WalletUtils.localValue(zyzAmount, exchangeRate.rate));
-					zyzAmountView.setHint(null);
+					localAmountView.setHint(WalletUtils.localValue(lycAmount, exchangeRate.rate));
+					lycAmountView.setHint(null);
 				}
 			}
 			else
@@ -203,8 +203,8 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 				final BigInteger localAmount = localAmountView.getAmount();
 				if (localAmount != null)
 				{
-					zyzAmountView.setAmount(null);
-					zyzAmountView.setHint(WalletUtils.zyzValue(localAmount, exchangeRate.rate));
+					lycAmountView.setAmount(null);
+					lycAmountView.setHint(WalletUtils.lycValue(localAmount, exchangeRate.rate));
 					localAmountView.setHint(null);
 				}
 			}
@@ -222,8 +222,8 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 
 	private void done()
 	{
-		final BigInteger amount = exchangeDirection ? zyzAmountView.getAmount() : WalletUtils
-				.zyzValue(localAmountView.getAmount(), exchangeRate.rate);
+		final BigInteger amount = exchangeDirection ? lycAmountView.getAmount() : WalletUtils
+				.lycValue(localAmountView.getAmount(), exchangeRate.rate);
 
 		((Listener) getTargetFragment()).useCalculatedAmount(amount);
 

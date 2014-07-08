@@ -47,7 +47,7 @@
 	<string name="send_coins_fragment_receiving_address_error_cross_network">%s adresi bu cüzdanla kullanılamaz!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">Bilinmeyen bir şebekenin adresi bu cüzdanla kullanılamaz!</string>
 	<string name="send_coins_fragment_available_label">Harcamak için kullanılabilir</string>
-	<string name="send_coins_fragment_pending">(%s ZYZ teyit bekliyor)</string>
+	<string name="send_coins_fragment_pending">(%s LYC teyit bekliyor)</string>
 	<string name="send_coins_fragment_amount_label">Ödenecek miktar</string>
 	<string name="send_coins_fragment_amount_error">Geçersiz miktar!</string>
 	<string name="send_coins_fragment_fee_label">ücret</string>
@@ -114,7 +114,7 @@
 	<string name="about_author_googleplus_title">Geliştiricinin Google+ sayfası</string>
 	<string name="about_credits_market_app_title">Android Market uygulama sayfası</string>
 	<string name="about_credits_market_publisher_title">Geliştiricinin diğer uygulamaları</string>
-	<string name="notification_coins_received_msg">%s ZYZ alındı</string>
+	<string name="notification_coins_received_msg">%s LYC alındı</string>
 	<string name="notification_peers_connected_msg">%d eş bağlı</string>
 
 	<!-- generic buttons -->

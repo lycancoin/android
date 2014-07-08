@@ -76,7 +76,7 @@ public class Constants
 	private static final String BLOCKEXPLORER_BASE_URL_TEST = "http://explorer.lycancoin.net/";
 	public static final String BLOCKEXPLORER_BASE_URL = TEST ? BLOCKEXPLORER_BASE_URL_TEST : BLOCKEXPLORER_BASE_URL_PROD;
 
-	public static final String MIMETYPE_TRANSACTION = "application/x-zyztx";
+	public static final String MIMETYPE_TRANSACTION = "application/x-lyctx";
 
 	public static final int MAX_NUM_CONFIRMATIONS = 7;
 	public static final String USER_AGENT = "Lycancoin Wallet";
@@ -86,7 +86,7 @@ public class Constants
 	public static final long BLOCKCHAIN_STATE_BROADCAST_THROTTLE_MS = DateUtils.SECOND_IN_MILLIS;
 	public static final long BLOCKCHAIN_UPTODATE_THRESHOLD_MS = DateUtils.HOUR_IN_MILLIS;
 
-	public static final String CURRENCY_CODE_LYCANCOIN = "ZYZ";
+	public static final String CURRENCY_CODE_LYCANCOIN = "LYC";
 	public static final char CHAR_HAIR_SPACE = '\u200a';
 	public static final char CHAR_THIN_SPACE = '\u2009';
 	public static final char CHAR_ALMOST_EQUAL_TO = '\u2248';
@@ -96,7 +96,7 @@ public class Constants
 	public static final int ADDRESS_FORMAT_GROUP_SIZE = 4;
 	public static final int ADDRESS_FORMAT_LINE_SIZE = 12;
 
-	public static final int ZYZ_PRECISION = 8;
+	public static final int LYC_PRECISION = 8;
 	public static final int LOCAL_PRECISION = 4;
 
 	public static final String DONATION_ADDRESS = "";
@@ -134,7 +134,7 @@ public class Constants
 	public static final String PREFS_KEY_LABS_SEND_COINS_LOW_FEE = "labs_send_coins_low_fee";
 	public static final String PREFS_KEY_LABS_TRANSACTION_DETAILS = "labs_transactions_details";
 	public static final String PREFS_KEY_LABS_BLOCK_EXPLORER = "labs_block_explorer";
-	public static final String PREFS_KEY_ZYZ_PRECISION = "zyz_precision";
+	public static final String PREFS_KEY_LYC_PRECISION = "lyc_precision";
 	public static final String PREFS_KEY_DISCLAIMER = "disclaimer";
 
 	public static final BigInteger DEFAULT_TX_FEE = Utils.CENT.multiply(new BigInteger("2")); // 0.02

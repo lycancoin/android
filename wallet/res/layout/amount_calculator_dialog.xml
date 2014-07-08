@@ -6,7 +6,7 @@
 	android:orientation="vertical" >
 
 	<de.schildbach.wallet.litecoin.ui.CurrencyAmountView
-		android:id="@+id/amount_calculator_row_zyz"
+		android:id="@+id/amount_calculator_row_lyc"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginLeft="12dp"

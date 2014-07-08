@@ -26,4 +26,4 @@ Licenza: GPLv3
 Usalo a tuo rischio e pericolo!
 
 --
-ZYZ bitcoin wallet blockchain bitcoinandroid androidbitcoin Geldbörse Кошелёк mobile payment
+LYC bitcoin wallet blockchain bitcoinandroid androidbitcoin Geldbörse Кошелёк mobile payment

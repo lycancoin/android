@@ -47,7 +47,7 @@
 	<string name="send_coins_fragment_receiving_address_error_cross_network">Impossible d\'utiliser l\'adresse %s avec ce porte-monnaie&#x202F;!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">Impossible d\'utiliser l\'adresse d\'un réseau inconnu avec ce porte-monnaie&#x202F;!</string>
 	<string name="send_coins_fragment_available_label">Montant disponible</string>
-	<string name="send_coins_fragment_pending">(ZYZ %s en attente de confirmation)</string>
+	<string name="send_coins_fragment_pending">(LYC %s en attente de confirmation)</string>
 	<string name="send_coins_fragment_amount_label">Montant à payer</string>
 	<string name="send_coins_fragment_amount_error">Montant invalide&#x202F;!</string>
 	<string name="send_coins_fragment_fee_label">Commission</string>
@@ -114,7 +114,7 @@
 	<string name="about_author_googleplus_title">Auteur chez Google+</string>
 	<string name="about_credits_market_app_title">Page Android Market de l\'application</string>
 	<string name="about_credits_market_publisher_title">Autres applications de l\'auteur</string>
-	<string name="notification_coins_received_msg">Reçu ZYZ %s</string>
+	<string name="notification_coins_received_msg">Reçu LYC %s</string>
 	<string name="notification_peers_connected_msg">%d connections</string>
 
 	<!-- generic buttons -->

@@ -47,7 +47,7 @@
 	<string name="send_coins_fragment_receiving_address_error_cross_network">Kan inte använda %s adressen med denna plånbok!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">Kan inte använda adressen från det okända nätverket med denna plånbok!</string>
 	<string name="send_coins_fragment_available_label">Tillgängliga att skicka</string>
-	<string name="send_coins_fragment_pending">(%s ZYZ väntar på att bekräftas)</string>
+	<string name="send_coins_fragment_pending">(%s LYC väntar på att bekräftas)</string>
 	<string name="send_coins_fragment_amount_label">Belopp att skicka</string>
 	<string name="send_coins_fragment_amount_error">Ogiltig mängd!</string>
 	<string name="send_coins_fragment_fee_label">Avgift</string>
@@ -114,7 +114,7 @@
 	<string name="about_author_googleplus_title">Utvecklaren på Google+</string>
 	<string name="about_credits_market_app_title">Google Play app sida</string>
 	<string name="about_credits_market_publisher_title">Andra appar från utvecklaren</string>
-	<string name="notification_coins_received_msg">Tagit emot %s ZYZ</string>
+	<string name="notification_coins_received_msg">Tagit emot %s LYC</string>
 	<string name="notification_peers_connected_msg">Ansluten till %d noder</string>
 
 	<!-- generic buttons -->

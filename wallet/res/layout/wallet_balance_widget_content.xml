@@ -34,7 +34,7 @@
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="12dp"
 				android:singleLine="true"
-				android:text="ZYZ"
+				android:text="LYC"
 				android:textColor="#bbb"
 				android:textSize="24sp"
 				tools:ignore="HardcodedText" />

@@ -250,7 +250,7 @@ public final class WalletAddressesFragment extends SherlockListFragment
                     clipboard.setText(address.toString());
                 } else {
                     android.content.ClipboardManager clipboard = (android.content.ClipboardManager) activity.getSystemService(Context.CLIPBOARD_SERVICE);
-                    android.content.ClipData clip = android.content.ClipData.newPlainText("ZYZ Address", address.toString());
+                    android.content.ClipData clip = android.content.ClipData.newPlainText("LYC Address", address.toString());
                     clipboard.setPrimaryClip(clip);
                 }
 				activity.toast(R.string.wallet_address_fragment_clipboard_msg);

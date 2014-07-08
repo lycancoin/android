@@ -401,13 +401,13 @@ public class TransactionsListFragment extends SherlockListFragment implements Lo
 
 	public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences, final String key)
 	{
-		if (Constants.PREFS_KEY_ZYZ_PRECISION.equals(key))
+		if (Constants.PREFS_KEY_LYC_PRECISION.equals(key))
 			updateView();
 	}
 
 	private void updateView()
 	{
-		adapter.setPrecision(Integer.parseInt(prefs.getString(Constants.PREFS_KEY_ZYZ_PRECISION, Integer.toString(Constants.ZYZ_PRECISION))));
+		adapter.setPrecision(Integer.parseInt(prefs.getString(Constants.PREFS_KEY_LYC_PRECISION, Integer.toString(Constants.LYC_PRECISION))));
 
 		adapter.clearLabelCache();
 	}

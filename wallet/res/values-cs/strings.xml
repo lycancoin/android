@@ -27,7 +27,7 @@
 	<string name="send_coins_fragment_receiving_address_hint">napište adresu či jméno</string>
 	<string name="send_coins_fragment_receiving_address_error">Nesprávná Lycancoin Adresa!</string>
 	<string name="send_coins_fragment_available_label">Možno utratit</string>
-	<string name="send_coins_fragment_pending">(ZYZ %s čeká na potvrzení)</string>
+	<string name="send_coins_fragment_pending">(LYC %s čeká na potvrzení)</string>
 	<string name="send_coins_fragment_amount_label">Částka k zaplacení</string>
 	<string name="send_coins_fragment_fee_label">Poplatek</string>
 	<string name="send_coins_fragment_button_send">Poslat</string>
@@ -67,7 +67,7 @@
 	<string name="about_credits_market_app_title">Aplikace na Google Play</string>
 	<string name="about_credits_market_publisher_title">Ostatní autorovy aplikace</string>
 
-	<string name="notification_coins_received_msg">Obdrženo ZYZ %s</string>
+	<string name="notification_coins_received_msg">Obdrženo LYC %s</string>
 	<string name="notification_peers_connected_msg">%d peerů připojeno</string>
 
 	<!-- generic buttons -->

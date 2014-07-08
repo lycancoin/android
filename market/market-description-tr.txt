@@ -26,4 +26,4 @@ Lisans: GPLv3
 Tüm riski siz üstlenirsiniz!
 
 --
-ZYZ bitcoin wallet blockchain bitcoinandroid androidbitcoin Geldbörse Кошелёк mobile payment
+LYC bitcoin wallet blockchain bitcoinandroid androidbitcoin Geldbörse Кошелёк mobile payment

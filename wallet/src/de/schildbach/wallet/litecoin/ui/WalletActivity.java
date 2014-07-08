@@ -130,9 +130,9 @@ public final class WalletActivity extends AbstractWalletActivity
         PackageManager pm = getPackageManager();
         List<PackageInfo> packages = pm.getInstalledPackages(0);
         for (PackageInfo pi : packages) {
-            if(pi.packageName.equals("de.schildbach.wallet_zyz") &&
+            if(pi.packageName.equals("de.schildbach.wallet_lyc") &&
                     pi.versionCode >= 150) {
-                // This is the new ZYZ wallet
+                // This is the new LYC wallet
                 // Since it's installed, the next action after backup is
                 // import.
                 haveNewWallet = true;
@@ -921,7 +921,7 @@ public final class WalletActivity extends AbstractWalletActivity
                         .setNeutralButton(R.string.button_install_new_app, new OnClickListener() {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                                intent.setData(Uri.parse("market://details?id=de.schildbach.wallet_zyz"));
+                                intent.setData(Uri.parse("market://details?id=de.schildbach.wallet_lyc"));
                                 startActivity(intent);
                             }
                         });
