@@ -107,7 +107,7 @@
 	<string name="peer_list_fragment_empty">Aucun pair connecté</string>
 	<string name="about_title">A propos de</string>
 	<string name="about_license_title">License</string>
-	<string name="about_credits_litecoinj_title">Cette application utilise litecoinj %s</string>
+	<string name="about_credits_xxxxxxxj_title">Cette application utilise xxxxxxxj %s</string>
 	<string name="about_credits_zxing_title">Cette application utilise \'zxing\'</string>
 	<string name="about_credits_icon_title">Cette application utilise une icône de \'bitboy\'</string>
 	<string name="about_author_twitter_title">Auteur sur Twitter</string>
@@ -128,8 +128,8 @@
 	<string name="button_paste">Coller</string>
 	<string name="button_share">Partager</string>
 	<string name="button_set_as_default">Défaut</string>
-	<string name="button_request_coins">Demande de litecoins</string>
-	<string name="button_send_coins">Envoi de litecoins</string>
+	<string name="button_request_coins">Demande de xxxxxxxs</string>
+	<string name="button_send_coins">Envoi de xxxxxxxs</string>
 	<string name="button_edit_address">Ajouter/éditer une adresse</string>
 	<string name="time_today">aujourd\'hui</string>
 	<string name="address_unlabeled">(sans étiquette)</string>

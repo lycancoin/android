@@ -73,7 +73,7 @@
 	<string name="wallet_old_sdk_dialog_message">Chances are that one of the next releases of Litecoin Wallet will not support your device any more. In some cases, it can get difficult to spend coins on this device.\n\nUnless you know what you are doing, it is recommended to move out your coins soon.</string>
 	<string name="send_coins_activity_title">Send Litecoins</string>
 	<string name="send_coins_uri_parse_error_title">Invalid Litecoin URI</string>
-	<string name="send_coins_parse_address_error_msg">Got invalid litecoin address!\n(Mixing up Testnet/Prodnet?)</string>
+	<string name="send_coins_parse_address_error_msg">Got invalid xxxxxxx address!\n(Mixing up Testnet/Prodnet?)</string>
 	<string name="send_coins_fragment_receiving_address_label">Pay to</string>
 	<string name="send_coins_fragment_receiving_address_hint">type address or name</string>
 	<string name="send_coins_fragment_receiving_address_error">Invalid Litecoin Address!</string>
@@ -189,7 +189,7 @@
 	<string name="report_issue_dialog_mail_intent_chooser">Send report using…</string>
 	<string name="about_title">About</string>
 	<string name="about_license_title">License</string>
-	<string name="about_credits_litecoinj_title">This app is using litecoinj %s</string>
+	<string name="about_credits_xxxxxxxj_title">This app is using xxxxxxxj %s</string>
 	<string name="about_credits_zxing_title">"This app is using 'zxing'"</string>
 	<string name="about_credits_icon_title">"This app is using an icon by 'bitboy'"</string>
 	<string name="about_author_twitter_title">Author at Twitter</string>

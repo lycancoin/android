@@ -40,7 +40,7 @@
 	<string name="wallet_version_dialog_button_binary">Ladda ner</string>
 	<string name="send_coins_activity_title">Skicka Litecoins</string>
 	<string name="send_coins_uri_parse_error_title">Ogiltig Litecoinadress</string>
-	<string name="send_coins_parse_address_error_msg">Fick ogiltig litecoinadress!\n(Blandar du ihop Testnet/Prodnet?)</string>
+	<string name="send_coins_parse_address_error_msg">Fick ogiltig xxxxxxxadress!\n(Blandar du ihop Testnet/Prodnet?)</string>
 	<string name="send_coins_fragment_receiving_address_label">Skicka till</string>
 	<string name="send_coins_fragment_receiving_address_hint">skriv adress eller namn</string>
 	<string name="send_coins_fragment_receiving_address_error">Ogiltig Litecoin adress!</string>
@@ -107,7 +107,7 @@
 	<string name="peer_list_fragment_empty">Inga peers anslutna</string>
 	<string name="about_title">Om</string>
 	<string name="about_license_title">Licens</string>
-	<string name="about_credits_litecoinj_title">Denna app använder litecoinj %s</string>
+	<string name="about_credits_xxxxxxxj_title">Denna app använder xxxxxxxj %s</string>
 	<string name="about_credits_zxing_title">Denna app använder \'zxing\'</string>
 	<string name="about_credits_icon_title">Appen använder en ikon av \'bitboy\'</string>
 	<string name="about_author_twitter_title">Utvecklaren på Twitter</string>

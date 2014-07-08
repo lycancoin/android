@@ -40,7 +40,7 @@
 	<string name="wallet_version_dialog_button_binary">İndir</string>
 	<string name="send_coins_activity_title">Litecoin gönder</string>
 	<string name="send_coins_uri_parse_error_title">Geçersiz Litecoin URİ\'si</string>
-	<string name="send_coins_parse_address_error_msg">Geçersiz litecoin adresi alındı!\n(Testnet ile Prodnet karışmış olmasın?)</string>
+	<string name="send_coins_parse_address_error_msg">Geçersiz xxxxxxx adresi alındı!\n(Testnet ile Prodnet karışmış olmasın?)</string>
 	<string name="send_coins_fragment_receiving_address_label">Şuna öde</string>
 	<string name="send_coins_fragment_receiving_address_hint">adını veya adresini giriniz</string>
 	<string name="send_coins_fragment_receiving_address_error">Geçersiz Litecoin adresi!</string>
@@ -107,7 +107,7 @@
 	<string name="peer_list_fragment_empty">Hiçbir eş bağlı değil</string>
 	<string name="about_title">Hakkında</string>
 	<string name="about_license_title">Lisans</string>
-	<string name="about_credits_litecoinj_title">Bu uygulama litecoinj %s kullanmaktadır</string>
+	<string name="about_credits_xxxxxxxj_title">Bu uygulama xxxxxxxj %s kullanmaktadır</string>
 	<string name="about_credits_zxing_title">Bu uygulama \'zxing\' kullanmaktadır</string>
 	<string name="about_credits_icon_title">Bu uygulama \'bitboy\' tarafından oluşturulan bir ikon kullanır</string>
 	<string name="about_author_twitter_title">Geliştiricinin Twitter sayfası</string>
