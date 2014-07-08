@@ -105,19 +105,19 @@ public class Constants
 	public static final String REPORT_SUBJECT_CRASH = "Crash report";
 
 	public static final String LICENSE_URL = "http://www.gnu.org/licenses/gpl-3.0.txt";
-	public static final String SOURCE_URL = "https://github.com/hank/xxxxxxx-wallet";
-	public static final String BINARY_URL = "https://github.com/hank/xxxxxxx-wallet";
-	public static final String CREDITS_XXXXXXXJ_URL = "http://code.google.com/p/xxxxxxxj/";
+	public static final String SOURCE_URL = "https://";
+	public static final String BINARY_URL = "https://";
+	public static final String CREDITS_XXXXXXXJ_URL = "http://";
 	public static final String CREDITS_ZXING_URL = "http://code.google.com/p/zxing/";
-	public static final String CREDITS_ICON_URL = "http://forum.xxxxxxx.net/index.php?topic=1134.0";
-	public static final String AUTHOR_TWITTER_URL = "https://twitter.com/#!/bitcoins4life";
-	public static final String AUTHOR_GOOGLEPLUS_URL = "https://profiles.google.com/hardware.hank";
+	public static final String CREDITS_ICON_URL = "http://";
+	public static final String AUTHOR_TWITTER_URL = "https://";
+	public static final String AUTHOR_GOOGLEPLUS_URL = "https://";
 	public static final String MARKET_APP_URL = "market://details?id=%s";
-	public static final String WEBMARKET_APP_URL = "https://play.google.com/store/apps/details?id=%s";
-	public static final String MARKET_PUBLISHER_URL = "market://search?q=pub:\"Joint Security Area\"";
+	public static final String WEBMARKET_APP_URL = "https://play.google.com/";
+	public static final String MARKET_PUBLISHER_URL = "market://";
 
-	private static final String VERSION_URL_PROD = "http://wallet.schildbach.de/version";
-	private static final String VERSION_URL_TEST = "http://wallet.schildbach.de/version_test";
+	private static final String VERSION_URL_PROD = "http://";
+	private static final String VERSION_URL_TEST = "http://";
 	public static final String VERSION_URL = TEST ? VERSION_URL_TEST : VERSION_URL_PROD;
 
 	public static final String PREFS_KEY_LAST_VERSION = "last_version";
