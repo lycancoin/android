@@ -60,7 +60,7 @@ public class TransactionsListAdapter extends BaseAdapter
 	private final int maxConnectedPeers;
 
 	private final List<Transaction> transactions = new ArrayList<Transaction>();
-	private int precision = Constants.LTC_PRECISION;
+	private int precision = Constants.ZYZ_PRECISION;
 
 	private final int colorSignificant;
 	private final int colorInsignificant;

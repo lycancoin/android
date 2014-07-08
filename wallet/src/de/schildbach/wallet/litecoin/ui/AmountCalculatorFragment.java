@@ -92,7 +92,7 @@ public final class AmountCalculatorFragment extends DialogFragment implements Lo
 	public Dialog onCreateDialog(final Bundle savedInstanceState)
 	{
 		exchangeCurrency = prefs.getString(Constants.PREFS_KEY_EXCHANGE_CURRENCY, Constants.DEFAULT_EXCHANGE_CURRENCY);
-		precision = Integer.parseInt(prefs.getString(Constants.PREFS_KEY_LTC_PRECISION, Integer.toString(Constants.LTC_PRECISION)));
+		precision = Integer.parseInt(prefs.getString(Constants.PREFS_KEY_ZYZ_PRECISION, Integer.toString(Constants.ZYZ_PRECISION)));
 
 		final AlertDialog.Builder dialog = new AlertDialog.Builder(activity);
 		dialog.setInverseBackgroundForced(true);

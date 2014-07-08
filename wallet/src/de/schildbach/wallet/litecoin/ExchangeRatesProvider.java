@@ -203,7 +203,7 @@ public class ExchangeRatesProvider extends ContentProvider
                         reader.close();
                 }
             }
-            // Handle LTC/EUR special since we have to do maths
+            // Handle ZYZ/EUR special since we have to do maths
             final URL URL = new URL("https://btc-e.com/api/2/btc_eur/ticker");
             final URLConnection connection = URL.openConnection();
             connection.setConnectTimeout(TIMEOUT_MS);
@@ -219,7 +219,7 @@ public class ExchangeRatesProvider extends ContentProvider
                 final JSONObject head = new JSONObject(content.toString());
                 JSONObject ticker = head.getJSONObject("ticker");
                 Double avg = ticker.getDouble("avg");
-                // This is bitcoins priced in euros.  We want LTC!
+                // This is bitcoins priced in euros.  We want ZYZ!
                 avg *= btcRate;
                 String s_avg = String.format("%.4f", avg).replace(',', '.');
                 rates.put("EUR", new ExchangeRate("EUR", Utils.toNanoCoins(s_avg), URL.getHost()));

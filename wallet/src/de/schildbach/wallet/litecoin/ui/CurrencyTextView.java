@@ -40,7 +40,7 @@ public final class CurrencyTextView extends TextView
 	private String prefix = null;
 	private ForegroundColorSpan prefixColorSpan = null;
 	private BigInteger amount = null;
-	private int precision = Constants.LTC_PRECISION;
+	private int precision = Constants.ZYZ_PRECISION;
 	private boolean alwaysSigned = false;
 	private RelativeSizeSpan prefixRelativeSizeSpan = null;
 	private RelativeSizeSpan insignificantRelativeSizeSpan = null;

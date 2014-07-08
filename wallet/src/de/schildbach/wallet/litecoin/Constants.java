@@ -86,7 +86,7 @@ public class Constants
 	public static final long BLOCKCHAIN_STATE_BROADCAST_THROTTLE_MS = DateUtils.SECOND_IN_MILLIS;
 	public static final long BLOCKCHAIN_UPTODATE_THRESHOLD_MS = DateUtils.HOUR_IN_MILLIS;
 
-	public static final String CURRENCY_CODE_XXXXXXX = "LTC";
+	public static final String CURRENCY_CODE_XXXXXXX = "ZYZ";
 	public static final char CHAR_HAIR_SPACE = '\u200a';
 	public static final char CHAR_THIN_SPACE = '\u2009';
 	public static final char CHAR_ALMOST_EQUAL_TO = '\u2248';
@@ -96,7 +96,7 @@ public class Constants
 	public static final int ADDRESS_FORMAT_GROUP_SIZE = 4;
 	public static final int ADDRESS_FORMAT_LINE_SIZE = 12;
 
-	public static final int LTC_PRECISION = 8;
+	public static final int ZYZ_PRECISION = 8;
 	public static final int LOCAL_PRECISION = 4;
 
 	public static final String DONATION_ADDRESS = "LerikguvK4nTvhk5XUp8ofg2JgLqAGnBV3";
@@ -134,7 +134,7 @@ public class Constants
 	public static final String PREFS_KEY_LABS_SEND_COINS_LOW_FEE = "labs_send_coins_low_fee";
 	public static final String PREFS_KEY_LABS_TRANSACTION_DETAILS = "labs_transactions_details";
 	public static final String PREFS_KEY_LABS_BLOCK_EXPLORER = "labs_block_explorer";
-	public static final String PREFS_KEY_LTC_PRECISION = "zyz_precision";
+	public static final String PREFS_KEY_ZYZ_PRECISION = "zyz_precision";
 	public static final String PREFS_KEY_DISCLAIMER = "disclaimer";
 
 	public static final BigInteger DEFAULT_TX_FEE = Utils.CENT.multiply(new BigInteger("2")); // 0.02

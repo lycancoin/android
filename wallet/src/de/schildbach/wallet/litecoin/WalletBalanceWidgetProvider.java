@@ -58,7 +58,7 @@ public class WalletBalanceWidgetProvider extends AppWidgetProvider
 			final BigInteger balance)
 	{
 		final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-		final int precision = Integer.parseInt(prefs.getString(Constants.PREFS_KEY_LTC_PRECISION, Integer.toString(Constants.LTC_PRECISION)));
+		final int precision = Integer.parseInt(prefs.getString(Constants.PREFS_KEY_ZYZ_PRECISION, Integer.toString(Constants.ZYZ_PRECISION)));
 		final Editable balanceStr = new SpannableStringBuilder(WalletUtils.formatValue(balance, precision));
 		WalletUtils.formatSignificant(balanceStr, WalletUtils.SMALLER_SPAN);
 
