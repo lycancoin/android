@@ -124,7 +124,7 @@ public final class CurrencyAmountView extends FrameLayout
 		contextButton.setLayoutParams(chooseViewParams);
 		this.addView(contextButton);
 
-		setCurrencyCode(Constants.CURRENCY_CODE_LITECOIN);
+		setCurrencyCode(Constants.CURRENCY_CODE_XXXXXXX);
 
 		updateAppearance();
 	}

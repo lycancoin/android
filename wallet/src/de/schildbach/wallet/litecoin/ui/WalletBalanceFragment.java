@@ -116,7 +116,7 @@ public final class WalletBalanceFragment extends Fragment
 		super.onViewCreated(view, savedInstanceState);
 
 		viewBalance = (CurrencyTextView) view.findViewById(R.id.wallet_balance);
-		viewBalance.setPrefix(Constants.CURRENCY_CODE_LITECOIN);
+		viewBalance.setPrefix(Constants.CURRENCY_CODE_XXXXXXX);
 
 		viewBalanceLocal = (CurrencyTextView) view.findViewById(R.id.wallet_balance_local);
 		viewBalanceLocal.setPrecision(Constants.LOCAL_PRECISION);

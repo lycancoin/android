@@ -181,7 +181,7 @@ public final class TransactionActivity extends AbstractWalletActivity
 		transactionFragment.update(tx);
 
 		if (nfcManager != null)
-			NfcTools.publishMimeObject(nfcManager, this, Constants.MIMETYPE_TRANSACTION, tx.unsafeLitecoinSerialize(), false);
+			NfcTools.publishMimeObject(nfcManager, this, Constants.MIMETYPE_TRANSACTION, tx.unsafeXxxxxxxSerialize(), false);
 	}
 
 	private void processPendingTransaction(final Transaction tx)

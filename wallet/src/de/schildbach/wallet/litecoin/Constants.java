@@ -69,8 +69,8 @@ public class Constants
 	private static final String BLOCKCHAIN_FILENAME_TEST = "blockchain-testnet";
 	public static final String BLOCKCHAIN_FILENAME = TEST ? BLOCKCHAIN_FILENAME_TEST : BLOCKCHAIN_FILENAME_PROD;
 
-	public static final String PEER_DISCOVERY_IRC_CHANNEL_PROD = "#litecoin";
-	public static final String PEER_DISCOVERY_IRC_CHANNEL_TEST = "#litecoinTEST3";
+	public static final String PEER_DISCOVERY_IRC_CHANNEL_PROD = "#xxxxxxx";
+	public static final String PEER_DISCOVERY_IRC_CHANNEL_TEST = "#xxxxxxxTEST3";
 
 	private static final String BLOCKEXPLORER_BASE_URL_PROD = "http://explorer.litecoin.net/";
 	private static final String BLOCKEXPLORER_BASE_URL_TEST = "http://explorer.litecoin.net/";
@@ -86,7 +86,7 @@ public class Constants
 	public static final long BLOCKCHAIN_STATE_BROADCAST_THROTTLE_MS = DateUtils.SECOND_IN_MILLIS;
 	public static final long BLOCKCHAIN_UPTODATE_THRESHOLD_MS = DateUtils.HOUR_IN_MILLIS;
 
-	public static final String CURRENCY_CODE_LITECOIN = "LTC";
+	public static final String CURRENCY_CODE_XXXXXXX = "LTC";
 	public static final char CHAR_HAIR_SPACE = '\u200a';
 	public static final char CHAR_THIN_SPACE = '\u2009';
 	public static final char CHAR_ALMOST_EQUAL_TO = '\u2248';
@@ -107,7 +107,7 @@ public class Constants
 	public static final String LICENSE_URL = "http://www.gnu.org/licenses/gpl-3.0.txt";
 	public static final String SOURCE_URL = "https://github.com/hank/litecoin-wallet";
 	public static final String BINARY_URL = "https://github.com/hank/litecoin-wallet";
-	public static final String CREDITS_LITECOINJ_URL = "http://code.google.com/p/litecoinj/";
+	public static final String CREDITS_XXXXXXXJ_URL = "http://code.google.com/p/litecoinj/";
 	public static final String CREDITS_ZXING_URL = "http://code.google.com/p/zxing/";
 	public static final String CREDITS_ICON_URL = "http://forum.litecoin.net/index.php?topic=1134.0";
 	public static final String AUTHOR_TWITTER_URL = "https://twitter.com/#!/bitcoins4life";
