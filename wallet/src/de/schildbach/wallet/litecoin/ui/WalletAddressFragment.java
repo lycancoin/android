@@ -56,9 +56,9 @@ public final class WalletAddressFragment extends Fragment
 	private SharedPreferences prefs;
 	private Object nfcManager;
 
-	private View litecoinAddressButton;
-	private TextView litecoinAddressLabel;
-	private ImageView litecoinAddressQrView;
+	private View xxxxxxxAddressButton;
+	private TextView xxxxxxxAddressLabel;
+	private ImageView xxxxxxxAddressQrView;
 
 	private Address lastSelectedAddress;
 
@@ -81,11 +81,11 @@ public final class WalletAddressFragment extends Fragment
 		nfcManager = activity.getSystemService(Context.NFC_SERVICE);
 
 		final View view = inflater.inflate(R.layout.wallet_address_fragment, container, false);
-		litecoinAddressButton = view.findViewById(R.id.litecoin_address_button);
-		litecoinAddressLabel = (TextView) view.findViewById(R.id.litecoin_address_label);
-		litecoinAddressQrView = (ImageView) view.findViewById(R.id.litecoin_address_qr);
+		xxxxxxxAddressButton = view.findViewById(R.id.xxxxxxx_address_button);
+		xxxxxxxAddressLabel = (TextView) view.findViewById(R.id.xxxxxxx_address_label);
+		xxxxxxxAddressQrView = (ImageView) view.findViewById(R.id.xxxxxxx_address_qr);
 
-		litecoinAddressButton.setOnClickListener(new OnClickListener()
+		xxxxxxxAddressButton.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(final View v)
 			{
@@ -93,7 +93,7 @@ public final class WalletAddressFragment extends Fragment
 			}
 		});
 
-		litecoinAddressQrView.setOnClickListener(new OnClickListener()
+		xxxxxxxAddressQrView.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(final View v)
 			{
@@ -101,7 +101,7 @@ public final class WalletAddressFragment extends Fragment
 			}
 		});
 
-		litecoinAddressQrView.setOnLongClickListener(new OnLongClickListener()
+		xxxxxxxAddressQrView.setOnLongClickListener(new OnLongClickListener()
 		{
 			public boolean onLongClick(final View v)
 			{
@@ -142,14 +142,14 @@ public final class WalletAddressFragment extends Fragment
 		{
 			lastSelectedAddress = selectedAddress;
 
-			litecoinAddressLabel.setText(WalletUtils.formatAddress(selectedAddress, Constants.ADDRESS_FORMAT_GROUP_SIZE,
+			xxxxxxxAddressLabel.setText(WalletUtils.formatAddress(selectedAddress, Constants.ADDRESS_FORMAT_GROUP_SIZE,
 					Constants.ADDRESS_FORMAT_LINE_SIZE));
 
 			final String addressStr = LitecoinURI.convertToLitecoinURI(selectedAddress, null, null, null);
 
 			final int size = (int) (256 * getResources().getDisplayMetrics().density);
 			qrCodeBitmap = WalletUtils.getQRCodeBitmap(addressStr, size);
-			litecoinAddressQrView.setImageBitmap(qrCodeBitmap);
+			xxxxxxxAddressQrView.setImageBitmap(qrCodeBitmap);
 
 			if (nfcManager != null)
 				NfcTools.publishUri(nfcManager, getActivity(), addressStr);

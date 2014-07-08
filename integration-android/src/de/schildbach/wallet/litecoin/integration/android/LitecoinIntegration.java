@@ -140,7 +140,7 @@ public final class LitecoinIntegration
 
 	private static Intent makeIntent(final String address, final Long amount)
 	{
-		final StringBuilder uri = new StringBuilder("litecoin:");
+		final StringBuilder uri = new StringBuilder("xxxxxxx:");
 		if (address != null)
 			uri.append(address);
 		if (amount != null)
@@ -173,8 +173,8 @@ public final class LitecoinIntegration
 	{
 		Toast.makeText(context, "No Xxxxxxx application found.\nPlease install Xxxxxxx Wallet.", Toast.LENGTH_LONG).show();
 
-		final Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=de.schildbach.wallet"));
-		final Intent binaryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/litecoin-wallet/downloads/list"));
+		final Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://"));
+		final Intent binaryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://"));
 
 		final PackageManager pm = context.getPackageManager();
 		if (pm.resolveActivity(marketIntent, 0) != null)
