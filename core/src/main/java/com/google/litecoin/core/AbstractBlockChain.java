@@ -703,8 +703,11 @@ public abstract class AbstractBlockChain {
      * Throws an exception if the blocks difficulty is not correct.
      */
     private void checkDifficultyTransitions(StoredBlock storedPrev, Block nextBlock) throws BlockStoreException, VerificationException {
-        checkState(lock.isLocked());
-        Block prev = storedPrev.getHeader();
+    	
+    	return; //!! FIXME
+    	/*!! checkState(lock.isLocked());
+        
+    	Block prev = storedPrev.getHeader();
         
         // Is this supposed to be a difficulty transition point?
         if ((storedPrev.getHeight() + 1) % params.interval != 0) {
@@ -772,10 +775,12 @@ public abstract class AbstractBlockChain {
         // The calculated difficulty is to a higher precision than received, so reduce here.
         BigInteger mask = BigInteger.valueOf(0xFFFFFFL).shiftLeft(accuracyBytes * 8);
         newDifficulty = newDifficulty.and(mask);
-
+*/
+        /*!! FIXME
         if (newDifficulty.compareTo(receivedDifficulty) != 0)
             throw new VerificationException("Network provided difficulty bits do not match what was calculated: " +
                     receivedDifficulty.toString(16) + " vs " + newDifficulty.toString(16));
+        */
     }
 
     private void checkTestnetDifficulty(StoredBlock storedPrev, Block prev, Block next) throws VerificationException, BlockStoreException {
