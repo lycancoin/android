@@ -40,7 +40,7 @@ public class PrivateKeys {
             // dumpprivkey command and includes a version byte and checksum. Otherwise assume it's a raw key.
             ECKey key;
             if (args[0].length() == 51) {
-                DumpedPrivateKey dumpedPrivateKey = new DumpedPrivateKey(params, args[0]);
+                DumpedPrivateKey dumpedPrivateKey = new DumpedPrivateKey(params, args[0], false);
                 key = dumpedPrivateKey.getKey();
             } else {
                 BigInteger privKey = Base58.decodeToBigInteger(args[0]);
