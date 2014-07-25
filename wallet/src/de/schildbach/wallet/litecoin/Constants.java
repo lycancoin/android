@@ -99,7 +99,7 @@ public class Constants
 	public static final int LYC_PRECISION = 8;
 	public static final int LOCAL_PRECISION = 4;
 
-	public static final String DONATION_ADDRESS = "";
+	public static final String DONATION_ADDRESS = "LYPbkTPZAetwKCWSWZkg2ZuJKj7pYhahh6";
 	public static final String REPORT_EMAIL = "support@kogorta.dp.ua";
 	public static final String REPORT_SUBJECT_ISSUE = "Reported issue";
 	public static final String REPORT_SUBJECT_CRASH = "Crash report";
