@@ -123,11 +123,11 @@ public final class ExchangeRatesFragment extends SherlockListFragment implements
 				currencyCodeView.setText(exchangeRate.currencyCode);
 
 				final CurrencyTextView rateView = (CurrencyTextView) view.findViewById(R.id.exchange_rate_row_rate);
-				rateView.setPrecision(Constants.LOCAL_PRECISION);
+				rateView.setPrecision(Constants.LYC_PRECISION);
 				rateView.setAmount(WalletUtils.localValue(Utils.COIN, exchangeRate.rate));
 
 				final CurrencyTextView walletView = (CurrencyTextView) view.findViewById(R.id.exchange_rate_row_balance);
-				walletView.setPrecision(Constants.LOCAL_PRECISION);
+				walletView.setPrecision(Constants.LYC_PRECISION);
 				walletView.setAmount(WalletUtils.localValue(balance, exchangeRate.rate));
 				walletView.setStrikeThru(Constants.TEST);
 				walletView.setTextColor(getResources().getColor(R.color.fg_less_significant));

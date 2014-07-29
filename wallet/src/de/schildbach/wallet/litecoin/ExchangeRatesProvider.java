@@ -95,9 +95,10 @@ public class ExchangeRatesProvider extends ContentProvider
 
 		if (exchangeRates == null || now - lastUpdated > UPDATE_FREQ_MS)
 		{
-			Map<String, ExchangeRate> newExchangeRates = getLitecoinCharts();
-			if (exchangeRates == null && newExchangeRates == null)
-				newExchangeRates = getBlockchainInfo();
+			Map<String, ExchangeRate> newExchangeRates = getBlockchainInfo();
+			//getLitecoinCharts();
+			//if (exchangeRates == null && newExchangeRates == null)
+			//	newExchangeRates = getBlockchainInfo();
 
 			if (newExchangeRates != null)
 			{
@@ -246,7 +247,7 @@ public class ExchangeRatesProvider extends ContentProvider
 	{
 		try
 		{
-			final URL URL = new URL("https://blockchain.info/ticker");
+			final URL URL = new URL("http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid=177");
 			final URLConnection connection = URL.openConnection();
 			connection.setConnectTimeout(TIMEOUT_MS);
 			connection.setReadTimeout(TIMEOUT_MS);
@@ -262,6 +263,13 @@ public class ExchangeRatesProvider extends ContentProvider
 				final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
 
 				final JSONObject head = new JSONObject(content.toString());
+				final JSONObject o = head.getJSONObject("return").getJSONObject("markets").getJSONObject("LYC");
+				final String rate = o.optString("lasttradeprice");
+				final String label = o.optString("label");
+				if (rate != null)
+					rates.put(label, new ExchangeRate(label, Utils.toNanoCoins(rate), URL.getHost()));
+
+				/*
 				for (final Iterator<String> i = head.keys(); i.hasNext();)
 				{
 					final String currencyCode = i.next();
@@ -270,7 +278,7 @@ public class ExchangeRatesProvider extends ContentProvider
 
 					if (rate != null)
 						rates.put(currencyCode, new ExchangeRate(currencyCode, Utils.toNanoCoins(rate), URL.getHost()));
-				}
+				}*/
 
 				return rates;
 			}
