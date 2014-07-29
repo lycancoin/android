@@ -120,7 +120,7 @@ public final class WalletActivity extends AbstractWalletActivity
 
 		touchLastUsed();
 
-        checkUpdateNotify();
+      //  checkUpdateNotify();
 	}
 
     /* Pops dialogs to guide the user to update */
