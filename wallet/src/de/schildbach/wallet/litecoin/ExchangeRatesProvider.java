@@ -72,6 +72,7 @@ public class ExchangeRatesProvider extends ContentProvider
 	private static final String KEY_SOURCE = "source";
 
 	private Map<String, ExchangeRate> exchangeRates = null;
+	private static Double LycBtcRate = null;
 	private long lastUpdated = 0;
 
 	private static final long UPDATE_FREQ_MS = DateUtils.HOUR_IN_MILLIS;
@@ -95,10 +96,13 @@ public class ExchangeRatesProvider extends ContentProvider
 
 		if (exchangeRates == null || now - lastUpdated > UPDATE_FREQ_MS)
 		{
+			LycBtcRate = getLycBtcRate();
+			if (LycBtcRate == null)
+				return null;
+
 			Map<String, ExchangeRate> newExchangeRates = getBlockchainInfo();
-			//getLitecoinCharts();
-			//if (exchangeRates == null && newExchangeRates == null)
-			//	newExchangeRates = getBlockchainInfo();
+			if (exchangeRates == null && newExchangeRates == null)
+				newExchangeRates = getLycancoinCharts();
 
 			if (newExchangeRates != null)
 			{
@@ -167,14 +171,13 @@ public class ExchangeRatesProvider extends ContentProvider
 		throw new UnsupportedOperationException();
 	}
 
-	private static Map<String, ExchangeRate> getLitecoinCharts()
+	private static Map<String, ExchangeRate> getLycancoinCharts()
 	{
         final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
-        // Keep the BTC rate around for a bit
-        Double btcRate = 0.0;
 		try {
-            String currencies[] = {"USD", "BTC", "RUR"};
-            String urls[] = {"https://btc-e.com/", "https://btc-e.com/", "https://btc-e.com/"};
+            String currencies[] = {"USD","EUR"};
+            String urls[] = {"https://btc-e.com/api/2/btc_usd/ticker",
+              "https://btc-e.com/api/2/btc_eur/ticker"};
             for(int i = 0; i < currencies.length; ++i) {
                 final String currencyCode = currencies[i];
                 final URL URL = new URL(urls[i]);
@@ -191,43 +194,17 @@ public class ExchangeRatesProvider extends ContentProvider
                     IOUtils.copy(reader, content);
                     final JSONObject head = new JSONObject(content.toString());
                     JSONObject ticker = head.getJSONObject("ticker");
-                    Double avg = ticker.getDouble("avg");
-                    String euros = String.format("%.4f", avg);
+                    Double avg = ticker.getDouble("avg") * LycBtcRate;
+                    String euros = String.format("%.8f", avg);
                     // Fix things like 3,1250
                     euros = euros.replace(",", ".");
-                    rates.put(currencyCode, new ExchangeRate(currencyCode, Utils.toNanoCoins(euros), URL.getHost()));
-                    if(currencyCode.equalsIgnoreCase("BTC")) btcRate = avg;
+                    rates.put(currencyCode, new ExchangeRate(currencyCode, Utils.toNanoCoins(euros), "cryptsy.com and " + URL.getHost()));
                 }
                 finally
                 {
                     if (reader != null)
                         reader.close();
                 }
-            }
-            // Handle LYC/EUR special since we have to do maths
-            final URL URL = new URL("https://btc-e.com/api/2/btc_eur/ticker");
-            final URLConnection connection = URL.openConnection();
-            connection.setConnectTimeout(TIMEOUT_MS);
-            connection.setReadTimeout(TIMEOUT_MS);
-            connection.connect();
-            final StringBuilder content = new StringBuilder();
-
-            Reader reader = null;
-            try
-            {
-                reader = new InputStreamReader(new BufferedInputStream(connection.getInputStream(), 1024));
-                IOUtils.copy(reader, content);
-                final JSONObject head = new JSONObject(content.toString());
-                JSONObject ticker = head.getJSONObject("ticker");
-                Double avg = ticker.getDouble("avg");
-                // This is bitcoins priced in euros.  We want LYC!
-                avg *= btcRate;
-                String s_avg = String.format("%.4f", avg).replace(',', '.');
-                rates.put("EUR", new ExchangeRate("EUR", Utils.toNanoCoins(s_avg), URL.getHost()));
-            } finally
-            {
-                if (reader != null)
-                    reader.close();
             }
             return rates;
         }
@@ -243,7 +220,7 @@ public class ExchangeRatesProvider extends ContentProvider
 		return null;
 	}
 
-	private static Map<String, ExchangeRate> getBlockchainInfo()
+	private static Double getLycBtcRate()
 	{
 		try
 		{
@@ -260,25 +237,59 @@ public class ExchangeRatesProvider extends ContentProvider
 				reader = new InputStreamReader(new BufferedInputStream(connection.getInputStream(), 1024));
 				IOUtils.copy(reader, content);
 
-				final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
-
 				final JSONObject head = new JSONObject(content.toString());
 				final JSONObject o = head.getJSONObject("return").getJSONObject("markets").getJSONObject("LYC");
-				final String rate = o.optString("lasttradeprice");
-				final String label = o.optString("label");
+				final Double rate = o.getDouble("lasttradeprice");
 				if (rate != null)
-					rates.put(label, new ExchangeRate(label, Utils.toNanoCoins(rate), URL.getHost()));
+					return rate;
+			}
+			finally
+			{
+				if (reader != null)
+					reader.close();
+			}
+		}
+		catch (final IOException x)
+		{
+			x.printStackTrace();
+		}
+		catch (final JSONException x)
+		{
+			x.printStackTrace();
+		}
 
-				/*
+		return null;
+	}
+
+	private static Map<String, ExchangeRate> getBlockchainInfo()
+	{
+		try
+		{
+			final URL URL = new URL("https://blockchain.info/ticker");
+			final URLConnection connection = URL.openConnection();
+			connection.setConnectTimeout(TIMEOUT_MS);
+			connection.setReadTimeout(TIMEOUT_MS);
+			connection.connect();
+			final StringBuilder content = new StringBuilder();
+
+			Reader reader = null;
+			try
+			{
+				reader = new InputStreamReader(new BufferedInputStream(connection.getInputStream(), 1024));
+				IOUtils.copy(reader, content);
+
+				final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
+				final JSONObject head = new JSONObject(content.toString());
 				for (final Iterator<String> i = head.keys(); i.hasNext();)
 				{
 					final String currencyCode = i.next();
 					final JSONObject o = head.getJSONObject(currencyCode);
-					final String rate = o.optString("15m", null);
-
+					final Double drate = o.getDouble("15m") * LycBtcRate;
+					String rate = String.format("%.8f", drate);
+					rate = rate.replace(",", ".");
 					if (rate != null)
-						rates.put(currencyCode, new ExchangeRate(currencyCode, Utils.toNanoCoins(rate), URL.getHost()));
-				}*/
+						rates.put(currencyCode, new ExchangeRate(currencyCode, Utils.toNanoCoins(rate), "cryptsy.com and " + URL.getHost()));
+				}
 
 				return rates;
 			}
