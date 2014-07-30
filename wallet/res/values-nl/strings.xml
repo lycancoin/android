@@ -58,7 +58,7 @@
 
 	<string name="about_title">Over</string>
 	<string name="about_license_title">Licentie</string>
-	<string name="about_credits_lycancoinj_title">Deze app gebruikt lycancoinj %s</string>
+	<string name="about_credits_lycancoinj_title">Deze app gebruikt litecoinj %s</string>
 	<string name="about_credits_zxing_title">"Deze app gebruikt 'zxing'"</string>
 	<string name="about_credits_icon_title">"Deze app gebruikt een icoon door 'bitboy'"</string>
 	<string name="about_author_twitter_title">Auteur op Twitter</string>
