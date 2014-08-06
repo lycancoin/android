@@ -7,7 +7,7 @@
 	<groupId>de.schildbach.wallet.litecoin</groupId>
 	<artifactId>base</artifactId>
 	<name>base</name>
-	<version>1</version>
+	<version>12.0.3.0</version>
 	<packaging>pom</packaging>
 
 	<modules>
