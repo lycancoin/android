@@ -6,7 +6,7 @@
 
 	<artifactId>wallet</artifactId>
 	<packaging>apk</packaging>
-	<version>1.002</version>
+	<version>1.003</version>
 	<name>Lycancoin Wallet</name>
 
 	<parent>
