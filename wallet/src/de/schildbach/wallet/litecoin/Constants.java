@@ -1,4 +1,4 @@
-
+/*
  * Copyright 2011-2013 the original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
