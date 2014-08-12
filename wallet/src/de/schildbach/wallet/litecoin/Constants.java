@@ -138,7 +138,7 @@ public class Constants
 	public static final String PREFS_KEY_LYC_PRECISION = "lyc_precision";
 	public static final String PREFS_KEY_DISCLAIMER = "disclaimer";
 
-	public static final BigInteger DEFAULT_TX_FEE = Utils.CENT.multiply(new BigInteger("0")); // 0.00
+	public static final BigInteger DEFAULT_TX_FEE = Utils.CENT.multiply(new BigInteger("2")); // 2
 
 	public static final long LAST_USAGE_THRESHOLD_JUST_MS = DateUtils.HOUR_IN_MILLIS;
 	public static final long LAST_USAGE_THRESHOLD_RECENTLY_MS = 2 * DateUtils.DAY_IN_MILLIS;
