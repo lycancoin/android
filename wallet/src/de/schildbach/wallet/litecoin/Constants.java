@@ -72,8 +72,8 @@ public class Constants
 	public static final String PEER_DISCOVERY_IRC_CHANNEL_PROD = "#lycancoin";
 	public static final String PEER_DISCOVERY_IRC_CHANNEL_TEST = "#lycancoinTEST3";
 
-	private static final String BLOCKEXPLORER_BASE_URL_PROD = "http://explorer.lycancoin.net/";
-	private static final String BLOCKEXPLORER_BASE_URL_TEST = "http://explorer.lycancoin.net/";
+	private static final String BLOCKEXPLORER_BASE_URL_PROD = "http://explorer.lyccoin.org/";
+	private static final String BLOCKEXPLORER_BASE_URL_TEST = "http://explorer.lyccoin.org/";
 	public static final String BLOCKEXPLORER_BASE_URL = TEST ? BLOCKEXPLORER_BASE_URL_TEST : BLOCKEXPLORER_BASE_URL_PROD;
 
 	public static final String MIMETYPE_TRANSACTION = "application/x-lyctx";
