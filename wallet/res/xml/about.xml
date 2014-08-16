@@ -7,7 +7,7 @@
 			android:title="Version" />
 		<Preference
 			android:key="about_copyright"
-			android:summary="© 2011-2013, Erik Gregg; \n© 2014, Cohors LLC "
+			android:summary="© 2011-2013, Erik Gregg; \n© 2014, Cohors LLC;  \n© 2014, Lycancoin.org"
 			android:title="Copyright" />
 		<Preference
 			android:key="about_license"
