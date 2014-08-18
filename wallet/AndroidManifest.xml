@@ -4,7 +4,7 @@
 	package="bz.cohors.moneta.lycancoin.wallet"
 	android:installLocation="auto"
 	android:versionCode="10019"
-	android:versionName="12.0.11.15" >
+	android:versionName="12.0.11.16" >
 
 	<uses-sdk
 		android:minSdkVersion="8"
