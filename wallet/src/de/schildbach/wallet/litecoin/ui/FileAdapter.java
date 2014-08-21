@@ -26,7 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import bz.cohors.moneta.lycancoin.wallet.R;
+import cryptidcurrency.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach

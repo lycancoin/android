@@ -64,7 +64,7 @@ import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.WalletApplication;
 import de.schildbach.wallet.litecoin.util.ThrottelingWalletChangeListener;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.lycancoin.wallet.R;
+import cryptidcurrency.lycancoin.wallet.R;
 import org.spongycastle.crypto.tls.TlsAgreementCredentials;
 
 /**

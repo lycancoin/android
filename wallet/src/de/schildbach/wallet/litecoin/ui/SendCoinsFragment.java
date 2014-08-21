@@ -72,7 +72,7 @@ import de.schildbach.wallet.litecoin.integration.android.LitecoinIntegration;
 import de.schildbach.wallet.litecoin.service.BlockchainService;
 import de.schildbach.wallet.litecoin.service.BlockchainServiceImpl;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.lycancoin.wallet.R;
+import cryptidcurrency.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach

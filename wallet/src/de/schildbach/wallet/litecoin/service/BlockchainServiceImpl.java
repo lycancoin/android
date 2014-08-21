@@ -69,7 +69,7 @@ import de.schildbach.wallet.litecoin.WalletBalanceWidgetProvider;
 import de.schildbach.wallet.litecoin.ui.WalletActivity;
 import de.schildbach.wallet.litecoin.util.ThrottelingWalletChangeListener;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.lycancoin.wallet.R;
+import cryptidcurrency.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach

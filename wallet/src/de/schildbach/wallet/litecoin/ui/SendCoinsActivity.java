@@ -32,7 +32,7 @@ import com.google.litecoin.uri.LitecoinURI;
 import com.google.litecoin.uri.LitecoinURIParseException;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import bz.cohors.moneta.lycancoin.wallet.R;
+import cryptidcurrency.lycancoin.wallet.R;
 
 import java.math.BigInteger;
 

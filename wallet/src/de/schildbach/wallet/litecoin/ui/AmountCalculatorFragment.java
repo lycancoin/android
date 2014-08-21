@@ -43,7 +43,7 @@ import de.schildbach.wallet.litecoin.Constants;
 import de.schildbach.wallet.litecoin.ExchangeRatesProvider;
 import de.schildbach.wallet.litecoin.ExchangeRatesProvider.ExchangeRate;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.lycancoin.wallet.R;
+import cryptidcurrency.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach

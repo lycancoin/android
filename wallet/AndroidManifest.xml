@@ -122,11 +122,11 @@
 
 		<provider
 			android:name="de.schildbach.wallet.litecoin.AddressBookProvider"
-			android:authorities="bz.cohors.moneta.lycancoin.wallet.address_book"
+			android:authorities="cryptidcurrency.lycancoin.wallet.address_book"
 			android:exported="false" />
 		<provider
 			android:name="de.schildbach.wallet.litecoin.ExchangeRatesProvider"
-			android:authorities="bz.cohors.moneta.lycancoin.wallet.exchange_rates"
+			android:authorities="cryptidcurrency.lycancoin.wallet.exchange_rates"
 			android:exported="false" />
 
 		<receiver

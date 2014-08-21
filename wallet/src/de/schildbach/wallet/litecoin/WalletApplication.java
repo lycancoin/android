@@ -54,7 +54,7 @@ import de.schildbach.wallet.litecoin.service.BlockchainServiceImpl;
 import de.schildbach.wallet.litecoin.util.CrashReporter;
 import de.schildbach.wallet.litecoin.util.StrictModeWrapper;
 import de.schildbach.wallet.litecoin.util.WalletUtils;
-import bz.cohors.moneta.lycancoin.wallet.R;
+import cryptidcurrency.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach

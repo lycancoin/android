@@ -26,7 +26,7 @@ import android.text.format.DateUtils;
 import com.google.litecoin.core.NetworkParameters;
 import com.google.litecoin.core.Utils;
 
-import bz.cohors.moneta.lycancoin.wallet.R;
+import cryptidcurrency.lycancoin.wallet.R;
 
 /**
  * @author Andreas Schildbach
