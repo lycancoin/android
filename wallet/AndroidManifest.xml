@@ -4,7 +4,7 @@
 	package="cryptidcurrency.lycancoin.wallet"
 	android:installLocation="auto"
 	android:versionCode="10019"
-	android:versionName="12.0.13.6" >
+	android:versionName="12.0.13.7" >
 
 	<uses-sdk
 		android:minSdkVersion="8"
