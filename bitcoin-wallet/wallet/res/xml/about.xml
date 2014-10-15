@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<PreferenceCategory android:title="@string/about_title" >
+		<Preference
+			android:key="about_version"
+			android:title="Version" />
+		<Preference
+			android:key="about_copyright"
+			android:summary="© 2011-2013, Erik Gregg; \n© 2014, Cohors LLC;  \n© 2014, Lycancoin.org"
+			android:title="Copyright" />
+		<Preference
+			android:key="about_license"
+			android:title="@string/about_license_title" />
+		<Preference android:key="about_credits_lycancoinj" />
+		<Preference
+			android:key="about_credits_zxing"
+			android:title="@string/about_credits_zxing_title" />
+		<Preference
+			android:key="about_market_app"
+			android:title="@string/about_credits_market_app_title" />
+	</PreferenceCategory>
+
+</PreferenceScreen>

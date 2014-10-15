@@ -1,0 +1,11 @@
+*.iml
+*.apk
+.DS_Store
+local.properties
+.classpath
+.project
+.settings/
+bin/
+gen/
+target/
+.idea/
