@@ -1,0 +1,1 @@
+The Lycancoin android wallet
